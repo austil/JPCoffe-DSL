@@ -1,0 +1,29 @@
+// Recette de la Béchamel
+
+Recipe "Béchamel" {
+  
+  For 6 people
+
+  Ingredients
+  ------------
+  * Farine 50gr
+  * Beurre 50gr
+  * Lait 60cl
+  * Sel
+  * Poivre
+  * Muscade rapée
+
+  Tools
+  ------
+  * Casserole à fond épais
+  * Cuillère en bois
+  * Râpe
+
+  Steps
+  ------
+  { } -> 1. faire fondre le Beurre dans la Casserole à fond épais
+  {1} -> 2. ajouter la Farine et remuer avec une Cuillère en bois
+  {2} -> 3. verser le Lait progressivement en remuant jusqu'a ce que la sauce épaississe
+  {3} -> 4. assaisoner de Sel, Poivre et Muscade rapée
+
+}
