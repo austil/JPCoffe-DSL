@@ -1,6 +1,6 @@
 use recipe Béchamel in "./bechamel.jpcoffe"
 
-Recipe  "Croque-Monsieur" {
+Recipe "Croque-Monsieur" {
 
   For 3 people
 

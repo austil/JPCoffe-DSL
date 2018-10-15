@@ -1,0 +1,29 @@
+Recipe "Suchi" {
+
+  For 6 people
+
+  Ingredients
+  ------------
+  * Riz court vinaigré AS Riz 300gr
+  * Wasabi
+  * GROUP "Poissons" [ 
+    * Saumon
+    * Thon
+    * Crevettes
+    * Etoile de mer
+  ] 500gr
+
+  Tools
+  ------
+  * Couteau à poisson
+
+  Steps
+  ------
+  { } -> 1. découper les Poissons et Crustacés en fine lamelle
+  {1} -> 2. humecter vos doigts
+  {2} -> 3. former un pavé de Riz avec vos mains
+  {3} -> 4. déposer une pointe de Wasabi sur une lamelle de Poissons
+  {4} -> 5. poser le pavé de Riz sur la lamelle de Poissons et former le sushi
+  {5} -> 6. IF il reste du Poissons et du Riz THEN 2.
+
+}
