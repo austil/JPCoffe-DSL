@@ -1,0 +1,68 @@
+// Recette des Lasagnes bolognaises express
+use recipe Béchamel in "./bechamel.jpcoffe"
+
+Recipe "Garniture Lasagnes Bolognaise" {
+    For 4 people
+
+    Ingredients
+    ------------
+    * Echalotes 2
+    * Cuillères à soupe d'huile d'olive 3
+    * Viande hachée 250gr
+    * Poivre
+    * Sel
+    * Purée de tomates 50gr
+    * Eau 20cl
+
+    Tools
+    ------
+    * Poële 1
+    * Planche en bois 1
+    * Hachoir 1
+    * Cuillère à soupe 1
+    * Couvercle 1
+
+    Steps
+    ------
+    {} -> 1. hacher les Echalotes sur la Planche en bois avec le Hachoir
+    {1} -> 2. fondre les Echalotes dans Cuillères à soupe d'huile d'olive à la Poële
+    {2} -> 3. cuire à la Poële la Viande Hachée avec le Sel, le Poivre, les Echalotes et les Cuillères d'huile d'olive
+    {3} -> 4. ajouter Purée de tomates et Eau dans la poële
+    {4} -> 5. laisser mijoter le tout sous Couvercle pendant 30 minutes
+
+}
+
+Recipe "Lasagnes Bolognaises Express" {
+
+    For 4 people
+
+    Ingredients
+    ------------    
+    * Eau 20cl
+    * Paquet feuilles lasagnes 1 as Feuilles lasagnes
+    * Gruyère rapé 100g
+    * Béchamel
+    * Garniture Lasagnes Bolognaise AS Garniture
+
+    Tools
+    ------
+    * Plat à gratin 1
+    * Four 1
+    * Casserole 1
+
+    Steps
+    ------
+    {} -> 1. préparer Garniture
+    {} -> 2. préparer Béchamel
+    {} -> 3. mettre de l'eau à ébullition dans la Casserole
+    {3} -> 4. précuire le Feuilles lasagnes dans Casserole pour 3 minutes
+    {4} -> 5. mettre une couche de Feuilles lasagnes dans Plat à gratin
+    {5} -> 6. mettre une couche de Garniture dans Plat à gratin
+    {6} -> 7. mettre une couche de Gruyère rapé dans Plat à gratin
+    {7} -> 8. IF il reste des Feuilles lasagnes et Garniture et Gruyère THEN 4
+    {8} -> 9. mettre la Béchamel sur la dernière couche
+    {9} -> 10. recouvrir de Gruyère rapé
+    {10} -> 11. mettre au Four à 200°C pendant 15 minutes
+
+
+}
