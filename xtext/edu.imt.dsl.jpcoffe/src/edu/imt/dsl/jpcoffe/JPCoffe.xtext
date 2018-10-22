@@ -1,0 +1,70 @@
+grammar edu.imt.dsl.jpcoffe.JPCoffe with org.eclipse.xtext.common.Terminals
+
+generate jPCoffe "http://www.imt.edu/dsl/jpcoffe/JPCoffe"
+
+Main :
+	(recipes += Recipe)+
+;
+
+Recipe : 
+	"Recipe" name = STRING "{"
+		portion = PortionNB
+		ingredients = IngredientsBlock
+		tools = ToolsBlock
+		steps = StepsBlock
+	"}"
+;
+
+PortionNB : 
+	"For" nb = INT ("people")?
+;
+
+IngredientsBlock :
+	"Ingredients" NEW_LINE
+	TITLE_LINE NEW_LINE
+	(Ingredient)*
+	NEW_LINE
+;
+
+Ingredient :
+	"*" SPACE NAME Quantity NEW_LINE
+;
+
+Quantity :
+	INT (METRIC_UNIT)?
+;
+
+terminal METRIC_UNIT :
+	"gr" | "kg" | "cl" | "l"
+;
+
+ToolsBlock :
+	"Tools" NEW_LINE
+	TITLE_LINE NEW_LINE
+	(Tool)*
+	NEW_LINE
+;
+
+Tool :
+	"*" SPACE NAME NEW_LINE
+;
+
+StepsBlock : 
+	"Steps" NEW_LINE
+	TITLE_LINE NEW_LINE
+	(Step)*
+	NEW_LINE
+;
+
+Step :
+	"{" (INT)? ("," INT)* "}" SPACE 
+	"->" SPACE INT "." SPACE
+	TEXT
+	NEW_LINE
+;
+
+terminal TITLE_LINE : ("-")+;
+terminal NAME : ('A'..'Z') ('a'..'z' | 'A'..'Z' | SPACE)*;
+terminal NEW_LINE : "\n" | "\r\n";
+terminal SPACE : ' ';
+terminal TEXT : ('a'..'z'|'A'..'Z'|'\''|',')+ ;
