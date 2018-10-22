@@ -1,0 +1,43 @@
+// Recette des Cookies
+
+Recipe "Cookies" {
+  
+  For 6 people
+
+  Ingredients
+  ------------
+  * Oeuf 1
+  * Sucre 85g
+  * Beurre doux 85g
+  * Farine 150g
+  * Pépites de chocolat 100g
+  * Cuillère à soupe de levure chimique 1 as Levure chimique
+  * Cuillère à soupe de café de sel 0,5 as Sel
+  * GROUP "Pâte" [ 
+    * Oeuf
+    * Sucre
+    * Beurre doux
+    * Farine
+    * Pépites de chocolat
+    * Levure chimique
+    * Sel
+  ]
+
+  Tools
+  ------
+  * Four
+  * Saladier
+  * Plaque recouverte d'une feuille de cuisson as Plaque
+
+  Steps
+  ------
+  {} -> 1. préchauffer le Four à 180°C.
+  {} -> 2. laisser ramollir le Beurre doux à température ambiante.
+  {2} -> 3. dans un Saladier, malaxer le Beurre doux avec le Sucre.
+  {3} -> 4. Ajouter l'Oeuf dans le Saladier.
+  {4} -> 5. verser progressivement la Farine, la Levure chimique, le Sel et les Pépites de chocolat pour former la Pâte.
+  {5} -> 6. mélanger la Pâte.
+  {6} -> 7. à l'aide des mains, former des noix de Pâte sur la Plaque en les espaçant car elles s'étaleront à la cuisson.
+  {1,7} -> 8. enfourner 8 à 10 minutes à 180° et sortir la Plaque dès que les contours des noix de Pâte commencent à brunir. 
+
+}

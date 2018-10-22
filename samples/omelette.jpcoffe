@@ -1,0 +1,31 @@
+// Recette de l'Omelette
+
+Recipe "Omelette" {
+  
+  For 2 people
+
+  Ingredients
+  ------------
+  * Oeufs 3
+  * Gruyère 30g
+  * Cuillères à soupe d'huile d'olive 2
+  * Sel
+  * Poivre
+
+  Tools
+  ------
+  * Fourchette
+  * Bol
+  * Poële
+
+  Steps
+  ------
+  { } -> 1. casser les Oeufs
+  {1} -> 2. verser le contenu des Oeufs dans le Bol
+  {2} -> 3. battre les Oeufs avec une Fourchette
+  {} -> 4. Faire chauffer Cuillères à soupe d'huile d'olive dans la Poële
+  {3,4} -> 5. verser les Oeufs dans la Poële
+  {5} -> 6. laisser cuir jusqu'à ce que les Oeufs deviennent fermes
+  {6} -> 7. ajouter le Gruyère, le Sel et le Poivre
+
+}

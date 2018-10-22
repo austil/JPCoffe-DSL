@@ -1,0 +1,44 @@
+// Recette de la Panna Cotta
+
+Recipe "Panna Cotta" {
+  
+  For 4 people
+
+  Ingredients
+  ------------
+  * Lait 20cl
+  * Crème liquide 20cl
+  * Sucre 30g
+  * Feuilles de gélatine 2,5
+  * Sachets sucre vanillé 2
+  * Gousse de vanille 1
+  * Coulis de framboise
+  * GROUP "Yaourt" [ 
+    * Lait 20cl
+    * Crème liquide 20cl
+    * Sucre 30g
+    * Feuilles de gélatine 2,5
+    * Sachets sucre vanillé 2
+    * Gousse de vanille 1
+  ]
+
+  Tools
+  ------
+  * Bol
+  * Casserole
+  * Cuillère
+  * Verrines 4
+  * Réfrigérateur
+
+  Steps
+  ------
+  { } -> 1. mettre à ramollir les Feuilles de gélatine dans Bol d'eau froide
+  {} -> 2. dans une Casserole, faites bouillir le Lait, la Crème liquide, le Sucre et la Gousse de vanille dont on aura enlevé les grains. 
+  {1} -> 3. essorer Feuilles de gélatine
+  {3} -> 4. ajouter Feuilles de gélatine dans Casserole pour former le Yaourt
+  {4} -> 5. mélanger Yaourt
+  {5} -> 6. verser le Yaourt dans les 4 Verrines
+  {6} -> 7. mettre le Yaourt au Réfrigérateur pour 3 heures
+  {7} -> 8. ajouter le Coulis de framboise sur le Yaourt de chaque Verrines
+
+}
