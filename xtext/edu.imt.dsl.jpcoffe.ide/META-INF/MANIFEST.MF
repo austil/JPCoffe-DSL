@@ -1,0 +1,16 @@
+Manifest-Version: 1.0
+Automatic-Module-Name: edu.imt.dsl.jpcoffe.ide
+Bundle-ManifestVersion: 2
+Bundle-Name: edu.imt.dsl.jpcoffe.ide
+Bundle-Vendor: My Company
+Bundle-Version: 1.0.0.qualifier
+Bundle-SymbolicName: edu.imt.dsl.jpcoffe.ide; singleton:=true
+Bundle-ActivationPolicy: lazy
+Require-Bundle: edu.imt.dsl.jpcoffe,
+ org.eclipse.xtext.ide,
+ org.eclipse.xtext.xbase.ide,
+ org.antlr.runtime;bundle-version="[3.2.0,3.2.1)"
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Export-Package: edu.imt.dsl.jpcoffe.ide.contentassist.antlr,
+ edu.imt.dsl.jpcoffe.ide.contentassist.antlr.internal
+
