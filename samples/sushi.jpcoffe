@@ -4,7 +4,7 @@ Recipe "Suchi" {
 
   Ingredients
   ------------
-  * Riz court vinaigré AS Riz 300gr
+  * Riz court vinaigre AS Riz 300gr
   * Wasabi
   * GROUP "Poissons" [ 
     * Saumon
@@ -15,15 +15,15 @@ Recipe "Suchi" {
 
   Tools
   ------
-  * Couteau à poisson
+  * Couteau a poisson
 
   Steps
   ------
-  { } -> 1. découper les Poissons et Crustacés en fine lamelle
+  { } -> 1. decouper les Poissons et Crustaces en fine lamelle
   {1} -> 2. humecter vos doigts
-  {2} -> 3. former un pavé de Riz avec vos mains
-  {3} -> 4. déposer une pointe de Wasabi sur une lamelle de Poissons
-  {4} -> 5. poser le pavé de Riz sur la lamelle de Poissons et former le sushi
+  {2} -> 3. former un pave de Riz avec vos mains
+  {3} -> 4. deposer une pointe de Wasabi sur une lamelle de Poissons
+  {4} -> 5. poser le pave de Riz sur la lamelle de Poissons et former le sushi
   {5} -> 6. IF il reste du Poissons et du Riz THEN 2.
 
 }

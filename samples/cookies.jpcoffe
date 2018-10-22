@@ -1,5 +1,3 @@
-// Recette des Cookies
-
 Recipe "Cookies" {
   
   For 6 people
@@ -10,15 +8,15 @@ Recipe "Cookies" {
   * Sucre 85g
   * Beurre doux 85g
   * Farine 150g
-  * Pépites de chocolat 100g
-  * Cuillère à soupe de levure chimique 1 as Levure chimique
-  * Cuillère à soupe de café de sel 0,5 as Sel
-  * GROUP "Pâte" [ 
+  * Pepites de chocolat 100g
+  * Cuillere a soupe de levure chimique 1 as Levure chimique
+  * Cuillere a soupe de cafe de sel 0,5 as Sel
+  * GROUP "Pate" [ 
     * Oeuf
     * Sucre
     * Beurre doux
     * Farine
-    * Pépites de chocolat
+    * Pepites de chocolat
     * Levure chimique
     * Sel
   ]
@@ -31,13 +29,13 @@ Recipe "Cookies" {
 
   Steps
   ------
-  {} -> 1. préchauffer le Four à 180°C.
-  {} -> 2. laisser ramollir le Beurre doux à température ambiante.
+  {} -> 1. prechauffer le Four a 180 degres.
+  {} -> 2. laisser ramollir le Beurre doux a temperature ambiante.
   {2} -> 3. dans un Saladier, malaxer le Beurre doux avec le Sucre.
   {3} -> 4. Ajouter l'Oeuf dans le Saladier.
-  {4} -> 5. verser progressivement la Farine, la Levure chimique, le Sel et les Pépites de chocolat pour former la Pâte.
-  {5} -> 6. mélanger la Pâte.
-  {6} -> 7. à l'aide des mains, former des noix de Pâte sur la Plaque en les espaçant car elles s'étaleront à la cuisson.
-  {1,7} -> 8. enfourner 8 à 10 minutes à 180° et sortir la Plaque dès que les contours des noix de Pâte commencent à brunir. 
+  {4} -> 5. verser progressivement la Farine, la Levure chimique, le Sel et les Pepites de chocolat pour former la Pate.
+  {5} -> 6. melanger la Pate.
+  {6} -> 7. a l'aide des mains, former des noix de Pate sur la Plaque en les espaçant car elles s'etaleront a la cuisson.
+  {1,7} -> 8. enfourner 8 a 10 minutes a 180 degres et sortir la Plaque des que les contours des noix de Pate commencent a brunir. 
 
 }

@@ -1,6 +1,4 @@
-// Recette de la Béchamel
-
-Recipe "Béchamel" {
+Recipe "Bechamel" {
   
   For 6 people
 
@@ -11,19 +9,19 @@ Recipe "Béchamel" {
   * Lait 60cl
   * Sel
   * Poivre
-  * Muscade rapée
+  * Muscade rapee
 
   Tools
   ------
-  * Casserole à fond épais
-  * Cuillère en bois
-  * Râpe
+  * Casserole a fond epais
+  * Cuillere en bois
+  * Rape
 
   Steps
   ------
-  { } -> 1. faire fondre le Beurre dans la Casserole à fond épais
-  {1} -> 2. ajouter la Farine et remuer avec une Cuillère en bois
-  {2} -> 3. verser le Lait progressivement en remuant jusqu'a ce que la sauce épaississe
-  {3} -> 4. assaisoner de Sel, Poivre et Muscade rapée
+  { } -> 1. faire fondre le Beurre dans la Casserole a fond epais
+  {1} -> 2. ajouter la Farine et remuer avec une Cuillere en bois
+  {2} -> 3. verser le Lait progressivement en remuant jusqu'a ce que la sauce epaississe
+  {3} -> 4. assaisonner de Sel, Poivre et Muscade rapee
 
 }

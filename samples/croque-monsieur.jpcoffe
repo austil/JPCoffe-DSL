@@ -1,4 +1,4 @@
-use recipe Béchamel in "./bechamel.jpcoffe"
+use recipe Bechamel in "./bechamel.jpcoffe"
 
 Recipe "Croque-Monsieur" {
 
@@ -8,25 +8,25 @@ Recipe "Croque-Monsieur" {
   ------------
   * Tranche de pain de mie 6
   * Jambon blanc 150gr
-  * Comté OR Cantal OR Gruyère AS Fromage 100gr
-  * Béchamel
+  * Comte OR Cantal OR Gruyere AS Fromage 100gr
+  * Bechamel
 
   Tools
   ------
   * Four
   * Couteau
-  * Cuillère à soupe
-  * ToolsFor Béchamel
+  * Cuillere a soupe
+  * ToolsFor Bechamel
 
   Steps
   ------
-  { } -> 1. étaler la Béchamel froide sur chaque Tranche de pain de mie
+  { } -> 1. etaler la Bechamel froide sur chaque Tranche de pain de mie
   { } -> 2. raper le Fromage
-  { } -> 3. préchauffer le Four à 190°C
-  {1, 2} -> 4. déposer le Fromage rapé et le Jambon blanc sur la moitié des Tranche de pain de mie
+  { } -> 3. prechauffer le Four a 190 degres
+  {1, 2} -> 4. deposer le Fromage rape et le Jambon blanc sur la moitie des Tranche de pain de mie
   {4} -> 5. recouvrir les tranches avec garniture par les tranches sans garniture
-  {5} -> 6. étaler le reste de la Béchamel sur chaque Croque-Monsieur
-  {6} -> 7. ajouter le reste du Fromage rapé sur chaque Croque-Monsieur
+  {5} -> 6. etaler le reste de la Bechamel sur chaque Croque-Monsieur
+  {6} -> 7. ajouter le reste du Fromage rape sur chaque Croque-Monsieur
   {3, 7} -> 8. Cuirre les Croque-Monsieur au Four sur une plaque de cuisson pendant une douzaine de minutes
 
 }

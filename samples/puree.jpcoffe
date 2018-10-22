@@ -1,35 +1,33 @@
-// Recette de la Purée
-
-Recipe "Purée" {
+Recipe "Puree" {
   
   For 4 people
 
   Ingredients
   ------------
   * Pommes de terre 1kg
-  * Beuure 50g
+  * Beurre 50g
   * Lait 20cl
-  * Comté rapé 100g
+  * Comte rape 100g
   * Sel
   * Noix de muscade
 
   Tools
   ------
-  * Éplucheur 
-  * Moulin à légumes
+  * eplucheur 
+  * Moulin a legumes
   * Casserole
 
   Steps
   ------
-  { } -> 1. éplucher les Pommes de terre
+  { } -> 1. eplucher les Pommes de terre
   {1} -> 2. couper les Pommes de terre en gros morceaux
-  {} -> 3. porter de l'eau à ébullition dans la Casserole
+  {} -> 3. porter de l'eau a ebullition dans la Casserole
   {2,3} -> 4. Mettre les Pommes de terre dans la Casserole pendant 20min
   {3} -> 5. mettre du Sel dans la Casserole
-  {4,5} -> 6. égoutter les Pommes de terre
-  {6} -> 7. passer les Pommes de terre au Moulin à légumes
+  {4,5} -> 6. egoutter les Pommes de terre
+  {6} -> 7. passer les Pommes de terre au Moulin a legumes
   {7} -> 8. mettre les Pommes de terre et le Beurre dans la Casserole sur feu doux
-  {8} -> 9. mélanger énergiquement en ajoutant peu à peu le Lait puis le Comté
+  {8} -> 9. melanger energiquement en ajoutant peu a peu le Lait puis le Comte
   {9} -> 10. assaisonner de Sel et de Noix de muscade
 
 }

@@ -1,6 +1,4 @@
-// Recette du Gateau au yaourt
-
-Recipe "Gâteau au Yaourt" {
+Recipe "Gateau au Yaourt" {
   
   For 8 people
 
@@ -17,17 +15,17 @@ Recipe "Gâteau au Yaourt" {
   ------
   * Four
   * Saladier
-  * Cuillère en bois
-  * Moule à cake beurré et fariné
+  * Cuillere en bois
+  * Moule a cake beurre et farine
 
   Steps
   ------
-  {} -> 1. préchauffer le Four à 180°C.
-  {} -> 2. dans un Saladier, verser le Yaourt et nettoyer le pot qui servira pour doser les autres ingrédients.
-  {2} -> 3. ajouter le Sucre en poudre et les Oeufs dans le Saladier et mélanger vigoureusement à l’aide d’une Cuillère en bois, jusqu’à ce que la pâte blanchisse légèrement.
-  {3} -> 4. ajouter alors l'Huile neutre, la Farine et la Levure chimique et bien remuer jusqu’à l’obtention d’une pâte homogène.
-  {4} -> 5. verser dans un Moule à cake.
+  {} -> 1. prechauffer le Four a 180 degres.
+  {} -> 2. dans un Saladier, verser le Yaourt et nettoyer le pot qui servira pour doser les autres ingredients.
+  {2} -> 3. ajouter le Sucre en poudre et les Oeufs dans le Saladier et melanger vigoureusement a l’aide d’une Cuillere en bois, jusqu’a ce que la pate blanchisse legerement.
+  {3} -> 4. ajouter alors l'Huile neutre, la Farine et la Levure chimique et bien remuer jusqu’a l’obtention d’une pate homogene.
+  {4} -> 5. verser dans un Moule a cake.
   {1,5} -> 6. enfourner le Moule a cake pendant 35 min.
-  {6} -> 7. démouler sur une grille et laisser refroidir.
+  {6} -> 7. demouler sur une grille et laisser refroidir.
 
 }
