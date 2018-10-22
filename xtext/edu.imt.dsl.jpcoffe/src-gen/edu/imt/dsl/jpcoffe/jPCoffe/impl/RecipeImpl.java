@@ -3,22 +3,100 @@
  */
 package edu.imt.dsl.jpcoffe.jPCoffe.impl;
 
+import edu.imt.dsl.jpcoffe.jPCoffe.IngredientsBlock;
 import edu.imt.dsl.jpcoffe.jPCoffe.JPCoffePackage;
+import edu.imt.dsl.jpcoffe.jPCoffe.PortionNB;
 import edu.imt.dsl.jpcoffe.jPCoffe.Recipe;
+import edu.imt.dsl.jpcoffe.jPCoffe.StepsBlock;
+import edu.imt.dsl.jpcoffe.jPCoffe.ToolsBlock;
+
+import org.eclipse.emf.common.notify.Notification;
+import org.eclipse.emf.common.notify.NotificationChain;
 
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.InternalEObject;
 
-import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
  * An implementation of the model object '<em><b>Recipe</b></em>'.
  * <!-- end-user-doc -->
+ * <p>
+ * The following features are implemented:
+ * </p>
+ * <ul>
+ *   <li>{@link edu.imt.dsl.jpcoffe.jPCoffe.impl.RecipeImpl#getName <em>Name</em>}</li>
+ *   <li>{@link edu.imt.dsl.jpcoffe.jPCoffe.impl.RecipeImpl#getPortion <em>Portion</em>}</li>
+ *   <li>{@link edu.imt.dsl.jpcoffe.jPCoffe.impl.RecipeImpl#getIngredients <em>Ingredients</em>}</li>
+ *   <li>{@link edu.imt.dsl.jpcoffe.jPCoffe.impl.RecipeImpl#getTools <em>Tools</em>}</li>
+ *   <li>{@link edu.imt.dsl.jpcoffe.jPCoffe.impl.RecipeImpl#getSteps <em>Steps</em>}</li>
+ * </ul>
  *
  * @generated
  */
-public class RecipeImpl extends MinimalEObjectImpl.Container implements Recipe
+public class RecipeImpl extends MainImpl implements Recipe
 {
+  /**
+   * The default value of the '{@link #getName() <em>Name</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getName()
+   * @generated
+   * @ordered
+   */
+  protected static final String NAME_EDEFAULT = null;
+
+  /**
+   * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getName()
+   * @generated
+   * @ordered
+   */
+  protected String name = NAME_EDEFAULT;
+
+  /**
+   * The cached value of the '{@link #getPortion() <em>Portion</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getPortion()
+   * @generated
+   * @ordered
+   */
+  protected PortionNB portion;
+
+  /**
+   * The cached value of the '{@link #getIngredients() <em>Ingredients</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getIngredients()
+   * @generated
+   * @ordered
+   */
+  protected IngredientsBlock ingredients;
+
+  /**
+   * The cached value of the '{@link #getTools() <em>Tools</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getTools()
+   * @generated
+   * @ordered
+   */
+  protected ToolsBlock tools;
+
+  /**
+   * The cached value of the '{@link #getSteps() <em>Steps</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getSteps()
+   * @generated
+   * @ordered
+   */
+  protected StepsBlock steps;
+
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -38,6 +116,366 @@ public class RecipeImpl extends MinimalEObjectImpl.Container implements Recipe
   protected EClass eStaticClass()
   {
     return JPCoffePackage.Literals.RECIPE;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public String getName()
+  {
+    return name;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setName(String newName)
+  {
+    String oldName = name;
+    name = newName;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, JPCoffePackage.RECIPE__NAME, oldName, name));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public PortionNB getPortion()
+  {
+    return portion;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public NotificationChain basicSetPortion(PortionNB newPortion, NotificationChain msgs)
+  {
+    PortionNB oldPortion = portion;
+    portion = newPortion;
+    if (eNotificationRequired())
+    {
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, JPCoffePackage.RECIPE__PORTION, oldPortion, newPortion);
+      if (msgs == null) msgs = notification; else msgs.add(notification);
+    }
+    return msgs;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setPortion(PortionNB newPortion)
+  {
+    if (newPortion != portion)
+    {
+      NotificationChain msgs = null;
+      if (portion != null)
+        msgs = ((InternalEObject)portion).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - JPCoffePackage.RECIPE__PORTION, null, msgs);
+      if (newPortion != null)
+        msgs = ((InternalEObject)newPortion).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - JPCoffePackage.RECIPE__PORTION, null, msgs);
+      msgs = basicSetPortion(newPortion, msgs);
+      if (msgs != null) msgs.dispatch();
+    }
+    else if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, JPCoffePackage.RECIPE__PORTION, newPortion, newPortion));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public IngredientsBlock getIngredients()
+  {
+    return ingredients;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public NotificationChain basicSetIngredients(IngredientsBlock newIngredients, NotificationChain msgs)
+  {
+    IngredientsBlock oldIngredients = ingredients;
+    ingredients = newIngredients;
+    if (eNotificationRequired())
+    {
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, JPCoffePackage.RECIPE__INGREDIENTS, oldIngredients, newIngredients);
+      if (msgs == null) msgs = notification; else msgs.add(notification);
+    }
+    return msgs;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setIngredients(IngredientsBlock newIngredients)
+  {
+    if (newIngredients != ingredients)
+    {
+      NotificationChain msgs = null;
+      if (ingredients != null)
+        msgs = ((InternalEObject)ingredients).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - JPCoffePackage.RECIPE__INGREDIENTS, null, msgs);
+      if (newIngredients != null)
+        msgs = ((InternalEObject)newIngredients).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - JPCoffePackage.RECIPE__INGREDIENTS, null, msgs);
+      msgs = basicSetIngredients(newIngredients, msgs);
+      if (msgs != null) msgs.dispatch();
+    }
+    else if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, JPCoffePackage.RECIPE__INGREDIENTS, newIngredients, newIngredients));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public ToolsBlock getTools()
+  {
+    return tools;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public NotificationChain basicSetTools(ToolsBlock newTools, NotificationChain msgs)
+  {
+    ToolsBlock oldTools = tools;
+    tools = newTools;
+    if (eNotificationRequired())
+    {
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, JPCoffePackage.RECIPE__TOOLS, oldTools, newTools);
+      if (msgs == null) msgs = notification; else msgs.add(notification);
+    }
+    return msgs;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setTools(ToolsBlock newTools)
+  {
+    if (newTools != tools)
+    {
+      NotificationChain msgs = null;
+      if (tools != null)
+        msgs = ((InternalEObject)tools).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - JPCoffePackage.RECIPE__TOOLS, null, msgs);
+      if (newTools != null)
+        msgs = ((InternalEObject)newTools).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - JPCoffePackage.RECIPE__TOOLS, null, msgs);
+      msgs = basicSetTools(newTools, msgs);
+      if (msgs != null) msgs.dispatch();
+    }
+    else if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, JPCoffePackage.RECIPE__TOOLS, newTools, newTools));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public StepsBlock getSteps()
+  {
+    return steps;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public NotificationChain basicSetSteps(StepsBlock newSteps, NotificationChain msgs)
+  {
+    StepsBlock oldSteps = steps;
+    steps = newSteps;
+    if (eNotificationRequired())
+    {
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, JPCoffePackage.RECIPE__STEPS, oldSteps, newSteps);
+      if (msgs == null) msgs = notification; else msgs.add(notification);
+    }
+    return msgs;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setSteps(StepsBlock newSteps)
+  {
+    if (newSteps != steps)
+    {
+      NotificationChain msgs = null;
+      if (steps != null)
+        msgs = ((InternalEObject)steps).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - JPCoffePackage.RECIPE__STEPS, null, msgs);
+      if (newSteps != null)
+        msgs = ((InternalEObject)newSteps).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - JPCoffePackage.RECIPE__STEPS, null, msgs);
+      msgs = basicSetSteps(newSteps, msgs);
+      if (msgs != null) msgs.dispatch();
+    }
+    else if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, JPCoffePackage.RECIPE__STEPS, newSteps, newSteps));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
+  {
+    switch (featureID)
+    {
+      case JPCoffePackage.RECIPE__PORTION:
+        return basicSetPortion(null, msgs);
+      case JPCoffePackage.RECIPE__INGREDIENTS:
+        return basicSetIngredients(null, msgs);
+      case JPCoffePackage.RECIPE__TOOLS:
+        return basicSetTools(null, msgs);
+      case JPCoffePackage.RECIPE__STEPS:
+        return basicSetSteps(null, msgs);
+    }
+    return super.eInverseRemove(otherEnd, featureID, msgs);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public Object eGet(int featureID, boolean resolve, boolean coreType)
+  {
+    switch (featureID)
+    {
+      case JPCoffePackage.RECIPE__NAME:
+        return getName();
+      case JPCoffePackage.RECIPE__PORTION:
+        return getPortion();
+      case JPCoffePackage.RECIPE__INGREDIENTS:
+        return getIngredients();
+      case JPCoffePackage.RECIPE__TOOLS:
+        return getTools();
+      case JPCoffePackage.RECIPE__STEPS:
+        return getSteps();
+    }
+    return super.eGet(featureID, resolve, coreType);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public void eSet(int featureID, Object newValue)
+  {
+    switch (featureID)
+    {
+      case JPCoffePackage.RECIPE__NAME:
+        setName((String)newValue);
+        return;
+      case JPCoffePackage.RECIPE__PORTION:
+        setPortion((PortionNB)newValue);
+        return;
+      case JPCoffePackage.RECIPE__INGREDIENTS:
+        setIngredients((IngredientsBlock)newValue);
+        return;
+      case JPCoffePackage.RECIPE__TOOLS:
+        setTools((ToolsBlock)newValue);
+        return;
+      case JPCoffePackage.RECIPE__STEPS:
+        setSteps((StepsBlock)newValue);
+        return;
+    }
+    super.eSet(featureID, newValue);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public void eUnset(int featureID)
+  {
+    switch (featureID)
+    {
+      case JPCoffePackage.RECIPE__NAME:
+        setName(NAME_EDEFAULT);
+        return;
+      case JPCoffePackage.RECIPE__PORTION:
+        setPortion((PortionNB)null);
+        return;
+      case JPCoffePackage.RECIPE__INGREDIENTS:
+        setIngredients((IngredientsBlock)null);
+        return;
+      case JPCoffePackage.RECIPE__TOOLS:
+        setTools((ToolsBlock)null);
+        return;
+      case JPCoffePackage.RECIPE__STEPS:
+        setSteps((StepsBlock)null);
+        return;
+    }
+    super.eUnset(featureID);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public boolean eIsSet(int featureID)
+  {
+    switch (featureID)
+    {
+      case JPCoffePackage.RECIPE__NAME:
+        return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
+      case JPCoffePackage.RECIPE__PORTION:
+        return portion != null;
+      case JPCoffePackage.RECIPE__INGREDIENTS:
+        return ingredients != null;
+      case JPCoffePackage.RECIPE__TOOLS:
+        return tools != null;
+      case JPCoffePackage.RECIPE__STEPS:
+        return steps != null;
+    }
+    return super.eIsSet(featureID);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public String toString()
+  {
+    if (eIsProxy()) return super.toString();
+
+    StringBuilder result = new StringBuilder(super.toString());
+    result.append(" (name: ");
+    result.append(name);
+    result.append(')');
+    return result.toString();
   }
 
 } //RecipeImpl

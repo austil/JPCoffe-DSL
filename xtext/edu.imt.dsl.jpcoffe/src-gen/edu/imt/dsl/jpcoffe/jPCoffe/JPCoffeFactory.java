@@ -51,6 +51,69 @@ public interface JPCoffeFactory extends EFactory
   PortionNB createPortionNB();
 
   /**
+   * Returns a new object of class '<em>Ingredients Block</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Ingredients Block</em>'.
+   * @generated
+   */
+  IngredientsBlock createIngredientsBlock();
+
+  /**
+   * Returns a new object of class '<em>Ingredient</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Ingredient</em>'.
+   * @generated
+   */
+  Ingredient createIngredient();
+
+  /**
+   * Returns a new object of class '<em>Quantity</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Quantity</em>'.
+   * @generated
+   */
+  Quantity createQuantity();
+
+  /**
+   * Returns a new object of class '<em>Tools Block</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Tools Block</em>'.
+   * @generated
+   */
+  ToolsBlock createToolsBlock();
+
+  /**
+   * Returns a new object of class '<em>Tool</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Tool</em>'.
+   * @generated
+   */
+  Tool createTool();
+
+  /**
+   * Returns a new object of class '<em>Steps Block</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Steps Block</em>'.
+   * @generated
+   */
+  StepsBlock createStepsBlock();
+
+  /**
+   * Returns a new object of class '<em>Step</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Step</em>'.
+   * @generated
+   */
+  Step createStep();
+
+  /**
    * Returns the package supported by this factory.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->

@@ -68,22 +68,13 @@ public interface JPCoffePackage extends EPackage
   int MAIN = 0;
 
   /**
-   * The feature id for the '<em><b>Recipes</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int MAIN__RECIPES = 0;
-
-  /**
    * The number of structural features of the '<em>Main</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int MAIN_FEATURE_COUNT = 1;
+  int MAIN_FEATURE_COUNT = 0;
 
   /**
    * The meta object id for the '{@link edu.imt.dsl.jpcoffe.jPCoffe.impl.RecipeImpl <em>Recipe</em>}' class.
@@ -96,13 +87,58 @@ public interface JPCoffePackage extends EPackage
   int RECIPE = 1;
 
   /**
+   * The feature id for the '<em><b>Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int RECIPE__NAME = MAIN_FEATURE_COUNT + 0;
+
+  /**
+   * The feature id for the '<em><b>Portion</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int RECIPE__PORTION = MAIN_FEATURE_COUNT + 1;
+
+  /**
+   * The feature id for the '<em><b>Ingredients</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int RECIPE__INGREDIENTS = MAIN_FEATURE_COUNT + 2;
+
+  /**
+   * The feature id for the '<em><b>Tools</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int RECIPE__TOOLS = MAIN_FEATURE_COUNT + 3;
+
+  /**
+   * The feature id for the '<em><b>Steps</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int RECIPE__STEPS = MAIN_FEATURE_COUNT + 4;
+
+  /**
    * The number of structural features of the '<em>Recipe</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int RECIPE_FEATURE_COUNT = 0;
+  int RECIPE_FEATURE_COUNT = MAIN_FEATURE_COUNT + 5;
 
   /**
    * The meta object id for the '{@link edu.imt.dsl.jpcoffe.jPCoffe.impl.PortionNBImpl <em>Portion NB</em>}' class.
@@ -121,7 +157,7 @@ public interface JPCoffePackage extends EPackage
    * @generated
    * @ordered
    */
-  int PORTION_NB__NB = RECIPE_FEATURE_COUNT + 0;
+  int PORTION_NB__NB = 0;
 
   /**
    * The number of structural features of the '<em>Portion NB</em>' class.
@@ -130,7 +166,239 @@ public interface JPCoffePackage extends EPackage
    * @generated
    * @ordered
    */
-  int PORTION_NB_FEATURE_COUNT = RECIPE_FEATURE_COUNT + 1;
+  int PORTION_NB_FEATURE_COUNT = 1;
+
+  /**
+   * The meta object id for the '{@link edu.imt.dsl.jpcoffe.jPCoffe.impl.IngredientsBlockImpl <em>Ingredients Block</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see edu.imt.dsl.jpcoffe.jPCoffe.impl.IngredientsBlockImpl
+   * @see edu.imt.dsl.jpcoffe.jPCoffe.impl.JPCoffePackageImpl#getIngredientsBlock()
+   * @generated
+   */
+  int INGREDIENTS_BLOCK = 3;
+
+  /**
+   * The feature id for the '<em><b>Ingredients List</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int INGREDIENTS_BLOCK__INGREDIENTS_LIST = 0;
+
+  /**
+   * The number of structural features of the '<em>Ingredients Block</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int INGREDIENTS_BLOCK_FEATURE_COUNT = 1;
+
+  /**
+   * The meta object id for the '{@link edu.imt.dsl.jpcoffe.jPCoffe.impl.IngredientImpl <em>Ingredient</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see edu.imt.dsl.jpcoffe.jPCoffe.impl.IngredientImpl
+   * @see edu.imt.dsl.jpcoffe.jPCoffe.impl.JPCoffePackageImpl#getIngredient()
+   * @generated
+   */
+  int INGREDIENT = 4;
+
+  /**
+   * The feature id for the '<em><b>Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int INGREDIENT__NAME = 0;
+
+  /**
+   * The feature id for the '<em><b>Quantity</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int INGREDIENT__QUANTITY = 1;
+
+  /**
+   * The number of structural features of the '<em>Ingredient</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int INGREDIENT_FEATURE_COUNT = 2;
+
+  /**
+   * The meta object id for the '{@link edu.imt.dsl.jpcoffe.jPCoffe.impl.QuantityImpl <em>Quantity</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see edu.imt.dsl.jpcoffe.jPCoffe.impl.QuantityImpl
+   * @see edu.imt.dsl.jpcoffe.jPCoffe.impl.JPCoffePackageImpl#getQuantity()
+   * @generated
+   */
+  int QUANTITY = 5;
+
+  /**
+   * The feature id for the '<em><b>Amount</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int QUANTITY__AMOUNT = 0;
+
+  /**
+   * The feature id for the '<em><b>Unit</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int QUANTITY__UNIT = 1;
+
+  /**
+   * The number of structural features of the '<em>Quantity</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int QUANTITY_FEATURE_COUNT = 2;
+
+  /**
+   * The meta object id for the '{@link edu.imt.dsl.jpcoffe.jPCoffe.impl.ToolsBlockImpl <em>Tools Block</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see edu.imt.dsl.jpcoffe.jPCoffe.impl.ToolsBlockImpl
+   * @see edu.imt.dsl.jpcoffe.jPCoffe.impl.JPCoffePackageImpl#getToolsBlock()
+   * @generated
+   */
+  int TOOLS_BLOCK = 6;
+
+  /**
+   * The feature id for the '<em><b>Tools List</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int TOOLS_BLOCK__TOOLS_LIST = 0;
+
+  /**
+   * The number of structural features of the '<em>Tools Block</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int TOOLS_BLOCK_FEATURE_COUNT = 1;
+
+  /**
+   * The meta object id for the '{@link edu.imt.dsl.jpcoffe.jPCoffe.impl.ToolImpl <em>Tool</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see edu.imt.dsl.jpcoffe.jPCoffe.impl.ToolImpl
+   * @see edu.imt.dsl.jpcoffe.jPCoffe.impl.JPCoffePackageImpl#getTool()
+   * @generated
+   */
+  int TOOL = 7;
+
+  /**
+   * The feature id for the '<em><b>Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int TOOL__NAME = 0;
+
+  /**
+   * The number of structural features of the '<em>Tool</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int TOOL_FEATURE_COUNT = 1;
+
+  /**
+   * The meta object id for the '{@link edu.imt.dsl.jpcoffe.jPCoffe.impl.StepsBlockImpl <em>Steps Block</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see edu.imt.dsl.jpcoffe.jPCoffe.impl.StepsBlockImpl
+   * @see edu.imt.dsl.jpcoffe.jPCoffe.impl.JPCoffePackageImpl#getStepsBlock()
+   * @generated
+   */
+  int STEPS_BLOCK = 8;
+
+  /**
+   * The feature id for the '<em><b>Steps List</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int STEPS_BLOCK__STEPS_LIST = 0;
+
+  /**
+   * The number of structural features of the '<em>Steps Block</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int STEPS_BLOCK_FEATURE_COUNT = 1;
+
+  /**
+   * The meta object id for the '{@link edu.imt.dsl.jpcoffe.jPCoffe.impl.StepImpl <em>Step</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see edu.imt.dsl.jpcoffe.jPCoffe.impl.StepImpl
+   * @see edu.imt.dsl.jpcoffe.jPCoffe.impl.JPCoffePackageImpl#getStep()
+   * @generated
+   */
+  int STEP = 9;
+
+  /**
+   * The feature id for the '<em><b>Pred</b></em>' attribute list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int STEP__PRED = 0;
+
+  /**
+   * The feature id for the '<em><b>Num</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int STEP__NUM = 1;
+
+  /**
+   * The feature id for the '<em><b>Text</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int STEP__TEXT = 2;
+
+  /**
+   * The number of structural features of the '<em>Step</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int STEP_FEATURE_COUNT = 3;
 
 
   /**
@@ -144,17 +412,6 @@ public interface JPCoffePackage extends EPackage
   EClass getMain();
 
   /**
-   * Returns the meta object for the containment reference list '{@link edu.imt.dsl.jpcoffe.jPCoffe.Main#getRecipes <em>Recipes</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference list '<em>Recipes</em>'.
-   * @see edu.imt.dsl.jpcoffe.jPCoffe.Main#getRecipes()
-   * @see #getMain()
-   * @generated
-   */
-  EReference getMain_Recipes();
-
-  /**
    * Returns the meta object for class '{@link edu.imt.dsl.jpcoffe.jPCoffe.Recipe <em>Recipe</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -163,6 +420,61 @@ public interface JPCoffePackage extends EPackage
    * @generated
    */
   EClass getRecipe();
+
+  /**
+   * Returns the meta object for the attribute '{@link edu.imt.dsl.jpcoffe.jPCoffe.Recipe#getName <em>Name</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Name</em>'.
+   * @see edu.imt.dsl.jpcoffe.jPCoffe.Recipe#getName()
+   * @see #getRecipe()
+   * @generated
+   */
+  EAttribute getRecipe_Name();
+
+  /**
+   * Returns the meta object for the containment reference '{@link edu.imt.dsl.jpcoffe.jPCoffe.Recipe#getPortion <em>Portion</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Portion</em>'.
+   * @see edu.imt.dsl.jpcoffe.jPCoffe.Recipe#getPortion()
+   * @see #getRecipe()
+   * @generated
+   */
+  EReference getRecipe_Portion();
+
+  /**
+   * Returns the meta object for the containment reference '{@link edu.imt.dsl.jpcoffe.jPCoffe.Recipe#getIngredients <em>Ingredients</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Ingredients</em>'.
+   * @see edu.imt.dsl.jpcoffe.jPCoffe.Recipe#getIngredients()
+   * @see #getRecipe()
+   * @generated
+   */
+  EReference getRecipe_Ingredients();
+
+  /**
+   * Returns the meta object for the containment reference '{@link edu.imt.dsl.jpcoffe.jPCoffe.Recipe#getTools <em>Tools</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Tools</em>'.
+   * @see edu.imt.dsl.jpcoffe.jPCoffe.Recipe#getTools()
+   * @see #getRecipe()
+   * @generated
+   */
+  EReference getRecipe_Tools();
+
+  /**
+   * Returns the meta object for the containment reference '{@link edu.imt.dsl.jpcoffe.jPCoffe.Recipe#getSteps <em>Steps</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Steps</em>'.
+   * @see edu.imt.dsl.jpcoffe.jPCoffe.Recipe#getSteps()
+   * @see #getRecipe()
+   * @generated
+   */
+  EReference getRecipe_Steps();
 
   /**
    * Returns the meta object for class '{@link edu.imt.dsl.jpcoffe.jPCoffe.PortionNB <em>Portion NB</em>}'.
@@ -184,6 +496,197 @@ public interface JPCoffePackage extends EPackage
    * @generated
    */
   EAttribute getPortionNB_Nb();
+
+  /**
+   * Returns the meta object for class '{@link edu.imt.dsl.jpcoffe.jPCoffe.IngredientsBlock <em>Ingredients Block</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Ingredients Block</em>'.
+   * @see edu.imt.dsl.jpcoffe.jPCoffe.IngredientsBlock
+   * @generated
+   */
+  EClass getIngredientsBlock();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link edu.imt.dsl.jpcoffe.jPCoffe.IngredientsBlock#getIngredientsList <em>Ingredients List</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Ingredients List</em>'.
+   * @see edu.imt.dsl.jpcoffe.jPCoffe.IngredientsBlock#getIngredientsList()
+   * @see #getIngredientsBlock()
+   * @generated
+   */
+  EReference getIngredientsBlock_IngredientsList();
+
+  /**
+   * Returns the meta object for class '{@link edu.imt.dsl.jpcoffe.jPCoffe.Ingredient <em>Ingredient</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Ingredient</em>'.
+   * @see edu.imt.dsl.jpcoffe.jPCoffe.Ingredient
+   * @generated
+   */
+  EClass getIngredient();
+
+  /**
+   * Returns the meta object for the attribute '{@link edu.imt.dsl.jpcoffe.jPCoffe.Ingredient#getName <em>Name</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Name</em>'.
+   * @see edu.imt.dsl.jpcoffe.jPCoffe.Ingredient#getName()
+   * @see #getIngredient()
+   * @generated
+   */
+  EAttribute getIngredient_Name();
+
+  /**
+   * Returns the meta object for the containment reference '{@link edu.imt.dsl.jpcoffe.jPCoffe.Ingredient#getQuantity <em>Quantity</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Quantity</em>'.
+   * @see edu.imt.dsl.jpcoffe.jPCoffe.Ingredient#getQuantity()
+   * @see #getIngredient()
+   * @generated
+   */
+  EReference getIngredient_Quantity();
+
+  /**
+   * Returns the meta object for class '{@link edu.imt.dsl.jpcoffe.jPCoffe.Quantity <em>Quantity</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Quantity</em>'.
+   * @see edu.imt.dsl.jpcoffe.jPCoffe.Quantity
+   * @generated
+   */
+  EClass getQuantity();
+
+  /**
+   * Returns the meta object for the attribute '{@link edu.imt.dsl.jpcoffe.jPCoffe.Quantity#getAmount <em>Amount</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Amount</em>'.
+   * @see edu.imt.dsl.jpcoffe.jPCoffe.Quantity#getAmount()
+   * @see #getQuantity()
+   * @generated
+   */
+  EAttribute getQuantity_Amount();
+
+  /**
+   * Returns the meta object for the attribute '{@link edu.imt.dsl.jpcoffe.jPCoffe.Quantity#getUnit <em>Unit</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Unit</em>'.
+   * @see edu.imt.dsl.jpcoffe.jPCoffe.Quantity#getUnit()
+   * @see #getQuantity()
+   * @generated
+   */
+  EAttribute getQuantity_Unit();
+
+  /**
+   * Returns the meta object for class '{@link edu.imt.dsl.jpcoffe.jPCoffe.ToolsBlock <em>Tools Block</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Tools Block</em>'.
+   * @see edu.imt.dsl.jpcoffe.jPCoffe.ToolsBlock
+   * @generated
+   */
+  EClass getToolsBlock();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link edu.imt.dsl.jpcoffe.jPCoffe.ToolsBlock#getToolsList <em>Tools List</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Tools List</em>'.
+   * @see edu.imt.dsl.jpcoffe.jPCoffe.ToolsBlock#getToolsList()
+   * @see #getToolsBlock()
+   * @generated
+   */
+  EReference getToolsBlock_ToolsList();
+
+  /**
+   * Returns the meta object for class '{@link edu.imt.dsl.jpcoffe.jPCoffe.Tool <em>Tool</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Tool</em>'.
+   * @see edu.imt.dsl.jpcoffe.jPCoffe.Tool
+   * @generated
+   */
+  EClass getTool();
+
+  /**
+   * Returns the meta object for the attribute '{@link edu.imt.dsl.jpcoffe.jPCoffe.Tool#getName <em>Name</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Name</em>'.
+   * @see edu.imt.dsl.jpcoffe.jPCoffe.Tool#getName()
+   * @see #getTool()
+   * @generated
+   */
+  EAttribute getTool_Name();
+
+  /**
+   * Returns the meta object for class '{@link edu.imt.dsl.jpcoffe.jPCoffe.StepsBlock <em>Steps Block</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Steps Block</em>'.
+   * @see edu.imt.dsl.jpcoffe.jPCoffe.StepsBlock
+   * @generated
+   */
+  EClass getStepsBlock();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link edu.imt.dsl.jpcoffe.jPCoffe.StepsBlock#getStepsList <em>Steps List</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Steps List</em>'.
+   * @see edu.imt.dsl.jpcoffe.jPCoffe.StepsBlock#getStepsList()
+   * @see #getStepsBlock()
+   * @generated
+   */
+  EReference getStepsBlock_StepsList();
+
+  /**
+   * Returns the meta object for class '{@link edu.imt.dsl.jpcoffe.jPCoffe.Step <em>Step</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Step</em>'.
+   * @see edu.imt.dsl.jpcoffe.jPCoffe.Step
+   * @generated
+   */
+  EClass getStep();
+
+  /**
+   * Returns the meta object for the attribute list '{@link edu.imt.dsl.jpcoffe.jPCoffe.Step#getPred <em>Pred</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute list '<em>Pred</em>'.
+   * @see edu.imt.dsl.jpcoffe.jPCoffe.Step#getPred()
+   * @see #getStep()
+   * @generated
+   */
+  EAttribute getStep_Pred();
+
+  /**
+   * Returns the meta object for the attribute '{@link edu.imt.dsl.jpcoffe.jPCoffe.Step#getNum <em>Num</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Num</em>'.
+   * @see edu.imt.dsl.jpcoffe.jPCoffe.Step#getNum()
+   * @see #getStep()
+   * @generated
+   */
+  EAttribute getStep_Num();
+
+  /**
+   * Returns the meta object for the attribute '{@link edu.imt.dsl.jpcoffe.jPCoffe.Step#getText <em>Text</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Text</em>'.
+   * @see edu.imt.dsl.jpcoffe.jPCoffe.Step#getText()
+   * @see #getStep()
+   * @generated
+   */
+  EAttribute getStep_Text();
 
   /**
    * Returns the factory that creates the instances of the model.
@@ -219,14 +722,6 @@ public interface JPCoffePackage extends EPackage
     EClass MAIN = eINSTANCE.getMain();
 
     /**
-     * The meta object literal for the '<em><b>Recipes</b></em>' containment reference list feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference MAIN__RECIPES = eINSTANCE.getMain_Recipes();
-
-    /**
      * The meta object literal for the '{@link edu.imt.dsl.jpcoffe.jPCoffe.impl.RecipeImpl <em>Recipe</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -235,6 +730,46 @@ public interface JPCoffePackage extends EPackage
      * @generated
      */
     EClass RECIPE = eINSTANCE.getRecipe();
+
+    /**
+     * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute RECIPE__NAME = eINSTANCE.getRecipe_Name();
+
+    /**
+     * The meta object literal for the '<em><b>Portion</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference RECIPE__PORTION = eINSTANCE.getRecipe_Portion();
+
+    /**
+     * The meta object literal for the '<em><b>Ingredients</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference RECIPE__INGREDIENTS = eINSTANCE.getRecipe_Ingredients();
+
+    /**
+     * The meta object literal for the '<em><b>Tools</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference RECIPE__TOOLS = eINSTANCE.getRecipe_Tools();
+
+    /**
+     * The meta object literal for the '<em><b>Steps</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference RECIPE__STEPS = eINSTANCE.getRecipe_Steps();
 
     /**
      * The meta object literal for the '{@link edu.imt.dsl.jpcoffe.jPCoffe.impl.PortionNBImpl <em>Portion NB</em>}' class.
@@ -253,6 +788,164 @@ public interface JPCoffePackage extends EPackage
      * @generated
      */
     EAttribute PORTION_NB__NB = eINSTANCE.getPortionNB_Nb();
+
+    /**
+     * The meta object literal for the '{@link edu.imt.dsl.jpcoffe.jPCoffe.impl.IngredientsBlockImpl <em>Ingredients Block</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see edu.imt.dsl.jpcoffe.jPCoffe.impl.IngredientsBlockImpl
+     * @see edu.imt.dsl.jpcoffe.jPCoffe.impl.JPCoffePackageImpl#getIngredientsBlock()
+     * @generated
+     */
+    EClass INGREDIENTS_BLOCK = eINSTANCE.getIngredientsBlock();
+
+    /**
+     * The meta object literal for the '<em><b>Ingredients List</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference INGREDIENTS_BLOCK__INGREDIENTS_LIST = eINSTANCE.getIngredientsBlock_IngredientsList();
+
+    /**
+     * The meta object literal for the '{@link edu.imt.dsl.jpcoffe.jPCoffe.impl.IngredientImpl <em>Ingredient</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see edu.imt.dsl.jpcoffe.jPCoffe.impl.IngredientImpl
+     * @see edu.imt.dsl.jpcoffe.jPCoffe.impl.JPCoffePackageImpl#getIngredient()
+     * @generated
+     */
+    EClass INGREDIENT = eINSTANCE.getIngredient();
+
+    /**
+     * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute INGREDIENT__NAME = eINSTANCE.getIngredient_Name();
+
+    /**
+     * The meta object literal for the '<em><b>Quantity</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference INGREDIENT__QUANTITY = eINSTANCE.getIngredient_Quantity();
+
+    /**
+     * The meta object literal for the '{@link edu.imt.dsl.jpcoffe.jPCoffe.impl.QuantityImpl <em>Quantity</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see edu.imt.dsl.jpcoffe.jPCoffe.impl.QuantityImpl
+     * @see edu.imt.dsl.jpcoffe.jPCoffe.impl.JPCoffePackageImpl#getQuantity()
+     * @generated
+     */
+    EClass QUANTITY = eINSTANCE.getQuantity();
+
+    /**
+     * The meta object literal for the '<em><b>Amount</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute QUANTITY__AMOUNT = eINSTANCE.getQuantity_Amount();
+
+    /**
+     * The meta object literal for the '<em><b>Unit</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute QUANTITY__UNIT = eINSTANCE.getQuantity_Unit();
+
+    /**
+     * The meta object literal for the '{@link edu.imt.dsl.jpcoffe.jPCoffe.impl.ToolsBlockImpl <em>Tools Block</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see edu.imt.dsl.jpcoffe.jPCoffe.impl.ToolsBlockImpl
+     * @see edu.imt.dsl.jpcoffe.jPCoffe.impl.JPCoffePackageImpl#getToolsBlock()
+     * @generated
+     */
+    EClass TOOLS_BLOCK = eINSTANCE.getToolsBlock();
+
+    /**
+     * The meta object literal for the '<em><b>Tools List</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference TOOLS_BLOCK__TOOLS_LIST = eINSTANCE.getToolsBlock_ToolsList();
+
+    /**
+     * The meta object literal for the '{@link edu.imt.dsl.jpcoffe.jPCoffe.impl.ToolImpl <em>Tool</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see edu.imt.dsl.jpcoffe.jPCoffe.impl.ToolImpl
+     * @see edu.imt.dsl.jpcoffe.jPCoffe.impl.JPCoffePackageImpl#getTool()
+     * @generated
+     */
+    EClass TOOL = eINSTANCE.getTool();
+
+    /**
+     * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute TOOL__NAME = eINSTANCE.getTool_Name();
+
+    /**
+     * The meta object literal for the '{@link edu.imt.dsl.jpcoffe.jPCoffe.impl.StepsBlockImpl <em>Steps Block</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see edu.imt.dsl.jpcoffe.jPCoffe.impl.StepsBlockImpl
+     * @see edu.imt.dsl.jpcoffe.jPCoffe.impl.JPCoffePackageImpl#getStepsBlock()
+     * @generated
+     */
+    EClass STEPS_BLOCK = eINSTANCE.getStepsBlock();
+
+    /**
+     * The meta object literal for the '<em><b>Steps List</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference STEPS_BLOCK__STEPS_LIST = eINSTANCE.getStepsBlock_StepsList();
+
+    /**
+     * The meta object literal for the '{@link edu.imt.dsl.jpcoffe.jPCoffe.impl.StepImpl <em>Step</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see edu.imt.dsl.jpcoffe.jPCoffe.impl.StepImpl
+     * @see edu.imt.dsl.jpcoffe.jPCoffe.impl.JPCoffePackageImpl#getStep()
+     * @generated
+     */
+    EClass STEP = eINSTANCE.getStep();
+
+    /**
+     * The meta object literal for the '<em><b>Pred</b></em>' attribute list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute STEP__PRED = eINSTANCE.getStep_Pred();
+
+    /**
+     * The meta object literal for the '<em><b>Num</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute STEP__NUM = eINSTANCE.getStep_Num();
+
+    /**
+     * The meta object literal for the '<em><b>Text</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute STEP__TEXT = eINSTANCE.getStep_Text();
 
   }
 

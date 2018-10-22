@@ -3,6 +3,7 @@
  */
 package edu.imt.dsl.jpcoffe.jPCoffe;
 
+import org.eclipse.emf.ecore.EObject;
 
 /**
  * <!-- begin-user-doc -->
@@ -20,7 +21,7 @@ package edu.imt.dsl.jpcoffe.jPCoffe;
  * @model
  * @generated
  */
-public interface PortionNB extends Recipe
+public interface PortionNB extends EObject
 {
   /**
    * Returns the value of the '<em><b>Nb</b></em>' attribute.

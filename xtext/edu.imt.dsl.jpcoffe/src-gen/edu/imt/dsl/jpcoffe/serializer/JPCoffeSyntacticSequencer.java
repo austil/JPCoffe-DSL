@@ -30,69 +30,18 @@ public class JPCoffeSyntacticSequencer extends AbstractSyntacticSequencer {
 	
 	@Override
 	protected String getUnassignedRuleCallToken(EObject semanticObject, RuleCall ruleCall, INode node) {
-		if (ruleCall.getRule() == grammarAccess.getIngredientsBlockRule())
-			return getIngredientsBlockToken(semanticObject, ruleCall, node);
-		else if (ruleCall.getRule() == grammarAccess.getSTRINGRule())
-			return getSTRINGToken(semanticObject, ruleCall, node);
-		else if (ruleCall.getRule() == grammarAccess.getStepsBlockRule())
-			return getStepsBlockToken(semanticObject, ruleCall, node);
-		else if (ruleCall.getRule() == grammarAccess.getToolsBlockRule())
-			return getToolsBlockToken(semanticObject, ruleCall, node);
+		if (ruleCall.getRule() == grammarAccess.getTITLE_LINERule())
+			return getTITLE_LINEToken(semanticObject, ruleCall, node);
 		return "";
 	}
 	
 	/**
-	 * IngredientsBlock :
-	 * 	"Ingredients" NEW_LINE
-	 * 	TITLE_LINE NEW_LINE
-	 * 	(Ingredient)*
-	 * 	NEW_LINE
-	 * ;
+	 * terminal TITLE_LINE : ("-")+;
 	 */
-	protected String getIngredientsBlockToken(EObject semanticObject, RuleCall ruleCall, INode node) {
+	protected String getTITLE_LINEToken(EObject semanticObject, RuleCall ruleCall, INode node) {
 		if (node != null)
 			return getTokenText(node);
-		return "Ingredients\n-";
-	}
-	
-	/**
-	 * terminal STRING:
-	 * 			'"' ( '\\' .  | !('\\'|'"') )* '"' |
-	 * 			"'" ( '\\' .  | !('\\'|"'") )* "'"
-	 * 		;
-	 */
-	protected String getSTRINGToken(EObject semanticObject, RuleCall ruleCall, INode node) {
-		if (node != null)
-			return getTokenText(node);
-		return "\"\"";
-	}
-	
-	/**
-	 * StepsBlock : 
-	 * 	"Steps" NEW_LINE
-	 * 	TITLE_LINE NEW_LINE
-	 * 	(Step)*
-	 * 	NEW_LINE
-	 * ;
-	 */
-	protected String getStepsBlockToken(EObject semanticObject, RuleCall ruleCall, INode node) {
-		if (node != null)
-			return getTokenText(node);
-		return "Steps\n-";
-	}
-	
-	/**
-	 * ToolsBlock :
-	 * 	"Tools" NEW_LINE
-	 * 	TITLE_LINE NEW_LINE
-	 * 	(Tool)*
-	 * 	NEW_LINE
-	 * ;
-	 */
-	protected String getToolsBlockToken(EObject semanticObject, RuleCall ruleCall, INode node) {
-		if (node != null)
-			return getTokenText(node);
-		return "Tools\n-";
+		return "-";
 	}
 	
 	@Override
@@ -113,7 +62,6 @@ public class JPCoffeSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *
 	 * This ambiguous syntax occurs at:
 	 *     nb=INT (ambiguity) (rule end)
-	 *     nb=INT (ambiguity) IngredientsBlock ToolsBlock StepsBlock '}' (rule end)
 	 */
 	protected void emit_PortionNB_PeopleKeyword_2_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);

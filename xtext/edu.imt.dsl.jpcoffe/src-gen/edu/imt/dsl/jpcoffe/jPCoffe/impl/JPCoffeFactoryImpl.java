@@ -68,6 +68,13 @@ public class JPCoffeFactoryImpl extends EFactoryImpl implements JPCoffeFactory
       case JPCoffePackage.MAIN: return createMain();
       case JPCoffePackage.RECIPE: return createRecipe();
       case JPCoffePackage.PORTION_NB: return createPortionNB();
+      case JPCoffePackage.INGREDIENTS_BLOCK: return createIngredientsBlock();
+      case JPCoffePackage.INGREDIENT: return createIngredient();
+      case JPCoffePackage.QUANTITY: return createQuantity();
+      case JPCoffePackage.TOOLS_BLOCK: return createToolsBlock();
+      case JPCoffePackage.TOOL: return createTool();
+      case JPCoffePackage.STEPS_BLOCK: return createStepsBlock();
+      case JPCoffePackage.STEP: return createStep();
       default:
         throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
     }
@@ -104,6 +111,83 @@ public class JPCoffeFactoryImpl extends EFactoryImpl implements JPCoffeFactory
   {
     PortionNBImpl portionNB = new PortionNBImpl();
     return portionNB;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public IngredientsBlock createIngredientsBlock()
+  {
+    IngredientsBlockImpl ingredientsBlock = new IngredientsBlockImpl();
+    return ingredientsBlock;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public Ingredient createIngredient()
+  {
+    IngredientImpl ingredient = new IngredientImpl();
+    return ingredient;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public Quantity createQuantity()
+  {
+    QuantityImpl quantity = new QuantityImpl();
+    return quantity;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public ToolsBlock createToolsBlock()
+  {
+    ToolsBlockImpl toolsBlock = new ToolsBlockImpl();
+    return toolsBlock;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public Tool createTool()
+  {
+    ToolImpl tool = new ToolImpl();
+    return tool;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public StepsBlock createStepsBlock()
+  {
+    StepsBlockImpl stepsBlock = new StepsBlockImpl();
+    return stepsBlock;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public Step createStep()
+  {
+    StepImpl step = new StepImpl();
+    return step;
   }
 
   /**

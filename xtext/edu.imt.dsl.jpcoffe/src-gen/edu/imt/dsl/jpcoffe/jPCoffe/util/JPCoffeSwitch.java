@@ -84,6 +84,7 @@ public class JPCoffeSwitch<T> extends Switch<T>
       {
         Recipe recipe = (Recipe)theEObject;
         T result = caseRecipe(recipe);
+        if (result == null) result = caseMain(recipe);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -91,7 +92,55 @@ public class JPCoffeSwitch<T> extends Switch<T>
       {
         PortionNB portionNB = (PortionNB)theEObject;
         T result = casePortionNB(portionNB);
-        if (result == null) result = caseRecipe(portionNB);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case JPCoffePackage.INGREDIENTS_BLOCK:
+      {
+        IngredientsBlock ingredientsBlock = (IngredientsBlock)theEObject;
+        T result = caseIngredientsBlock(ingredientsBlock);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case JPCoffePackage.INGREDIENT:
+      {
+        Ingredient ingredient = (Ingredient)theEObject;
+        T result = caseIngredient(ingredient);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case JPCoffePackage.QUANTITY:
+      {
+        Quantity quantity = (Quantity)theEObject;
+        T result = caseQuantity(quantity);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case JPCoffePackage.TOOLS_BLOCK:
+      {
+        ToolsBlock toolsBlock = (ToolsBlock)theEObject;
+        T result = caseToolsBlock(toolsBlock);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case JPCoffePackage.TOOL:
+      {
+        Tool tool = (Tool)theEObject;
+        T result = caseTool(tool);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case JPCoffePackage.STEPS_BLOCK:
+      {
+        StepsBlock stepsBlock = (StepsBlock)theEObject;
+        T result = caseStepsBlock(stepsBlock);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case JPCoffePackage.STEP:
+      {
+        Step step = (Step)theEObject;
+        T result = caseStep(step);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -143,6 +192,118 @@ public class JPCoffeSwitch<T> extends Switch<T>
    * @generated
    */
   public T casePortionNB(PortionNB object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Ingredients Block</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Ingredients Block</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseIngredientsBlock(IngredientsBlock object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Ingredient</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Ingredient</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseIngredient(Ingredient object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Quantity</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Quantity</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseQuantity(Quantity object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Tools Block</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Tools Block</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseToolsBlock(ToolsBlock object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Tool</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Tool</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseTool(Tool object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Steps Block</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Steps Block</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseStepsBlock(StepsBlock object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Step</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Step</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseStep(Step object)
   {
     return null;
   }

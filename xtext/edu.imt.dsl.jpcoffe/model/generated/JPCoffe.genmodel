@@ -6,12 +6,41 @@
     complianceLevel="6.0" copyrightFields="false" runtimeVersion="2.14">
   <genPackages prefix="JPCoffe" basePackage="edu.imt.dsl.jpcoffe" disposableProviderFactory="true"
       fileExtensions="jpcoffe" ecorePackage="JPCoffe.ecore#/">
-    <genClasses ecoreClass="JPCoffe.ecore#//Main">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference JPCoffe.ecore#//Main/recipes"/>
+    <genClasses ecoreClass="JPCoffe.ecore#//Main"/>
+    <genClasses ecoreClass="JPCoffe.ecore#//Recipe">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute JPCoffe.ecore#//Recipe/name"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference JPCoffe.ecore#//Recipe/portion"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference JPCoffe.ecore#//Recipe/ingredients"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference JPCoffe.ecore#//Recipe/tools"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference JPCoffe.ecore#//Recipe/steps"/>
     </genClasses>
-    <genClasses ecoreClass="JPCoffe.ecore#//Recipe"/>
     <genClasses ecoreClass="JPCoffe.ecore#//PortionNB">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute JPCoffe.ecore#//PortionNB/nb"/>
+    </genClasses>
+    <genClasses ecoreClass="JPCoffe.ecore#//IngredientsBlock">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference JPCoffe.ecore#//IngredientsBlock/ingredientsList"/>
+    </genClasses>
+    <genClasses ecoreClass="JPCoffe.ecore#//Ingredient">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute JPCoffe.ecore#//Ingredient/name"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference JPCoffe.ecore#//Ingredient/quantity"/>
+    </genClasses>
+    <genClasses ecoreClass="JPCoffe.ecore#//Quantity">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute JPCoffe.ecore#//Quantity/amount"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute JPCoffe.ecore#//Quantity/unit"/>
+    </genClasses>
+    <genClasses ecoreClass="JPCoffe.ecore#//ToolsBlock">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference JPCoffe.ecore#//ToolsBlock/toolsList"/>
+    </genClasses>
+    <genClasses ecoreClass="JPCoffe.ecore#//Tool">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute JPCoffe.ecore#//Tool/name"/>
+    </genClasses>
+    <genClasses ecoreClass="JPCoffe.ecore#//StepsBlock">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference JPCoffe.ecore#//StepsBlock/stepsList"/>
+    </genClasses>
+    <genClasses ecoreClass="JPCoffe.ecore#//Step">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute JPCoffe.ecore#//Step/pred"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute JPCoffe.ecore#//Step/num"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute JPCoffe.ecore#//Step/text"/>
     </genClasses>
   </genPackages>
 </genmodel:GenModel>

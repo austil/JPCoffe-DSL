@@ -4,7 +4,7 @@
 package edu.imt.dsl.jpcoffe.jPCoffe.impl;
 
 import edu.imt.dsl.jpcoffe.jPCoffe.JPCoffePackage;
-import edu.imt.dsl.jpcoffe.jPCoffe.PortionNB;
+import edu.imt.dsl.jpcoffe.jPCoffe.Tool;
 
 import org.eclipse.emf.common.notify.Notification;
 
@@ -15,45 +15,45 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Portion NB</b></em>'.
+ * An implementation of the model object '<em><b>Tool</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link edu.imt.dsl.jpcoffe.jPCoffe.impl.PortionNBImpl#getNb <em>Nb</em>}</li>
+ *   <li>{@link edu.imt.dsl.jpcoffe.jPCoffe.impl.ToolImpl#getName <em>Name</em>}</li>
  * </ul>
  *
  * @generated
  */
-public class PortionNBImpl extends MinimalEObjectImpl.Container implements PortionNB
+public class ToolImpl extends MinimalEObjectImpl.Container implements Tool
 {
   /**
-   * The default value of the '{@link #getNb() <em>Nb</em>}' attribute.
+   * The default value of the '{@link #getName() <em>Name</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getNb()
+   * @see #getName()
    * @generated
    * @ordered
    */
-  protected static final int NB_EDEFAULT = 0;
+  protected static final String NAME_EDEFAULT = null;
 
   /**
-   * The cached value of the '{@link #getNb() <em>Nb</em>}' attribute.
+   * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getNb()
+   * @see #getName()
    * @generated
    * @ordered
    */
-  protected int nb = NB_EDEFAULT;
+  protected String name = NAME_EDEFAULT;
 
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  protected PortionNBImpl()
+  protected ToolImpl()
   {
     super();
   }
@@ -66,7 +66,7 @@ public class PortionNBImpl extends MinimalEObjectImpl.Container implements Porti
   @Override
   protected EClass eStaticClass()
   {
-    return JPCoffePackage.Literals.PORTION_NB;
+    return JPCoffePackage.Literals.TOOL;
   }
 
   /**
@@ -74,9 +74,9 @@ public class PortionNBImpl extends MinimalEObjectImpl.Container implements Porti
    * <!-- end-user-doc -->
    * @generated
    */
-  public int getNb()
+  public String getName()
   {
-    return nb;
+    return name;
   }
 
   /**
@@ -84,12 +84,12 @@ public class PortionNBImpl extends MinimalEObjectImpl.Container implements Porti
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setNb(int newNb)
+  public void setName(String newName)
   {
-    int oldNb = nb;
-    nb = newNb;
+    String oldName = name;
+    name = newName;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, JPCoffePackage.PORTION_NB__NB, oldNb, nb));
+      eNotify(new ENotificationImpl(this, Notification.SET, JPCoffePackage.TOOL__NAME, oldName, name));
   }
 
   /**
@@ -102,8 +102,8 @@ public class PortionNBImpl extends MinimalEObjectImpl.Container implements Porti
   {
     switch (featureID)
     {
-      case JPCoffePackage.PORTION_NB__NB:
-        return getNb();
+      case JPCoffePackage.TOOL__NAME:
+        return getName();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -118,8 +118,8 @@ public class PortionNBImpl extends MinimalEObjectImpl.Container implements Porti
   {
     switch (featureID)
     {
-      case JPCoffePackage.PORTION_NB__NB:
-        setNb((Integer)newValue);
+      case JPCoffePackage.TOOL__NAME:
+        setName((String)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -135,8 +135,8 @@ public class PortionNBImpl extends MinimalEObjectImpl.Container implements Porti
   {
     switch (featureID)
     {
-      case JPCoffePackage.PORTION_NB__NB:
-        setNb(NB_EDEFAULT);
+      case JPCoffePackage.TOOL__NAME:
+        setName(NAME_EDEFAULT);
         return;
     }
     super.eUnset(featureID);
@@ -152,8 +152,8 @@ public class PortionNBImpl extends MinimalEObjectImpl.Container implements Porti
   {
     switch (featureID)
     {
-      case JPCoffePackage.PORTION_NB__NB:
-        return nb != NB_EDEFAULT;
+      case JPCoffePackage.TOOL__NAME:
+        return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
     }
     return super.eIsSet(featureID);
   }
@@ -169,10 +169,10 @@ public class PortionNBImpl extends MinimalEObjectImpl.Container implements Porti
     if (eIsProxy()) return super.toString();
 
     StringBuilder result = new StringBuilder(super.toString());
-    result.append(" (nb: ");
-    result.append(nb);
+    result.append(" (name: ");
+    result.append(name);
     result.append(')');
     return result.toString();
   }
 
-} //PortionNBImpl
+} //ToolImpl

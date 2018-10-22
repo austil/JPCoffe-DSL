@@ -4,9 +4,16 @@
 package edu.imt.dsl.jpcoffe.serializer;
 
 import com.google.inject.Inject;
+import edu.imt.dsl.jpcoffe.jPCoffe.Ingredient;
+import edu.imt.dsl.jpcoffe.jPCoffe.IngredientsBlock;
 import edu.imt.dsl.jpcoffe.jPCoffe.JPCoffePackage;
-import edu.imt.dsl.jpcoffe.jPCoffe.Main;
 import edu.imt.dsl.jpcoffe.jPCoffe.PortionNB;
+import edu.imt.dsl.jpcoffe.jPCoffe.Quantity;
+import edu.imt.dsl.jpcoffe.jPCoffe.Recipe;
+import edu.imt.dsl.jpcoffe.jPCoffe.Step;
+import edu.imt.dsl.jpcoffe.jPCoffe.StepsBlock;
+import edu.imt.dsl.jpcoffe.jPCoffe.Tool;
+import edu.imt.dsl.jpcoffe.jPCoffe.ToolsBlock;
 import edu.imt.dsl.jpcoffe.services.JPCoffeGrammarAccess;
 import java.util.Set;
 import org.eclipse.emf.ecore.EObject;
@@ -33,11 +40,32 @@ public class JPCoffeSemanticSequencer extends AbstractDelegatingSemanticSequence
 		Set<Parameter> parameters = context.getEnabledBooleanParameters();
 		if (epackage == JPCoffePackage.eINSTANCE)
 			switch (semanticObject.eClass().getClassifierID()) {
-			case JPCoffePackage.MAIN:
-				sequence_Main(context, (Main) semanticObject); 
+			case JPCoffePackage.INGREDIENT:
+				sequence_Ingredient(context, (Ingredient) semanticObject); 
+				return; 
+			case JPCoffePackage.INGREDIENTS_BLOCK:
+				sequence_IngredientsBlock(context, (IngredientsBlock) semanticObject); 
 				return; 
 			case JPCoffePackage.PORTION_NB:
 				sequence_PortionNB(context, (PortionNB) semanticObject); 
+				return; 
+			case JPCoffePackage.QUANTITY:
+				sequence_Quantity(context, (Quantity) semanticObject); 
+				return; 
+			case JPCoffePackage.RECIPE:
+				sequence_Recipe(context, (Recipe) semanticObject); 
+				return; 
+			case JPCoffePackage.STEP:
+				sequence_Step(context, (Step) semanticObject); 
+				return; 
+			case JPCoffePackage.STEPS_BLOCK:
+				sequence_StepsBlock(context, (StepsBlock) semanticObject); 
+				return; 
+			case JPCoffePackage.TOOL:
+				sequence_Tool(context, (Tool) semanticObject); 
+				return; 
+			case JPCoffePackage.TOOLS_BLOCK:
+				sequence_ToolsBlock(context, (ToolsBlock) semanticObject); 
 				return; 
 			}
 		if (errorAcceptor != null)
@@ -46,19 +74,30 @@ public class JPCoffeSemanticSequencer extends AbstractDelegatingSemanticSequence
 	
 	/**
 	 * Contexts:
-	 *     Main returns Main
+	 *     Ingredient returns Ingredient
 	 *
 	 * Constraint:
-	 *     recipes+=Recipe+
+	 *     (name=NAME quantity=Quantity?)
 	 */
-	protected void sequence_Main(ISerializationContext context, Main semanticObject) {
+	protected void sequence_Ingredient(ISerializationContext context, Ingredient semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	
 	
 	/**
 	 * Contexts:
-	 *     Recipe returns PortionNB
+	 *     IngredientsBlock returns IngredientsBlock
+	 *
+	 * Constraint:
+	 *     ingredientsList+=Ingredient*
+	 */
+	protected void sequence_IngredientsBlock(ISerializationContext context, IngredientsBlock semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Contexts:
 	 *     PortionNB returns PortionNB
 	 *
 	 * Constraint:
@@ -72,6 +111,103 @@ public class JPCoffeSemanticSequencer extends AbstractDelegatingSemanticSequence
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
 		feeder.accept(grammarAccess.getPortionNBAccess().getNbINTTerminalRuleCall_1_0(), semanticObject.getNb());
 		feeder.finish();
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     Quantity returns Quantity
+	 *
+	 * Constraint:
+	 *     (amount=INT unit=METRIC_UNIT?)
+	 */
+	protected void sequence_Quantity(ISerializationContext context, Quantity semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     Main returns Recipe
+	 *     Recipe returns Recipe
+	 *
+	 * Constraint:
+	 *     (name=STRING portion=PortionNB ingredients=IngredientsBlock tools=ToolsBlock steps=StepsBlock)
+	 */
+	protected void sequence_Recipe(ISerializationContext context, Recipe semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, JPCoffePackage.Literals.RECIPE__NAME) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, JPCoffePackage.Literals.RECIPE__NAME));
+			if (transientValues.isValueTransient(semanticObject, JPCoffePackage.Literals.RECIPE__PORTION) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, JPCoffePackage.Literals.RECIPE__PORTION));
+			if (transientValues.isValueTransient(semanticObject, JPCoffePackage.Literals.RECIPE__INGREDIENTS) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, JPCoffePackage.Literals.RECIPE__INGREDIENTS));
+			if (transientValues.isValueTransient(semanticObject, JPCoffePackage.Literals.RECIPE__TOOLS) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, JPCoffePackage.Literals.RECIPE__TOOLS));
+			if (transientValues.isValueTransient(semanticObject, JPCoffePackage.Literals.RECIPE__STEPS) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, JPCoffePackage.Literals.RECIPE__STEPS));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getRecipeAccess().getNameSTRINGTerminalRuleCall_1_0(), semanticObject.getName());
+		feeder.accept(grammarAccess.getRecipeAccess().getPortionPortionNBParserRuleCall_3_0(), semanticObject.getPortion());
+		feeder.accept(grammarAccess.getRecipeAccess().getIngredientsIngredientsBlockParserRuleCall_4_0(), semanticObject.getIngredients());
+		feeder.accept(grammarAccess.getRecipeAccess().getToolsToolsBlockParserRuleCall_5_0(), semanticObject.getTools());
+		feeder.accept(grammarAccess.getRecipeAccess().getStepsStepsBlockParserRuleCall_6_0(), semanticObject.getSteps());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     Step returns Step
+	 *
+	 * Constraint:
+	 *     (pred+=INT? pred+=INT* num=INT text=TEXT)
+	 */
+	protected void sequence_Step(ISerializationContext context, Step semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     StepsBlock returns StepsBlock
+	 *
+	 * Constraint:
+	 *     stepsList+=Step*
+	 */
+	protected void sequence_StepsBlock(ISerializationContext context, StepsBlock semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     Tool returns Tool
+	 *
+	 * Constraint:
+	 *     name=NAME
+	 */
+	protected void sequence_Tool(ISerializationContext context, Tool semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, JPCoffePackage.Literals.TOOL__NAME) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, JPCoffePackage.Literals.TOOL__NAME));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getToolAccess().getNameNAMEParserRuleCall_1_0(), semanticObject.getName());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     ToolsBlock returns ToolsBlock
+	 *
+	 * Constraint:
+	 *     toolsList+=Tool*
+	 */
+	protected void sequence_ToolsBlock(ISerializationContext context, ToolsBlock semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
 	}
 	
 	

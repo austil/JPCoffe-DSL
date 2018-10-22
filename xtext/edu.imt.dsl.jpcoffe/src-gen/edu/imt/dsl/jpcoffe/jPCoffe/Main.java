@@ -3,8 +3,6 @@
  */
 package edu.imt.dsl.jpcoffe.jPCoffe;
 
-import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EObject;
 
 /**
@@ -12,12 +10,6 @@ import org.eclipse.emf.ecore.EObject;
  * A representation of the model object '<em><b>Main</b></em>'.
  * <!-- end-user-doc -->
  *
- * <p>
- * The following features are supported:
- * </p>
- * <ul>
- *   <li>{@link edu.imt.dsl.jpcoffe.jPCoffe.Main#getRecipes <em>Recipes</em>}</li>
- * </ul>
  *
  * @see edu.imt.dsl.jpcoffe.jPCoffe.JPCoffePackage#getMain()
  * @model
@@ -25,20 +17,4 @@ import org.eclipse.emf.ecore.EObject;
  */
 public interface Main extends EObject
 {
-  /**
-   * Returns the value of the '<em><b>Recipes</b></em>' containment reference list.
-   * The list contents are of type {@link edu.imt.dsl.jpcoffe.jPCoffe.Recipe}.
-   * <!-- begin-user-doc -->
-   * <p>
-   * If the meaning of the '<em>Recipes</em>' containment reference list isn't clear,
-   * there really should be more of a description here...
-   * </p>
-   * <!-- end-user-doc -->
-   * @return the value of the '<em>Recipes</em>' containment reference list.
-   * @see edu.imt.dsl.jpcoffe.jPCoffe.JPCoffePackage#getMain_Recipes()
-   * @model containment="true"
-   * @generated
-   */
-  EList<Recipe> getRecipes();
-
 } // Main

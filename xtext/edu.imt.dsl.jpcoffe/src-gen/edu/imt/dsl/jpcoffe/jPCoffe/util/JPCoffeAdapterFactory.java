@@ -91,6 +91,41 @@ public class JPCoffeAdapterFactory extends AdapterFactoryImpl
         return createPortionNBAdapter();
       }
       @Override
+      public Adapter caseIngredientsBlock(IngredientsBlock object)
+      {
+        return createIngredientsBlockAdapter();
+      }
+      @Override
+      public Adapter caseIngredient(Ingredient object)
+      {
+        return createIngredientAdapter();
+      }
+      @Override
+      public Adapter caseQuantity(Quantity object)
+      {
+        return createQuantityAdapter();
+      }
+      @Override
+      public Adapter caseToolsBlock(ToolsBlock object)
+      {
+        return createToolsBlockAdapter();
+      }
+      @Override
+      public Adapter caseTool(Tool object)
+      {
+        return createToolAdapter();
+      }
+      @Override
+      public Adapter caseStepsBlock(StepsBlock object)
+      {
+        return createStepsBlockAdapter();
+      }
+      @Override
+      public Adapter caseStep(Step object)
+      {
+        return createStepAdapter();
+      }
+      @Override
       public Adapter defaultCase(EObject object)
       {
         return createEObjectAdapter();
@@ -153,6 +188,111 @@ public class JPCoffeAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createPortionNBAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link edu.imt.dsl.jpcoffe.jPCoffe.IngredientsBlock <em>Ingredients Block</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see edu.imt.dsl.jpcoffe.jPCoffe.IngredientsBlock
+   * @generated
+   */
+  public Adapter createIngredientsBlockAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link edu.imt.dsl.jpcoffe.jPCoffe.Ingredient <em>Ingredient</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see edu.imt.dsl.jpcoffe.jPCoffe.Ingredient
+   * @generated
+   */
+  public Adapter createIngredientAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link edu.imt.dsl.jpcoffe.jPCoffe.Quantity <em>Quantity</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see edu.imt.dsl.jpcoffe.jPCoffe.Quantity
+   * @generated
+   */
+  public Adapter createQuantityAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link edu.imt.dsl.jpcoffe.jPCoffe.ToolsBlock <em>Tools Block</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see edu.imt.dsl.jpcoffe.jPCoffe.ToolsBlock
+   * @generated
+   */
+  public Adapter createToolsBlockAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link edu.imt.dsl.jpcoffe.jPCoffe.Tool <em>Tool</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see edu.imt.dsl.jpcoffe.jPCoffe.Tool
+   * @generated
+   */
+  public Adapter createToolAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link edu.imt.dsl.jpcoffe.jPCoffe.StepsBlock <em>Steps Block</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see edu.imt.dsl.jpcoffe.jPCoffe.StepsBlock
+   * @generated
+   */
+  public Adapter createStepsBlockAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link edu.imt.dsl.jpcoffe.jPCoffe.Step <em>Step</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see edu.imt.dsl.jpcoffe.jPCoffe.Step
+   * @generated
+   */
+  public Adapter createStepAdapter()
   {
     return null;
   }

@@ -1,18 +1,20 @@
-grammar edu.imt.dsl.jpcoffe.JPCoffe with org.eclipse.xtext.common.Terminals
+grammar edu.imt.dsl.jpcoffe.JPCoffe hidden(WS, ML_COMMENT, SL_COMMENT)
+
+import "http://www.eclipse.org/emf/2002/Ecore" as ecore
 
 generate jPCoffe "http://www.imt.edu/dsl/jpcoffe/JPCoffe"
 
-Main :
-	(recipes += Recipe)+
+Main:
+	Recipe
 ;
 
 Recipe : 
-	"Recipe" name = STRING "{"
+	'Recipe' name = STRING '{'
 		portion = PortionNB
 		ingredients = IngredientsBlock
 		tools = ToolsBlock
 		steps = StepsBlock
-	"}"
+	'}'
 ;
 
 PortionNB : 
@@ -20,18 +22,19 @@ PortionNB :
 ;
 
 IngredientsBlock :
-	"Ingredients" NEW_LINE
-	TITLE_LINE NEW_LINE
-	(Ingredient)*
-	NEW_LINE
+	{IngredientsBlock} "Ingredients"
+	TITLE_LINE
+	(ingredientsList += Ingredient)*
 ;
 
 Ingredient :
-	"*" SPACE NAME Quantity NEW_LINE
+	"*" 
+	name = NAME
+	(quantity = Quantity)?
 ;
 
 Quantity :
-	INT (METRIC_UNIT)?
+	amount = INT (unit = METRIC_UNIT)?
 ;
 
 terminal METRIC_UNIT :
@@ -39,32 +42,43 @@ terminal METRIC_UNIT :
 ;
 
 ToolsBlock :
-	"Tools" NEW_LINE
-	TITLE_LINE NEW_LINE
-	(Tool)*
-	NEW_LINE
+	{ToolsBlock} "Tools"
+	TITLE_LINE
+	(toolsList += Tool)*
 ;
 
 Tool :
-	"*" SPACE NAME NEW_LINE
+	"*"
+	name = NAME
 ;
 
 StepsBlock : 
-	"Steps" NEW_LINE
-	TITLE_LINE NEW_LINE
-	(Step)*
-	NEW_LINE
+	{StepsBlock} "Steps"
+	TITLE_LINE
+	(stepsList += Step)*
 ;
 
 Step :
-	"{" (INT)? ("," INT)* "}" SPACE 
-	"->" SPACE INT "." SPACE
-	TEXT
-	NEW_LINE
+	"{" (pred += INT)? ("," pred += INT)* "}" 
+	"->" num = INT "."
+	text = TEXT
 ;
 
+NAME : MAJ_WORD (WORD)*;
+TEXT : (MAJ_WORD | WORD)+;
+
 terminal TITLE_LINE : ("-")+;
-terminal NAME : ('A'..'Z') ('a'..'z' | 'A'..'Z' | SPACE)*;
-terminal NEW_LINE : "\n" | "\r\n";
-terminal SPACE : ' ';
-terminal TEXT : ('a'..'z'|'A'..'Z'|'\''|',')+ ;
+terminal MAJ_WORD : ('A'..'Z') ('a'..'z')*;
+terminal WORD : ('a'..'z'|'A'..'Z'|'\''|',')+ ;
+
+// from org.eclipse.xtext.common.Terminals
+
+terminal INT returns ecore::EInt: ('0'..'9')+;
+terminal STRING:
+	'"' ( '\\' . /* 'b'|'t'|'n'|'f'|'r'|'u'|'"'|"'"|'\\' */ | !('\\'|'"') )* '"' |
+	"'" ( '\\' . /* 'b'|'t'|'n'|'f'|'r'|'u'|'"'|"'"|'\\' */ | !('\\'|"'") )* "'"
+;
+terminal ML_COMMENT : '/*' -> '*/';
+terminal SL_COMMENT : '//' !('\n'|'\r')* ('\r'? '\n')?;
+
+terminal WS : (' '|'\t'|'\r'|'\n')+;

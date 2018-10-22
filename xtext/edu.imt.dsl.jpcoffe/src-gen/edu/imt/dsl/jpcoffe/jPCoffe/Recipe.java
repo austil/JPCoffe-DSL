@@ -3,18 +3,157 @@
  */
 package edu.imt.dsl.jpcoffe.jPCoffe;
 
-import org.eclipse.emf.ecore.EObject;
 
 /**
  * <!-- begin-user-doc -->
  * A representation of the model object '<em><b>Recipe</b></em>'.
  * <!-- end-user-doc -->
  *
+ * <p>
+ * The following features are supported:
+ * </p>
+ * <ul>
+ *   <li>{@link edu.imt.dsl.jpcoffe.jPCoffe.Recipe#getName <em>Name</em>}</li>
+ *   <li>{@link edu.imt.dsl.jpcoffe.jPCoffe.Recipe#getPortion <em>Portion</em>}</li>
+ *   <li>{@link edu.imt.dsl.jpcoffe.jPCoffe.Recipe#getIngredients <em>Ingredients</em>}</li>
+ *   <li>{@link edu.imt.dsl.jpcoffe.jPCoffe.Recipe#getTools <em>Tools</em>}</li>
+ *   <li>{@link edu.imt.dsl.jpcoffe.jPCoffe.Recipe#getSteps <em>Steps</em>}</li>
+ * </ul>
  *
  * @see edu.imt.dsl.jpcoffe.jPCoffe.JPCoffePackage#getRecipe()
  * @model
  * @generated
  */
-public interface Recipe extends EObject
+public interface Recipe extends Main
 {
+  /**
+   * Returns the value of the '<em><b>Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Name</em>' attribute isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Name</em>' attribute.
+   * @see #setName(String)
+   * @see edu.imt.dsl.jpcoffe.jPCoffe.JPCoffePackage#getRecipe_Name()
+   * @model
+   * @generated
+   */
+  String getName();
+
+  /**
+   * Sets the value of the '{@link edu.imt.dsl.jpcoffe.jPCoffe.Recipe#getName <em>Name</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Name</em>' attribute.
+   * @see #getName()
+   * @generated
+   */
+  void setName(String value);
+
+  /**
+   * Returns the value of the '<em><b>Portion</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Portion</em>' containment reference isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Portion</em>' containment reference.
+   * @see #setPortion(PortionNB)
+   * @see edu.imt.dsl.jpcoffe.jPCoffe.JPCoffePackage#getRecipe_Portion()
+   * @model containment="true"
+   * @generated
+   */
+  PortionNB getPortion();
+
+  /**
+   * Sets the value of the '{@link edu.imt.dsl.jpcoffe.jPCoffe.Recipe#getPortion <em>Portion</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Portion</em>' containment reference.
+   * @see #getPortion()
+   * @generated
+   */
+  void setPortion(PortionNB value);
+
+  /**
+   * Returns the value of the '<em><b>Ingredients</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Ingredients</em>' containment reference isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Ingredients</em>' containment reference.
+   * @see #setIngredients(IngredientsBlock)
+   * @see edu.imt.dsl.jpcoffe.jPCoffe.JPCoffePackage#getRecipe_Ingredients()
+   * @model containment="true"
+   * @generated
+   */
+  IngredientsBlock getIngredients();
+
+  /**
+   * Sets the value of the '{@link edu.imt.dsl.jpcoffe.jPCoffe.Recipe#getIngredients <em>Ingredients</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Ingredients</em>' containment reference.
+   * @see #getIngredients()
+   * @generated
+   */
+  void setIngredients(IngredientsBlock value);
+
+  /**
+   * Returns the value of the '<em><b>Tools</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Tools</em>' containment reference isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Tools</em>' containment reference.
+   * @see #setTools(ToolsBlock)
+   * @see edu.imt.dsl.jpcoffe.jPCoffe.JPCoffePackage#getRecipe_Tools()
+   * @model containment="true"
+   * @generated
+   */
+  ToolsBlock getTools();
+
+  /**
+   * Sets the value of the '{@link edu.imt.dsl.jpcoffe.jPCoffe.Recipe#getTools <em>Tools</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Tools</em>' containment reference.
+   * @see #getTools()
+   * @generated
+   */
+  void setTools(ToolsBlock value);
+
+  /**
+   * Returns the value of the '<em><b>Steps</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Steps</em>' containment reference isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Steps</em>' containment reference.
+   * @see #setSteps(StepsBlock)
+   * @see edu.imt.dsl.jpcoffe.jPCoffe.JPCoffePackage#getRecipe_Steps()
+   * @model containment="true"
+   * @generated
+   */
+  StepsBlock getSteps();
+
+  /**
+   * Sets the value of the '{@link edu.imt.dsl.jpcoffe.jPCoffe.Recipe#getSteps <em>Steps</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Steps</em>' containment reference.
+   * @see #getSteps()
+   * @generated
+   */
+  void setSteps(StepsBlock value);
+
 } // Recipe

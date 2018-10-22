@@ -21,32 +21,28 @@ import java.util.ArrayList;
 @SuppressWarnings("all")
 public class InternalJPCoffeParser extends AbstractInternalAntlrParser {
     public static final String[] tokenNames = new String[] {
-        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_STRING", "RULE_INT", "RULE_NEW_LINE", "RULE_TITLE_LINE", "RULE_SPACE", "RULE_NAME", "RULE_METRIC_UNIT", "RULE_TEXT", "RULE_ID", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'Recipe'", "'{'", "'}'", "'For'", "'people'", "'Ingredients'", "'*'", "'Tools'", "'Steps'", "','", "'->'", "'.'"
+        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_STRING", "RULE_INT", "RULE_TITLE_LINE", "RULE_METRIC_UNIT", "RULE_MAJ_WORD", "RULE_WORD", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "'Recipe'", "'{'", "'}'", "'For'", "'people'", "'Ingredients'", "'*'", "'Tools'", "'Steps'", "','", "'->'", "'.'"
     };
-    public static final int RULE_METRIC_UNIT=10;
-    public static final int RULE_NAME=9;
+    public static final int RULE_METRIC_UNIT=7;
+    public static final int RULE_WORD=9;
     public static final int RULE_STRING=4;
-    public static final int RULE_SL_COMMENT=14;
+    public static final int RULE_SL_COMMENT=11;
     public static final int T__19=19;
+    public static final int T__15=15;
+    public static final int T__16=16;
     public static final int T__17=17;
     public static final int T__18=18;
-    public static final int RULE_SPACE=8;
+    public static final int T__13=13;
+    public static final int T__14=14;
     public static final int EOF=-1;
-    public static final int RULE_ID=12;
-    public static final int RULE_WS=15;
-    public static final int RULE_ANY_OTHER=16;
-    public static final int RULE_NEW_LINE=6;
-    public static final int T__26=26;
-    public static final int T__27=27;
-    public static final int T__28=28;
+    public static final int RULE_WS=12;
+    public static final int RULE_MAJ_WORD=8;
     public static final int RULE_INT=5;
     public static final int T__22=22;
-    public static final int RULE_ML_COMMENT=13;
+    public static final int RULE_ML_COMMENT=10;
     public static final int T__23=23;
-    public static final int RULE_TITLE_LINE=7;
-    public static final int RULE_TEXT=11;
+    public static final int RULE_TITLE_LINE=6;
     public static final int T__24=24;
-    public static final int T__25=25;
     public static final int T__20=20;
     public static final int T__21=21;
 
@@ -126,74 +122,32 @@ public class InternalJPCoffeParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleMain"
-    // InternalJPCoffe.g:71:1: ruleMain returns [EObject current=null] : ( (lv_recipes_0_0= ruleRecipe ) )+ ;
+    // InternalJPCoffe.g:71:1: ruleMain returns [EObject current=null] : this_Recipe_0= ruleRecipe ;
     public final EObject ruleMain() throws RecognitionException {
         EObject current = null;
 
-        EObject lv_recipes_0_0 = null;
+        EObject this_Recipe_0 = null;
 
 
 
         	enterRule();
 
         try {
-            // InternalJPCoffe.g:77:2: ( ( (lv_recipes_0_0= ruleRecipe ) )+ )
-            // InternalJPCoffe.g:78:2: ( (lv_recipes_0_0= ruleRecipe ) )+
+            // InternalJPCoffe.g:77:2: (this_Recipe_0= ruleRecipe )
+            // InternalJPCoffe.g:78:2: this_Recipe_0= ruleRecipe
             {
-            // InternalJPCoffe.g:78:2: ( (lv_recipes_0_0= ruleRecipe ) )+
-            int cnt1=0;
-            loop1:
-            do {
-                int alt1=2;
-                int LA1_0 = input.LA(1);
 
-                if ( (LA1_0==17) ) {
-                    alt1=1;
-                }
+            		newCompositeNode(grammarAccess.getMainAccess().getRecipeParserRuleCall());
+            	
+            pushFollow(FOLLOW_2);
+            this_Recipe_0=ruleRecipe();
+
+            state._fsp--;
 
 
-                switch (alt1) {
-            	case 1 :
-            	    // InternalJPCoffe.g:79:3: (lv_recipes_0_0= ruleRecipe )
-            	    {
-            	    // InternalJPCoffe.g:79:3: (lv_recipes_0_0= ruleRecipe )
-            	    // InternalJPCoffe.g:80:4: lv_recipes_0_0= ruleRecipe
-            	    {
-
-            	    				newCompositeNode(grammarAccess.getMainAccess().getRecipesRecipeParserRuleCall_0());
-            	    			
-            	    pushFollow(FOLLOW_3);
-            	    lv_recipes_0_0=ruleRecipe();
-
-            	    state._fsp--;
-
-
-            	    				if (current==null) {
-            	    					current = createModelElementForParent(grammarAccess.getMainRule());
-            	    				}
-            	    				add(
-            	    					current,
-            	    					"recipes",
-            	    					lv_recipes_0_0,
-            	    					"edu.imt.dsl.jpcoffe.JPCoffe.Recipe");
-            	    				afterParserOrEnumRuleCall();
-            	    			
-
-            	    }
-
-
-            	    }
-            	    break;
-
-            	default :
-            	    if ( cnt1 >= 1 ) break loop1;
-                        EarlyExitException eee =
-                            new EarlyExitException(1, input);
-                        throw eee;
-                }
-                cnt1++;
-            } while (true);
-
+            		current = this_Recipe_0;
+            		afterParserOrEnumRuleCall();
+            	
 
             }
 
@@ -214,7 +168,7 @@ public class InternalJPCoffeParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleRecipe"
-    // InternalJPCoffe.g:100:1: entryRuleRecipe returns [EObject current=null] : iv_ruleRecipe= ruleRecipe EOF ;
+    // InternalJPCoffe.g:89:1: entryRuleRecipe returns [EObject current=null] : iv_ruleRecipe= ruleRecipe EOF ;
     public final EObject entryRuleRecipe() throws RecognitionException {
         EObject current = null;
 
@@ -222,8 +176,8 @@ public class InternalJPCoffeParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalJPCoffe.g:100:47: (iv_ruleRecipe= ruleRecipe EOF )
-            // InternalJPCoffe.g:101:2: iv_ruleRecipe= ruleRecipe EOF
+            // InternalJPCoffe.g:89:47: (iv_ruleRecipe= ruleRecipe EOF )
+            // InternalJPCoffe.g:90:2: iv_ruleRecipe= ruleRecipe EOF
             {
              newCompositeNode(grammarAccess.getRecipeRule()); 
             pushFollow(FOLLOW_1);
@@ -250,85 +204,192 @@ public class InternalJPCoffeParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleRecipe"
-    // InternalJPCoffe.g:107:1: ruleRecipe returns [EObject current=null] : (otherlv_0= 'Recipe' this_STRING_1= RULE_STRING otherlv_2= '{' this_PortionNB_3= rulePortionNB ruleIngredientsBlock ruleToolsBlock ruleStepsBlock otherlv_7= '}' ) ;
+    // InternalJPCoffe.g:96:1: ruleRecipe returns [EObject current=null] : (otherlv_0= 'Recipe' ( (lv_name_1_0= RULE_STRING ) ) otherlv_2= '{' ( (lv_portion_3_0= rulePortionNB ) ) ( (lv_ingredients_4_0= ruleIngredientsBlock ) ) ( (lv_tools_5_0= ruleToolsBlock ) ) ( (lv_steps_6_0= ruleStepsBlock ) ) otherlv_7= '}' ) ;
     public final EObject ruleRecipe() throws RecognitionException {
         EObject current = null;
 
         Token otherlv_0=null;
-        Token this_STRING_1=null;
+        Token lv_name_1_0=null;
         Token otherlv_2=null;
         Token otherlv_7=null;
-        EObject this_PortionNB_3 = null;
+        EObject lv_portion_3_0 = null;
+
+        EObject lv_ingredients_4_0 = null;
+
+        EObject lv_tools_5_0 = null;
+
+        EObject lv_steps_6_0 = null;
 
 
 
         	enterRule();
 
         try {
-            // InternalJPCoffe.g:113:2: ( (otherlv_0= 'Recipe' this_STRING_1= RULE_STRING otherlv_2= '{' this_PortionNB_3= rulePortionNB ruleIngredientsBlock ruleToolsBlock ruleStepsBlock otherlv_7= '}' ) )
-            // InternalJPCoffe.g:114:2: (otherlv_0= 'Recipe' this_STRING_1= RULE_STRING otherlv_2= '{' this_PortionNB_3= rulePortionNB ruleIngredientsBlock ruleToolsBlock ruleStepsBlock otherlv_7= '}' )
+            // InternalJPCoffe.g:102:2: ( (otherlv_0= 'Recipe' ( (lv_name_1_0= RULE_STRING ) ) otherlv_2= '{' ( (lv_portion_3_0= rulePortionNB ) ) ( (lv_ingredients_4_0= ruleIngredientsBlock ) ) ( (lv_tools_5_0= ruleToolsBlock ) ) ( (lv_steps_6_0= ruleStepsBlock ) ) otherlv_7= '}' ) )
+            // InternalJPCoffe.g:103:2: (otherlv_0= 'Recipe' ( (lv_name_1_0= RULE_STRING ) ) otherlv_2= '{' ( (lv_portion_3_0= rulePortionNB ) ) ( (lv_ingredients_4_0= ruleIngredientsBlock ) ) ( (lv_tools_5_0= ruleToolsBlock ) ) ( (lv_steps_6_0= ruleStepsBlock ) ) otherlv_7= '}' )
             {
-            // InternalJPCoffe.g:114:2: (otherlv_0= 'Recipe' this_STRING_1= RULE_STRING otherlv_2= '{' this_PortionNB_3= rulePortionNB ruleIngredientsBlock ruleToolsBlock ruleStepsBlock otherlv_7= '}' )
-            // InternalJPCoffe.g:115:3: otherlv_0= 'Recipe' this_STRING_1= RULE_STRING otherlv_2= '{' this_PortionNB_3= rulePortionNB ruleIngredientsBlock ruleToolsBlock ruleStepsBlock otherlv_7= '}'
+            // InternalJPCoffe.g:103:2: (otherlv_0= 'Recipe' ( (lv_name_1_0= RULE_STRING ) ) otherlv_2= '{' ( (lv_portion_3_0= rulePortionNB ) ) ( (lv_ingredients_4_0= ruleIngredientsBlock ) ) ( (lv_tools_5_0= ruleToolsBlock ) ) ( (lv_steps_6_0= ruleStepsBlock ) ) otherlv_7= '}' )
+            // InternalJPCoffe.g:104:3: otherlv_0= 'Recipe' ( (lv_name_1_0= RULE_STRING ) ) otherlv_2= '{' ( (lv_portion_3_0= rulePortionNB ) ) ( (lv_ingredients_4_0= ruleIngredientsBlock ) ) ( (lv_tools_5_0= ruleToolsBlock ) ) ( (lv_steps_6_0= ruleStepsBlock ) ) otherlv_7= '}'
             {
-            otherlv_0=(Token)match(input,17,FOLLOW_4); 
+            otherlv_0=(Token)match(input,13,FOLLOW_3); 
 
             			newLeafNode(otherlv_0, grammarAccess.getRecipeAccess().getRecipeKeyword_0());
             		
-            this_STRING_1=(Token)match(input,RULE_STRING,FOLLOW_5); 
+            // InternalJPCoffe.g:108:3: ( (lv_name_1_0= RULE_STRING ) )
+            // InternalJPCoffe.g:109:4: (lv_name_1_0= RULE_STRING )
+            {
+            // InternalJPCoffe.g:109:4: (lv_name_1_0= RULE_STRING )
+            // InternalJPCoffe.g:110:5: lv_name_1_0= RULE_STRING
+            {
+            lv_name_1_0=(Token)match(input,RULE_STRING,FOLLOW_4); 
 
-            			newLeafNode(this_STRING_1, grammarAccess.getRecipeAccess().getSTRINGTerminalRuleCall_1());
-            		
-            otherlv_2=(Token)match(input,18,FOLLOW_6); 
+            					newLeafNode(lv_name_1_0, grammarAccess.getRecipeAccess().getNameSTRINGTerminalRuleCall_1_0());
+            				
+
+            					if (current==null) {
+            						current = createModelElement(grammarAccess.getRecipeRule());
+            					}
+            					setWithLastConsumed(
+            						current,
+            						"name",
+            						lv_name_1_0,
+            						"edu.imt.dsl.jpcoffe.JPCoffe.STRING");
+            				
+
+            }
+
+
+            }
+
+            otherlv_2=(Token)match(input,14,FOLLOW_5); 
 
             			newLeafNode(otherlv_2, grammarAccess.getRecipeAccess().getLeftCurlyBracketKeyword_2());
             		
+            // InternalJPCoffe.g:130:3: ( (lv_portion_3_0= rulePortionNB ) )
+            // InternalJPCoffe.g:131:4: (lv_portion_3_0= rulePortionNB )
+            {
+            // InternalJPCoffe.g:131:4: (lv_portion_3_0= rulePortionNB )
+            // InternalJPCoffe.g:132:5: lv_portion_3_0= rulePortionNB
+            {
 
-            			newCompositeNode(grammarAccess.getRecipeAccess().getPortionNBParserRuleCall_3());
-            		
+            					newCompositeNode(grammarAccess.getRecipeAccess().getPortionPortionNBParserRuleCall_3_0());
+            				
+            pushFollow(FOLLOW_6);
+            lv_portion_3_0=rulePortionNB();
+
+            state._fsp--;
+
+
+            					if (current==null) {
+            						current = createModelElementForParent(grammarAccess.getRecipeRule());
+            					}
+            					set(
+            						current,
+            						"portion",
+            						lv_portion_3_0,
+            						"edu.imt.dsl.jpcoffe.JPCoffe.PortionNB");
+            					afterParserOrEnumRuleCall();
+            				
+
+            }
+
+
+            }
+
+            // InternalJPCoffe.g:149:3: ( (lv_ingredients_4_0= ruleIngredientsBlock ) )
+            // InternalJPCoffe.g:150:4: (lv_ingredients_4_0= ruleIngredientsBlock )
+            {
+            // InternalJPCoffe.g:150:4: (lv_ingredients_4_0= ruleIngredientsBlock )
+            // InternalJPCoffe.g:151:5: lv_ingredients_4_0= ruleIngredientsBlock
+            {
+
+            					newCompositeNode(grammarAccess.getRecipeAccess().getIngredientsIngredientsBlockParserRuleCall_4_0());
+            				
             pushFollow(FOLLOW_7);
-            this_PortionNB_3=rulePortionNB();
+            lv_ingredients_4_0=ruleIngredientsBlock();
 
             state._fsp--;
 
 
-            			current = this_PortionNB_3;
-            			afterParserOrEnumRuleCall();
-            		
+            					if (current==null) {
+            						current = createModelElementForParent(grammarAccess.getRecipeRule());
+            					}
+            					set(
+            						current,
+            						"ingredients",
+            						lv_ingredients_4_0,
+            						"edu.imt.dsl.jpcoffe.JPCoffe.IngredientsBlock");
+            					afterParserOrEnumRuleCall();
+            				
 
-            			newCompositeNode(grammarAccess.getRecipeAccess().getIngredientsBlockParserRuleCall_4());
-            		
+            }
+
+
+            }
+
+            // InternalJPCoffe.g:168:3: ( (lv_tools_5_0= ruleToolsBlock ) )
+            // InternalJPCoffe.g:169:4: (lv_tools_5_0= ruleToolsBlock )
+            {
+            // InternalJPCoffe.g:169:4: (lv_tools_5_0= ruleToolsBlock )
+            // InternalJPCoffe.g:170:5: lv_tools_5_0= ruleToolsBlock
+            {
+
+            					newCompositeNode(grammarAccess.getRecipeAccess().getToolsToolsBlockParserRuleCall_5_0());
+            				
             pushFollow(FOLLOW_8);
-            ruleIngredientsBlock();
+            lv_tools_5_0=ruleToolsBlock();
 
             state._fsp--;
 
 
-            			afterParserOrEnumRuleCall();
-            		
+            					if (current==null) {
+            						current = createModelElementForParent(grammarAccess.getRecipeRule());
+            					}
+            					set(
+            						current,
+            						"tools",
+            						lv_tools_5_0,
+            						"edu.imt.dsl.jpcoffe.JPCoffe.ToolsBlock");
+            					afterParserOrEnumRuleCall();
+            				
 
-            			newCompositeNode(grammarAccess.getRecipeAccess().getToolsBlockParserRuleCall_5());
-            		
+            }
+
+
+            }
+
+            // InternalJPCoffe.g:187:3: ( (lv_steps_6_0= ruleStepsBlock ) )
+            // InternalJPCoffe.g:188:4: (lv_steps_6_0= ruleStepsBlock )
+            {
+            // InternalJPCoffe.g:188:4: (lv_steps_6_0= ruleStepsBlock )
+            // InternalJPCoffe.g:189:5: lv_steps_6_0= ruleStepsBlock
+            {
+
+            					newCompositeNode(grammarAccess.getRecipeAccess().getStepsStepsBlockParserRuleCall_6_0());
+            				
             pushFollow(FOLLOW_9);
-            ruleToolsBlock();
+            lv_steps_6_0=ruleStepsBlock();
 
             state._fsp--;
 
 
-            			afterParserOrEnumRuleCall();
-            		
+            					if (current==null) {
+            						current = createModelElementForParent(grammarAccess.getRecipeRule());
+            					}
+            					set(
+            						current,
+            						"steps",
+            						lv_steps_6_0,
+            						"edu.imt.dsl.jpcoffe.JPCoffe.StepsBlock");
+            					afterParserOrEnumRuleCall();
+            				
 
-            			newCompositeNode(grammarAccess.getRecipeAccess().getStepsBlockParserRuleCall_6());
-            		
-            pushFollow(FOLLOW_10);
-            ruleStepsBlock();
-
-            state._fsp--;
+            }
 
 
-            			afterParserOrEnumRuleCall();
-            		
-            otherlv_7=(Token)match(input,19,FOLLOW_2); 
+            }
+
+            otherlv_7=(Token)match(input,15,FOLLOW_2); 
 
             			newLeafNode(otherlv_7, grammarAccess.getRecipeAccess().getRightCurlyBracketKeyword_7());
             		
@@ -355,7 +416,7 @@ public class InternalJPCoffeParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRulePortionNB"
-    // InternalJPCoffe.g:164:1: entryRulePortionNB returns [EObject current=null] : iv_rulePortionNB= rulePortionNB EOF ;
+    // InternalJPCoffe.g:214:1: entryRulePortionNB returns [EObject current=null] : iv_rulePortionNB= rulePortionNB EOF ;
     public final EObject entryRulePortionNB() throws RecognitionException {
         EObject current = null;
 
@@ -363,8 +424,8 @@ public class InternalJPCoffeParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalJPCoffe.g:164:50: (iv_rulePortionNB= rulePortionNB EOF )
-            // InternalJPCoffe.g:165:2: iv_rulePortionNB= rulePortionNB EOF
+            // InternalJPCoffe.g:214:50: (iv_rulePortionNB= rulePortionNB EOF )
+            // InternalJPCoffe.g:215:2: iv_rulePortionNB= rulePortionNB EOF
             {
              newCompositeNode(grammarAccess.getPortionNBRule()); 
             pushFollow(FOLLOW_1);
@@ -391,7 +452,7 @@ public class InternalJPCoffeParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "rulePortionNB"
-    // InternalJPCoffe.g:171:1: rulePortionNB returns [EObject current=null] : (otherlv_0= 'For' ( (lv_nb_1_0= RULE_INT ) ) (otherlv_2= 'people' )? ) ;
+    // InternalJPCoffe.g:221:1: rulePortionNB returns [EObject current=null] : (otherlv_0= 'For' ( (lv_nb_1_0= RULE_INT ) ) (otherlv_2= 'people' )? ) ;
     public final EObject rulePortionNB() throws RecognitionException {
         EObject current = null;
 
@@ -403,23 +464,23 @@ public class InternalJPCoffeParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalJPCoffe.g:177:2: ( (otherlv_0= 'For' ( (lv_nb_1_0= RULE_INT ) ) (otherlv_2= 'people' )? ) )
-            // InternalJPCoffe.g:178:2: (otherlv_0= 'For' ( (lv_nb_1_0= RULE_INT ) ) (otherlv_2= 'people' )? )
+            // InternalJPCoffe.g:227:2: ( (otherlv_0= 'For' ( (lv_nb_1_0= RULE_INT ) ) (otherlv_2= 'people' )? ) )
+            // InternalJPCoffe.g:228:2: (otherlv_0= 'For' ( (lv_nb_1_0= RULE_INT ) ) (otherlv_2= 'people' )? )
             {
-            // InternalJPCoffe.g:178:2: (otherlv_0= 'For' ( (lv_nb_1_0= RULE_INT ) ) (otherlv_2= 'people' )? )
-            // InternalJPCoffe.g:179:3: otherlv_0= 'For' ( (lv_nb_1_0= RULE_INT ) ) (otherlv_2= 'people' )?
+            // InternalJPCoffe.g:228:2: (otherlv_0= 'For' ( (lv_nb_1_0= RULE_INT ) ) (otherlv_2= 'people' )? )
+            // InternalJPCoffe.g:229:3: otherlv_0= 'For' ( (lv_nb_1_0= RULE_INT ) ) (otherlv_2= 'people' )?
             {
-            otherlv_0=(Token)match(input,20,FOLLOW_11); 
+            otherlv_0=(Token)match(input,16,FOLLOW_10); 
 
             			newLeafNode(otherlv_0, grammarAccess.getPortionNBAccess().getForKeyword_0());
             		
-            // InternalJPCoffe.g:183:3: ( (lv_nb_1_0= RULE_INT ) )
-            // InternalJPCoffe.g:184:4: (lv_nb_1_0= RULE_INT )
+            // InternalJPCoffe.g:233:3: ( (lv_nb_1_0= RULE_INT ) )
+            // InternalJPCoffe.g:234:4: (lv_nb_1_0= RULE_INT )
             {
-            // InternalJPCoffe.g:184:4: (lv_nb_1_0= RULE_INT )
-            // InternalJPCoffe.g:185:5: lv_nb_1_0= RULE_INT
+            // InternalJPCoffe.g:234:4: (lv_nb_1_0= RULE_INT )
+            // InternalJPCoffe.g:235:5: lv_nb_1_0= RULE_INT
             {
-            lv_nb_1_0=(Token)match(input,RULE_INT,FOLLOW_12); 
+            lv_nb_1_0=(Token)match(input,RULE_INT,FOLLOW_11); 
 
             					newLeafNode(lv_nb_1_0, grammarAccess.getPortionNBAccess().getNbINTTerminalRuleCall_1_0());
             				
@@ -431,7 +492,7 @@ public class InternalJPCoffeParser extends AbstractInternalAntlrParser {
             						current,
             						"nb",
             						lv_nb_1_0,
-            						"org.eclipse.xtext.common.Terminals.INT");
+            						"edu.imt.dsl.jpcoffe.JPCoffe.INT");
             				
 
             }
@@ -439,18 +500,18 @@ public class InternalJPCoffeParser extends AbstractInternalAntlrParser {
 
             }
 
-            // InternalJPCoffe.g:201:3: (otherlv_2= 'people' )?
-            int alt2=2;
-            int LA2_0 = input.LA(1);
+            // InternalJPCoffe.g:251:3: (otherlv_2= 'people' )?
+            int alt1=2;
+            int LA1_0 = input.LA(1);
 
-            if ( (LA2_0==21) ) {
-                alt2=1;
+            if ( (LA1_0==17) ) {
+                alt1=1;
             }
-            switch (alt2) {
+            switch (alt1) {
                 case 1 :
-                    // InternalJPCoffe.g:202:4: otherlv_2= 'people'
+                    // InternalJPCoffe.g:252:4: otherlv_2= 'people'
                     {
-                    otherlv_2=(Token)match(input,21,FOLLOW_2); 
+                    otherlv_2=(Token)match(input,17,FOLLOW_2); 
 
                     				newLeafNode(otherlv_2, grammarAccess.getPortionNBAccess().getPeopleKeyword_2());
                     			
@@ -483,16 +544,16 @@ public class InternalJPCoffeParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleIngredientsBlock"
-    // InternalJPCoffe.g:211:1: entryRuleIngredientsBlock returns [String current=null] : iv_ruleIngredientsBlock= ruleIngredientsBlock EOF ;
-    public final String entryRuleIngredientsBlock() throws RecognitionException {
-        String current = null;
+    // InternalJPCoffe.g:261:1: entryRuleIngredientsBlock returns [EObject current=null] : iv_ruleIngredientsBlock= ruleIngredientsBlock EOF ;
+    public final EObject entryRuleIngredientsBlock() throws RecognitionException {
+        EObject current = null;
 
-        AntlrDatatypeRuleToken iv_ruleIngredientsBlock = null;
+        EObject iv_ruleIngredientsBlock = null;
 
 
         try {
-            // InternalJPCoffe.g:211:56: (iv_ruleIngredientsBlock= ruleIngredientsBlock EOF )
-            // InternalJPCoffe.g:212:2: iv_ruleIngredientsBlock= ruleIngredientsBlock EOF
+            // InternalJPCoffe.g:261:57: (iv_ruleIngredientsBlock= ruleIngredientsBlock EOF )
+            // InternalJPCoffe.g:262:2: iv_ruleIngredientsBlock= ruleIngredientsBlock EOF
             {
              newCompositeNode(grammarAccess.getIngredientsBlockRule()); 
             pushFollow(FOLLOW_1);
@@ -500,7 +561,7 @@ public class InternalJPCoffeParser extends AbstractInternalAntlrParser {
 
             state._fsp--;
 
-             current =iv_ruleIngredientsBlock.getText(); 
+             current =iv_ruleIngredientsBlock; 
             match(input,EOF,FOLLOW_2); 
 
             }
@@ -519,99 +580,93 @@ public class InternalJPCoffeParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleIngredientsBlock"
-    // InternalJPCoffe.g:218:1: ruleIngredientsBlock returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : (kw= 'Ingredients' this_NEW_LINE_1= RULE_NEW_LINE this_TITLE_LINE_2= RULE_TITLE_LINE this_NEW_LINE_3= RULE_NEW_LINE (this_Ingredient_4= ruleIngredient )* this_NEW_LINE_5= RULE_NEW_LINE ) ;
-    public final AntlrDatatypeRuleToken ruleIngredientsBlock() throws RecognitionException {
-        AntlrDatatypeRuleToken current = new AntlrDatatypeRuleToken();
+    // InternalJPCoffe.g:268:1: ruleIngredientsBlock returns [EObject current=null] : ( () otherlv_1= 'Ingredients' this_TITLE_LINE_2= RULE_TITLE_LINE ( (lv_ingredientsList_3_0= ruleIngredient ) )* ) ;
+    public final EObject ruleIngredientsBlock() throws RecognitionException {
+        EObject current = null;
 
-        Token kw=null;
-        Token this_NEW_LINE_1=null;
+        Token otherlv_1=null;
         Token this_TITLE_LINE_2=null;
-        Token this_NEW_LINE_3=null;
-        Token this_NEW_LINE_5=null;
-        AntlrDatatypeRuleToken this_Ingredient_4 = null;
+        EObject lv_ingredientsList_3_0 = null;
 
 
 
         	enterRule();
 
         try {
-            // InternalJPCoffe.g:224:2: ( (kw= 'Ingredients' this_NEW_LINE_1= RULE_NEW_LINE this_TITLE_LINE_2= RULE_TITLE_LINE this_NEW_LINE_3= RULE_NEW_LINE (this_Ingredient_4= ruleIngredient )* this_NEW_LINE_5= RULE_NEW_LINE ) )
-            // InternalJPCoffe.g:225:2: (kw= 'Ingredients' this_NEW_LINE_1= RULE_NEW_LINE this_TITLE_LINE_2= RULE_TITLE_LINE this_NEW_LINE_3= RULE_NEW_LINE (this_Ingredient_4= ruleIngredient )* this_NEW_LINE_5= RULE_NEW_LINE )
+            // InternalJPCoffe.g:274:2: ( ( () otherlv_1= 'Ingredients' this_TITLE_LINE_2= RULE_TITLE_LINE ( (lv_ingredientsList_3_0= ruleIngredient ) )* ) )
+            // InternalJPCoffe.g:275:2: ( () otherlv_1= 'Ingredients' this_TITLE_LINE_2= RULE_TITLE_LINE ( (lv_ingredientsList_3_0= ruleIngredient ) )* )
             {
-            // InternalJPCoffe.g:225:2: (kw= 'Ingredients' this_NEW_LINE_1= RULE_NEW_LINE this_TITLE_LINE_2= RULE_TITLE_LINE this_NEW_LINE_3= RULE_NEW_LINE (this_Ingredient_4= ruleIngredient )* this_NEW_LINE_5= RULE_NEW_LINE )
-            // InternalJPCoffe.g:226:3: kw= 'Ingredients' this_NEW_LINE_1= RULE_NEW_LINE this_TITLE_LINE_2= RULE_TITLE_LINE this_NEW_LINE_3= RULE_NEW_LINE (this_Ingredient_4= ruleIngredient )* this_NEW_LINE_5= RULE_NEW_LINE
+            // InternalJPCoffe.g:275:2: ( () otherlv_1= 'Ingredients' this_TITLE_LINE_2= RULE_TITLE_LINE ( (lv_ingredientsList_3_0= ruleIngredient ) )* )
+            // InternalJPCoffe.g:276:3: () otherlv_1= 'Ingredients' this_TITLE_LINE_2= RULE_TITLE_LINE ( (lv_ingredientsList_3_0= ruleIngredient ) )*
             {
-            kw=(Token)match(input,22,FOLLOW_13); 
+            // InternalJPCoffe.g:276:3: ()
+            // InternalJPCoffe.g:277:4: 
+            {
 
-            			current.merge(kw);
-            			newLeafNode(kw, grammarAccess.getIngredientsBlockAccess().getIngredientsKeyword_0());
-            		
-            this_NEW_LINE_1=(Token)match(input,RULE_NEW_LINE,FOLLOW_14); 
+            				current = forceCreateModelElement(
+            					grammarAccess.getIngredientsBlockAccess().getIngredientsBlockAction_0(),
+            					current);
+            			
 
-            			current.merge(this_NEW_LINE_1);
-            		
+            }
 
-            			newLeafNode(this_NEW_LINE_1, grammarAccess.getIngredientsBlockAccess().getNEW_LINETerminalRuleCall_1());
+            otherlv_1=(Token)match(input,18,FOLLOW_12); 
+
+            			newLeafNode(otherlv_1, grammarAccess.getIngredientsBlockAccess().getIngredientsKeyword_1());
             		
             this_TITLE_LINE_2=(Token)match(input,RULE_TITLE_LINE,FOLLOW_13); 
 
-            			current.merge(this_TITLE_LINE_2);
-            		
-
             			newLeafNode(this_TITLE_LINE_2, grammarAccess.getIngredientsBlockAccess().getTITLE_LINETerminalRuleCall_2());
             		
-            this_NEW_LINE_3=(Token)match(input,RULE_NEW_LINE,FOLLOW_15); 
-
-            			current.merge(this_NEW_LINE_3);
-            		
-
-            			newLeafNode(this_NEW_LINE_3, grammarAccess.getIngredientsBlockAccess().getNEW_LINETerminalRuleCall_3());
-            		
-            // InternalJPCoffe.g:252:3: (this_Ingredient_4= ruleIngredient )*
-            loop3:
+            // InternalJPCoffe.g:291:3: ( (lv_ingredientsList_3_0= ruleIngredient ) )*
+            loop2:
             do {
-                int alt3=2;
-                int LA3_0 = input.LA(1);
+                int alt2=2;
+                int LA2_0 = input.LA(1);
 
-                if ( (LA3_0==23) ) {
-                    alt3=1;
+                if ( (LA2_0==19) ) {
+                    alt2=1;
                 }
 
 
-                switch (alt3) {
+                switch (alt2) {
             	case 1 :
-            	    // InternalJPCoffe.g:253:4: this_Ingredient_4= ruleIngredient
+            	    // InternalJPCoffe.g:292:4: (lv_ingredientsList_3_0= ruleIngredient )
+            	    {
+            	    // InternalJPCoffe.g:292:4: (lv_ingredientsList_3_0= ruleIngredient )
+            	    // InternalJPCoffe.g:293:5: lv_ingredientsList_3_0= ruleIngredient
             	    {
 
-            	    				newCompositeNode(grammarAccess.getIngredientsBlockAccess().getIngredientParserRuleCall_4());
-            	    			
-            	    pushFollow(FOLLOW_15);
-            	    this_Ingredient_4=ruleIngredient();
+            	    					newCompositeNode(grammarAccess.getIngredientsBlockAccess().getIngredientsListIngredientParserRuleCall_3_0());
+            	    				
+            	    pushFollow(FOLLOW_13);
+            	    lv_ingredientsList_3_0=ruleIngredient();
 
             	    state._fsp--;
 
 
-            	    				current.merge(this_Ingredient_4);
-            	    			
+            	    					if (current==null) {
+            	    						current = createModelElementForParent(grammarAccess.getIngredientsBlockRule());
+            	    					}
+            	    					add(
+            	    						current,
+            	    						"ingredientsList",
+            	    						lv_ingredientsList_3_0,
+            	    						"edu.imt.dsl.jpcoffe.JPCoffe.Ingredient");
+            	    					afterParserOrEnumRuleCall();
+            	    				
 
-            	    				afterParserOrEnumRuleCall();
-            	    			
+            	    }
+
 
             	    }
             	    break;
 
             	default :
-            	    break loop3;
+            	    break loop2;
                 }
             } while (true);
 
-            this_NEW_LINE_5=(Token)match(input,RULE_NEW_LINE,FOLLOW_2); 
-
-            			current.merge(this_NEW_LINE_5);
-            		
-
-            			newLeafNode(this_NEW_LINE_5, grammarAccess.getIngredientsBlockAccess().getNEW_LINETerminalRuleCall_5());
-            		
 
             }
 
@@ -635,16 +690,16 @@ public class InternalJPCoffeParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleIngredient"
-    // InternalJPCoffe.g:275:1: entryRuleIngredient returns [String current=null] : iv_ruleIngredient= ruleIngredient EOF ;
-    public final String entryRuleIngredient() throws RecognitionException {
-        String current = null;
+    // InternalJPCoffe.g:314:1: entryRuleIngredient returns [EObject current=null] : iv_ruleIngredient= ruleIngredient EOF ;
+    public final EObject entryRuleIngredient() throws RecognitionException {
+        EObject current = null;
 
-        AntlrDatatypeRuleToken iv_ruleIngredient = null;
+        EObject iv_ruleIngredient = null;
 
 
         try {
-            // InternalJPCoffe.g:275:50: (iv_ruleIngredient= ruleIngredient EOF )
-            // InternalJPCoffe.g:276:2: iv_ruleIngredient= ruleIngredient EOF
+            // InternalJPCoffe.g:314:51: (iv_ruleIngredient= ruleIngredient EOF )
+            // InternalJPCoffe.g:315:2: iv_ruleIngredient= ruleIngredient EOF
             {
              newCompositeNode(grammarAccess.getIngredientRule()); 
             pushFollow(FOLLOW_1);
@@ -652,7 +707,7 @@ public class InternalJPCoffeParser extends AbstractInternalAntlrParser {
 
             state._fsp--;
 
-             current =iv_ruleIngredient.getText(); 
+             current =iv_ruleIngredient; 
             match(input,EOF,FOLLOW_2); 
 
             }
@@ -671,67 +726,103 @@ public class InternalJPCoffeParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleIngredient"
-    // InternalJPCoffe.g:282:1: ruleIngredient returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : (kw= '*' this_SPACE_1= RULE_SPACE this_NAME_2= RULE_NAME this_Quantity_3= ruleQuantity this_NEW_LINE_4= RULE_NEW_LINE ) ;
-    public final AntlrDatatypeRuleToken ruleIngredient() throws RecognitionException {
-        AntlrDatatypeRuleToken current = new AntlrDatatypeRuleToken();
+    // InternalJPCoffe.g:321:1: ruleIngredient returns [EObject current=null] : (otherlv_0= '*' ( (lv_name_1_0= ruleNAME ) ) ( (lv_quantity_2_0= ruleQuantity ) )? ) ;
+    public final EObject ruleIngredient() throws RecognitionException {
+        EObject current = null;
 
-        Token kw=null;
-        Token this_SPACE_1=null;
-        Token this_NAME_2=null;
-        Token this_NEW_LINE_4=null;
-        AntlrDatatypeRuleToken this_Quantity_3 = null;
+        Token otherlv_0=null;
+        AntlrDatatypeRuleToken lv_name_1_0 = null;
+
+        EObject lv_quantity_2_0 = null;
 
 
 
         	enterRule();
 
         try {
-            // InternalJPCoffe.g:288:2: ( (kw= '*' this_SPACE_1= RULE_SPACE this_NAME_2= RULE_NAME this_Quantity_3= ruleQuantity this_NEW_LINE_4= RULE_NEW_LINE ) )
-            // InternalJPCoffe.g:289:2: (kw= '*' this_SPACE_1= RULE_SPACE this_NAME_2= RULE_NAME this_Quantity_3= ruleQuantity this_NEW_LINE_4= RULE_NEW_LINE )
+            // InternalJPCoffe.g:327:2: ( (otherlv_0= '*' ( (lv_name_1_0= ruleNAME ) ) ( (lv_quantity_2_0= ruleQuantity ) )? ) )
+            // InternalJPCoffe.g:328:2: (otherlv_0= '*' ( (lv_name_1_0= ruleNAME ) ) ( (lv_quantity_2_0= ruleQuantity ) )? )
             {
-            // InternalJPCoffe.g:289:2: (kw= '*' this_SPACE_1= RULE_SPACE this_NAME_2= RULE_NAME this_Quantity_3= ruleQuantity this_NEW_LINE_4= RULE_NEW_LINE )
-            // InternalJPCoffe.g:290:3: kw= '*' this_SPACE_1= RULE_SPACE this_NAME_2= RULE_NAME this_Quantity_3= ruleQuantity this_NEW_LINE_4= RULE_NEW_LINE
+            // InternalJPCoffe.g:328:2: (otherlv_0= '*' ( (lv_name_1_0= ruleNAME ) ) ( (lv_quantity_2_0= ruleQuantity ) )? )
+            // InternalJPCoffe.g:329:3: otherlv_0= '*' ( (lv_name_1_0= ruleNAME ) ) ( (lv_quantity_2_0= ruleQuantity ) )?
             {
-            kw=(Token)match(input,23,FOLLOW_16); 
+            otherlv_0=(Token)match(input,19,FOLLOW_14); 
 
-            			current.merge(kw);
-            			newLeafNode(kw, grammarAccess.getIngredientAccess().getAsteriskKeyword_0());
+            			newLeafNode(otherlv_0, grammarAccess.getIngredientAccess().getAsteriskKeyword_0());
             		
-            this_SPACE_1=(Token)match(input,RULE_SPACE,FOLLOW_17); 
+            // InternalJPCoffe.g:333:3: ( (lv_name_1_0= ruleNAME ) )
+            // InternalJPCoffe.g:334:4: (lv_name_1_0= ruleNAME )
+            {
+            // InternalJPCoffe.g:334:4: (lv_name_1_0= ruleNAME )
+            // InternalJPCoffe.g:335:5: lv_name_1_0= ruleNAME
+            {
 
-            			current.merge(this_SPACE_1);
-            		
-
-            			newLeafNode(this_SPACE_1, grammarAccess.getIngredientAccess().getSPACETerminalRuleCall_1());
-            		
-            this_NAME_2=(Token)match(input,RULE_NAME,FOLLOW_11); 
-
-            			current.merge(this_NAME_2);
-            		
-
-            			newLeafNode(this_NAME_2, grammarAccess.getIngredientAccess().getNAMETerminalRuleCall_2());
-            		
-
-            			newCompositeNode(grammarAccess.getIngredientAccess().getQuantityParserRuleCall_3());
-            		
-            pushFollow(FOLLOW_13);
-            this_Quantity_3=ruleQuantity();
+            					newCompositeNode(grammarAccess.getIngredientAccess().getNameNAMEParserRuleCall_1_0());
+            				
+            pushFollow(FOLLOW_15);
+            lv_name_1_0=ruleNAME();
 
             state._fsp--;
 
 
-            			current.merge(this_Quantity_3);
-            		
+            					if (current==null) {
+            						current = createModelElementForParent(grammarAccess.getIngredientRule());
+            					}
+            					set(
+            						current,
+            						"name",
+            						lv_name_1_0,
+            						"edu.imt.dsl.jpcoffe.JPCoffe.NAME");
+            					afterParserOrEnumRuleCall();
+            				
 
-            			afterParserOrEnumRuleCall();
-            		
-            this_NEW_LINE_4=(Token)match(input,RULE_NEW_LINE,FOLLOW_2); 
+            }
 
-            			current.merge(this_NEW_LINE_4);
-            		
 
-            			newLeafNode(this_NEW_LINE_4, grammarAccess.getIngredientAccess().getNEW_LINETerminalRuleCall_4());
-            		
+            }
+
+            // InternalJPCoffe.g:352:3: ( (lv_quantity_2_0= ruleQuantity ) )?
+            int alt3=2;
+            int LA3_0 = input.LA(1);
+
+            if ( (LA3_0==RULE_INT) ) {
+                alt3=1;
+            }
+            switch (alt3) {
+                case 1 :
+                    // InternalJPCoffe.g:353:4: (lv_quantity_2_0= ruleQuantity )
+                    {
+                    // InternalJPCoffe.g:353:4: (lv_quantity_2_0= ruleQuantity )
+                    // InternalJPCoffe.g:354:5: lv_quantity_2_0= ruleQuantity
+                    {
+
+                    					newCompositeNode(grammarAccess.getIngredientAccess().getQuantityQuantityParserRuleCall_2_0());
+                    				
+                    pushFollow(FOLLOW_2);
+                    lv_quantity_2_0=ruleQuantity();
+
+                    state._fsp--;
+
+
+                    					if (current==null) {
+                    						current = createModelElementForParent(grammarAccess.getIngredientRule());
+                    					}
+                    					set(
+                    						current,
+                    						"quantity",
+                    						lv_quantity_2_0,
+                    						"edu.imt.dsl.jpcoffe.JPCoffe.Quantity");
+                    					afterParserOrEnumRuleCall();
+                    				
+
+                    }
+
+
+                    }
+                    break;
+
+            }
+
 
             }
 
@@ -755,16 +846,16 @@ public class InternalJPCoffeParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleQuantity"
-    // InternalJPCoffe.g:330:1: entryRuleQuantity returns [String current=null] : iv_ruleQuantity= ruleQuantity EOF ;
-    public final String entryRuleQuantity() throws RecognitionException {
-        String current = null;
+    // InternalJPCoffe.g:375:1: entryRuleQuantity returns [EObject current=null] : iv_ruleQuantity= ruleQuantity EOF ;
+    public final EObject entryRuleQuantity() throws RecognitionException {
+        EObject current = null;
 
-        AntlrDatatypeRuleToken iv_ruleQuantity = null;
+        EObject iv_ruleQuantity = null;
 
 
         try {
-            // InternalJPCoffe.g:330:48: (iv_ruleQuantity= ruleQuantity EOF )
-            // InternalJPCoffe.g:331:2: iv_ruleQuantity= ruleQuantity EOF
+            // InternalJPCoffe.g:375:49: (iv_ruleQuantity= ruleQuantity EOF )
+            // InternalJPCoffe.g:376:2: iv_ruleQuantity= ruleQuantity EOF
             {
              newCompositeNode(grammarAccess.getQuantityRule()); 
             pushFollow(FOLLOW_1);
@@ -772,7 +863,7 @@ public class InternalJPCoffeParser extends AbstractInternalAntlrParser {
 
             state._fsp--;
 
-             current =iv_ruleQuantity.getText(); 
+             current =iv_ruleQuantity; 
             match(input,EOF,FOLLOW_2); 
 
             }
@@ -791,31 +882,50 @@ public class InternalJPCoffeParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleQuantity"
-    // InternalJPCoffe.g:337:1: ruleQuantity returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : (this_INT_0= RULE_INT (this_METRIC_UNIT_1= RULE_METRIC_UNIT )? ) ;
-    public final AntlrDatatypeRuleToken ruleQuantity() throws RecognitionException {
-        AntlrDatatypeRuleToken current = new AntlrDatatypeRuleToken();
+    // InternalJPCoffe.g:382:1: ruleQuantity returns [EObject current=null] : ( ( (lv_amount_0_0= RULE_INT ) ) ( (lv_unit_1_0= RULE_METRIC_UNIT ) )? ) ;
+    public final EObject ruleQuantity() throws RecognitionException {
+        EObject current = null;
 
-        Token this_INT_0=null;
-        Token this_METRIC_UNIT_1=null;
+        Token lv_amount_0_0=null;
+        Token lv_unit_1_0=null;
 
 
         	enterRule();
 
         try {
-            // InternalJPCoffe.g:343:2: ( (this_INT_0= RULE_INT (this_METRIC_UNIT_1= RULE_METRIC_UNIT )? ) )
-            // InternalJPCoffe.g:344:2: (this_INT_0= RULE_INT (this_METRIC_UNIT_1= RULE_METRIC_UNIT )? )
+            // InternalJPCoffe.g:388:2: ( ( ( (lv_amount_0_0= RULE_INT ) ) ( (lv_unit_1_0= RULE_METRIC_UNIT ) )? ) )
+            // InternalJPCoffe.g:389:2: ( ( (lv_amount_0_0= RULE_INT ) ) ( (lv_unit_1_0= RULE_METRIC_UNIT ) )? )
             {
-            // InternalJPCoffe.g:344:2: (this_INT_0= RULE_INT (this_METRIC_UNIT_1= RULE_METRIC_UNIT )? )
-            // InternalJPCoffe.g:345:3: this_INT_0= RULE_INT (this_METRIC_UNIT_1= RULE_METRIC_UNIT )?
+            // InternalJPCoffe.g:389:2: ( ( (lv_amount_0_0= RULE_INT ) ) ( (lv_unit_1_0= RULE_METRIC_UNIT ) )? )
+            // InternalJPCoffe.g:390:3: ( (lv_amount_0_0= RULE_INT ) ) ( (lv_unit_1_0= RULE_METRIC_UNIT ) )?
             {
-            this_INT_0=(Token)match(input,RULE_INT,FOLLOW_18); 
+            // InternalJPCoffe.g:390:3: ( (lv_amount_0_0= RULE_INT ) )
+            // InternalJPCoffe.g:391:4: (lv_amount_0_0= RULE_INT )
+            {
+            // InternalJPCoffe.g:391:4: (lv_amount_0_0= RULE_INT )
+            // InternalJPCoffe.g:392:5: lv_amount_0_0= RULE_INT
+            {
+            lv_amount_0_0=(Token)match(input,RULE_INT,FOLLOW_16); 
 
-            			current.merge(this_INT_0);
-            		
+            					newLeafNode(lv_amount_0_0, grammarAccess.getQuantityAccess().getAmountINTTerminalRuleCall_0_0());
+            				
 
-            			newLeafNode(this_INT_0, grammarAccess.getQuantityAccess().getINTTerminalRuleCall_0());
-            		
-            // InternalJPCoffe.g:352:3: (this_METRIC_UNIT_1= RULE_METRIC_UNIT )?
+            					if (current==null) {
+            						current = createModelElement(grammarAccess.getQuantityRule());
+            					}
+            					setWithLastConsumed(
+            						current,
+            						"amount",
+            						lv_amount_0_0,
+            						"edu.imt.dsl.jpcoffe.JPCoffe.INT");
+            				
+
+            }
+
+
+            }
+
+            // InternalJPCoffe.g:408:3: ( (lv_unit_1_0= RULE_METRIC_UNIT ) )?
             int alt4=2;
             int LA4_0 = input.LA(1);
 
@@ -824,15 +934,28 @@ public class InternalJPCoffeParser extends AbstractInternalAntlrParser {
             }
             switch (alt4) {
                 case 1 :
-                    // InternalJPCoffe.g:353:4: this_METRIC_UNIT_1= RULE_METRIC_UNIT
+                    // InternalJPCoffe.g:409:4: (lv_unit_1_0= RULE_METRIC_UNIT )
                     {
-                    this_METRIC_UNIT_1=(Token)match(input,RULE_METRIC_UNIT,FOLLOW_2); 
+                    // InternalJPCoffe.g:409:4: (lv_unit_1_0= RULE_METRIC_UNIT )
+                    // InternalJPCoffe.g:410:5: lv_unit_1_0= RULE_METRIC_UNIT
+                    {
+                    lv_unit_1_0=(Token)match(input,RULE_METRIC_UNIT,FOLLOW_2); 
 
-                    				current.merge(this_METRIC_UNIT_1);
-                    			
+                    					newLeafNode(lv_unit_1_0, grammarAccess.getQuantityAccess().getUnitMETRIC_UNITTerminalRuleCall_1_0());
+                    				
 
-                    				newLeafNode(this_METRIC_UNIT_1, grammarAccess.getQuantityAccess().getMETRIC_UNITTerminalRuleCall_1());
-                    			
+                    					if (current==null) {
+                    						current = createModelElement(grammarAccess.getQuantityRule());
+                    					}
+                    					setWithLastConsumed(
+                    						current,
+                    						"unit",
+                    						lv_unit_1_0,
+                    						"edu.imt.dsl.jpcoffe.JPCoffe.METRIC_UNIT");
+                    				
+
+                    }
+
 
                     }
                     break;
@@ -862,16 +985,16 @@ public class InternalJPCoffeParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleToolsBlock"
-    // InternalJPCoffe.g:365:1: entryRuleToolsBlock returns [String current=null] : iv_ruleToolsBlock= ruleToolsBlock EOF ;
-    public final String entryRuleToolsBlock() throws RecognitionException {
-        String current = null;
+    // InternalJPCoffe.g:430:1: entryRuleToolsBlock returns [EObject current=null] : iv_ruleToolsBlock= ruleToolsBlock EOF ;
+    public final EObject entryRuleToolsBlock() throws RecognitionException {
+        EObject current = null;
 
-        AntlrDatatypeRuleToken iv_ruleToolsBlock = null;
+        EObject iv_ruleToolsBlock = null;
 
 
         try {
-            // InternalJPCoffe.g:365:50: (iv_ruleToolsBlock= ruleToolsBlock EOF )
-            // InternalJPCoffe.g:366:2: iv_ruleToolsBlock= ruleToolsBlock EOF
+            // InternalJPCoffe.g:430:51: (iv_ruleToolsBlock= ruleToolsBlock EOF )
+            // InternalJPCoffe.g:431:2: iv_ruleToolsBlock= ruleToolsBlock EOF
             {
              newCompositeNode(grammarAccess.getToolsBlockRule()); 
             pushFollow(FOLLOW_1);
@@ -879,7 +1002,7 @@ public class InternalJPCoffeParser extends AbstractInternalAntlrParser {
 
             state._fsp--;
 
-             current =iv_ruleToolsBlock.getText(); 
+             current =iv_ruleToolsBlock; 
             match(input,EOF,FOLLOW_2); 
 
             }
@@ -898,83 +1021,84 @@ public class InternalJPCoffeParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleToolsBlock"
-    // InternalJPCoffe.g:372:1: ruleToolsBlock returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : (kw= 'Tools' this_NEW_LINE_1= RULE_NEW_LINE this_TITLE_LINE_2= RULE_TITLE_LINE this_NEW_LINE_3= RULE_NEW_LINE (this_Tool_4= ruleTool )* this_NEW_LINE_5= RULE_NEW_LINE ) ;
-    public final AntlrDatatypeRuleToken ruleToolsBlock() throws RecognitionException {
-        AntlrDatatypeRuleToken current = new AntlrDatatypeRuleToken();
+    // InternalJPCoffe.g:437:1: ruleToolsBlock returns [EObject current=null] : ( () otherlv_1= 'Tools' this_TITLE_LINE_2= RULE_TITLE_LINE ( (lv_toolsList_3_0= ruleTool ) )* ) ;
+    public final EObject ruleToolsBlock() throws RecognitionException {
+        EObject current = null;
 
-        Token kw=null;
-        Token this_NEW_LINE_1=null;
+        Token otherlv_1=null;
         Token this_TITLE_LINE_2=null;
-        Token this_NEW_LINE_3=null;
-        Token this_NEW_LINE_5=null;
-        AntlrDatatypeRuleToken this_Tool_4 = null;
+        EObject lv_toolsList_3_0 = null;
 
 
 
         	enterRule();
 
         try {
-            // InternalJPCoffe.g:378:2: ( (kw= 'Tools' this_NEW_LINE_1= RULE_NEW_LINE this_TITLE_LINE_2= RULE_TITLE_LINE this_NEW_LINE_3= RULE_NEW_LINE (this_Tool_4= ruleTool )* this_NEW_LINE_5= RULE_NEW_LINE ) )
-            // InternalJPCoffe.g:379:2: (kw= 'Tools' this_NEW_LINE_1= RULE_NEW_LINE this_TITLE_LINE_2= RULE_TITLE_LINE this_NEW_LINE_3= RULE_NEW_LINE (this_Tool_4= ruleTool )* this_NEW_LINE_5= RULE_NEW_LINE )
+            // InternalJPCoffe.g:443:2: ( ( () otherlv_1= 'Tools' this_TITLE_LINE_2= RULE_TITLE_LINE ( (lv_toolsList_3_0= ruleTool ) )* ) )
+            // InternalJPCoffe.g:444:2: ( () otherlv_1= 'Tools' this_TITLE_LINE_2= RULE_TITLE_LINE ( (lv_toolsList_3_0= ruleTool ) )* )
             {
-            // InternalJPCoffe.g:379:2: (kw= 'Tools' this_NEW_LINE_1= RULE_NEW_LINE this_TITLE_LINE_2= RULE_TITLE_LINE this_NEW_LINE_3= RULE_NEW_LINE (this_Tool_4= ruleTool )* this_NEW_LINE_5= RULE_NEW_LINE )
-            // InternalJPCoffe.g:380:3: kw= 'Tools' this_NEW_LINE_1= RULE_NEW_LINE this_TITLE_LINE_2= RULE_TITLE_LINE this_NEW_LINE_3= RULE_NEW_LINE (this_Tool_4= ruleTool )* this_NEW_LINE_5= RULE_NEW_LINE
+            // InternalJPCoffe.g:444:2: ( () otherlv_1= 'Tools' this_TITLE_LINE_2= RULE_TITLE_LINE ( (lv_toolsList_3_0= ruleTool ) )* )
+            // InternalJPCoffe.g:445:3: () otherlv_1= 'Tools' this_TITLE_LINE_2= RULE_TITLE_LINE ( (lv_toolsList_3_0= ruleTool ) )*
             {
-            kw=(Token)match(input,24,FOLLOW_13); 
+            // InternalJPCoffe.g:445:3: ()
+            // InternalJPCoffe.g:446:4: 
+            {
 
-            			current.merge(kw);
-            			newLeafNode(kw, grammarAccess.getToolsBlockAccess().getToolsKeyword_0());
-            		
-            this_NEW_LINE_1=(Token)match(input,RULE_NEW_LINE,FOLLOW_14); 
+            				current = forceCreateModelElement(
+            					grammarAccess.getToolsBlockAccess().getToolsBlockAction_0(),
+            					current);
+            			
 
-            			current.merge(this_NEW_LINE_1);
-            		
+            }
 
-            			newLeafNode(this_NEW_LINE_1, grammarAccess.getToolsBlockAccess().getNEW_LINETerminalRuleCall_1());
+            otherlv_1=(Token)match(input,20,FOLLOW_12); 
+
+            			newLeafNode(otherlv_1, grammarAccess.getToolsBlockAccess().getToolsKeyword_1());
             		
             this_TITLE_LINE_2=(Token)match(input,RULE_TITLE_LINE,FOLLOW_13); 
 
-            			current.merge(this_TITLE_LINE_2);
-            		
-
             			newLeafNode(this_TITLE_LINE_2, grammarAccess.getToolsBlockAccess().getTITLE_LINETerminalRuleCall_2());
             		
-            this_NEW_LINE_3=(Token)match(input,RULE_NEW_LINE,FOLLOW_15); 
-
-            			current.merge(this_NEW_LINE_3);
-            		
-
-            			newLeafNode(this_NEW_LINE_3, grammarAccess.getToolsBlockAccess().getNEW_LINETerminalRuleCall_3());
-            		
-            // InternalJPCoffe.g:406:3: (this_Tool_4= ruleTool )*
+            // InternalJPCoffe.g:460:3: ( (lv_toolsList_3_0= ruleTool ) )*
             loop5:
             do {
                 int alt5=2;
                 int LA5_0 = input.LA(1);
 
-                if ( (LA5_0==23) ) {
+                if ( (LA5_0==19) ) {
                     alt5=1;
                 }
 
 
                 switch (alt5) {
             	case 1 :
-            	    // InternalJPCoffe.g:407:4: this_Tool_4= ruleTool
+            	    // InternalJPCoffe.g:461:4: (lv_toolsList_3_0= ruleTool )
+            	    {
+            	    // InternalJPCoffe.g:461:4: (lv_toolsList_3_0= ruleTool )
+            	    // InternalJPCoffe.g:462:5: lv_toolsList_3_0= ruleTool
             	    {
 
-            	    				newCompositeNode(grammarAccess.getToolsBlockAccess().getToolParserRuleCall_4());
-            	    			
-            	    pushFollow(FOLLOW_15);
-            	    this_Tool_4=ruleTool();
+            	    					newCompositeNode(grammarAccess.getToolsBlockAccess().getToolsListToolParserRuleCall_3_0());
+            	    				
+            	    pushFollow(FOLLOW_13);
+            	    lv_toolsList_3_0=ruleTool();
 
             	    state._fsp--;
 
 
-            	    				current.merge(this_Tool_4);
-            	    			
+            	    					if (current==null) {
+            	    						current = createModelElementForParent(grammarAccess.getToolsBlockRule());
+            	    					}
+            	    					add(
+            	    						current,
+            	    						"toolsList",
+            	    						lv_toolsList_3_0,
+            	    						"edu.imt.dsl.jpcoffe.JPCoffe.Tool");
+            	    					afterParserOrEnumRuleCall();
+            	    				
 
-            	    				afterParserOrEnumRuleCall();
-            	    			
+            	    }
+
 
             	    }
             	    break;
@@ -984,13 +1108,6 @@ public class InternalJPCoffeParser extends AbstractInternalAntlrParser {
                 }
             } while (true);
 
-            this_NEW_LINE_5=(Token)match(input,RULE_NEW_LINE,FOLLOW_2); 
-
-            			current.merge(this_NEW_LINE_5);
-            		
-
-            			newLeafNode(this_NEW_LINE_5, grammarAccess.getToolsBlockAccess().getNEW_LINETerminalRuleCall_5());
-            		
 
             }
 
@@ -1014,16 +1131,16 @@ public class InternalJPCoffeParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleTool"
-    // InternalJPCoffe.g:429:1: entryRuleTool returns [String current=null] : iv_ruleTool= ruleTool EOF ;
-    public final String entryRuleTool() throws RecognitionException {
-        String current = null;
+    // InternalJPCoffe.g:483:1: entryRuleTool returns [EObject current=null] : iv_ruleTool= ruleTool EOF ;
+    public final EObject entryRuleTool() throws RecognitionException {
+        EObject current = null;
 
-        AntlrDatatypeRuleToken iv_ruleTool = null;
+        EObject iv_ruleTool = null;
 
 
         try {
-            // InternalJPCoffe.g:429:44: (iv_ruleTool= ruleTool EOF )
-            // InternalJPCoffe.g:430:2: iv_ruleTool= ruleTool EOF
+            // InternalJPCoffe.g:483:45: (iv_ruleTool= ruleTool EOF )
+            // InternalJPCoffe.g:484:2: iv_ruleTool= ruleTool EOF
             {
              newCompositeNode(grammarAccess.getToolRule()); 
             pushFollow(FOLLOW_1);
@@ -1031,7 +1148,7 @@ public class InternalJPCoffeParser extends AbstractInternalAntlrParser {
 
             state._fsp--;
 
-             current =iv_ruleTool.getText(); 
+             current =iv_ruleTool; 
             match(input,EOF,FOLLOW_2); 
 
             }
@@ -1050,51 +1167,59 @@ public class InternalJPCoffeParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleTool"
-    // InternalJPCoffe.g:436:1: ruleTool returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : (kw= '*' this_SPACE_1= RULE_SPACE this_NAME_2= RULE_NAME this_NEW_LINE_3= RULE_NEW_LINE ) ;
-    public final AntlrDatatypeRuleToken ruleTool() throws RecognitionException {
-        AntlrDatatypeRuleToken current = new AntlrDatatypeRuleToken();
+    // InternalJPCoffe.g:490:1: ruleTool returns [EObject current=null] : (otherlv_0= '*' ( (lv_name_1_0= ruleNAME ) ) ) ;
+    public final EObject ruleTool() throws RecognitionException {
+        EObject current = null;
 
-        Token kw=null;
-        Token this_SPACE_1=null;
-        Token this_NAME_2=null;
-        Token this_NEW_LINE_3=null;
+        Token otherlv_0=null;
+        AntlrDatatypeRuleToken lv_name_1_0 = null;
+
 
 
         	enterRule();
 
         try {
-            // InternalJPCoffe.g:442:2: ( (kw= '*' this_SPACE_1= RULE_SPACE this_NAME_2= RULE_NAME this_NEW_LINE_3= RULE_NEW_LINE ) )
-            // InternalJPCoffe.g:443:2: (kw= '*' this_SPACE_1= RULE_SPACE this_NAME_2= RULE_NAME this_NEW_LINE_3= RULE_NEW_LINE )
+            // InternalJPCoffe.g:496:2: ( (otherlv_0= '*' ( (lv_name_1_0= ruleNAME ) ) ) )
+            // InternalJPCoffe.g:497:2: (otherlv_0= '*' ( (lv_name_1_0= ruleNAME ) ) )
             {
-            // InternalJPCoffe.g:443:2: (kw= '*' this_SPACE_1= RULE_SPACE this_NAME_2= RULE_NAME this_NEW_LINE_3= RULE_NEW_LINE )
-            // InternalJPCoffe.g:444:3: kw= '*' this_SPACE_1= RULE_SPACE this_NAME_2= RULE_NAME this_NEW_LINE_3= RULE_NEW_LINE
+            // InternalJPCoffe.g:497:2: (otherlv_0= '*' ( (lv_name_1_0= ruleNAME ) ) )
+            // InternalJPCoffe.g:498:3: otherlv_0= '*' ( (lv_name_1_0= ruleNAME ) )
             {
-            kw=(Token)match(input,23,FOLLOW_16); 
+            otherlv_0=(Token)match(input,19,FOLLOW_14); 
 
-            			current.merge(kw);
-            			newLeafNode(kw, grammarAccess.getToolAccess().getAsteriskKeyword_0());
+            			newLeafNode(otherlv_0, grammarAccess.getToolAccess().getAsteriskKeyword_0());
             		
-            this_SPACE_1=(Token)match(input,RULE_SPACE,FOLLOW_17); 
+            // InternalJPCoffe.g:502:3: ( (lv_name_1_0= ruleNAME ) )
+            // InternalJPCoffe.g:503:4: (lv_name_1_0= ruleNAME )
+            {
+            // InternalJPCoffe.g:503:4: (lv_name_1_0= ruleNAME )
+            // InternalJPCoffe.g:504:5: lv_name_1_0= ruleNAME
+            {
 
-            			current.merge(this_SPACE_1);
-            		
+            					newCompositeNode(grammarAccess.getToolAccess().getNameNAMEParserRuleCall_1_0());
+            				
+            pushFollow(FOLLOW_2);
+            lv_name_1_0=ruleNAME();
 
-            			newLeafNode(this_SPACE_1, grammarAccess.getToolAccess().getSPACETerminalRuleCall_1());
-            		
-            this_NAME_2=(Token)match(input,RULE_NAME,FOLLOW_13); 
+            state._fsp--;
 
-            			current.merge(this_NAME_2);
-            		
 
-            			newLeafNode(this_NAME_2, grammarAccess.getToolAccess().getNAMETerminalRuleCall_2());
-            		
-            this_NEW_LINE_3=(Token)match(input,RULE_NEW_LINE,FOLLOW_2); 
+            					if (current==null) {
+            						current = createModelElementForParent(grammarAccess.getToolRule());
+            					}
+            					set(
+            						current,
+            						"name",
+            						lv_name_1_0,
+            						"edu.imt.dsl.jpcoffe.JPCoffe.NAME");
+            					afterParserOrEnumRuleCall();
+            				
 
-            			current.merge(this_NEW_LINE_3);
-            		
+            }
 
-            			newLeafNode(this_NEW_LINE_3, grammarAccess.getToolAccess().getNEW_LINETerminalRuleCall_3());
-            		
+
+            }
+
 
             }
 
@@ -1118,16 +1243,16 @@ public class InternalJPCoffeParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleStepsBlock"
-    // InternalJPCoffe.g:474:1: entryRuleStepsBlock returns [String current=null] : iv_ruleStepsBlock= ruleStepsBlock EOF ;
-    public final String entryRuleStepsBlock() throws RecognitionException {
-        String current = null;
+    // InternalJPCoffe.g:525:1: entryRuleStepsBlock returns [EObject current=null] : iv_ruleStepsBlock= ruleStepsBlock EOF ;
+    public final EObject entryRuleStepsBlock() throws RecognitionException {
+        EObject current = null;
 
-        AntlrDatatypeRuleToken iv_ruleStepsBlock = null;
+        EObject iv_ruleStepsBlock = null;
 
 
         try {
-            // InternalJPCoffe.g:474:50: (iv_ruleStepsBlock= ruleStepsBlock EOF )
-            // InternalJPCoffe.g:475:2: iv_ruleStepsBlock= ruleStepsBlock EOF
+            // InternalJPCoffe.g:525:51: (iv_ruleStepsBlock= ruleStepsBlock EOF )
+            // InternalJPCoffe.g:526:2: iv_ruleStepsBlock= ruleStepsBlock EOF
             {
              newCompositeNode(grammarAccess.getStepsBlockRule()); 
             pushFollow(FOLLOW_1);
@@ -1135,7 +1260,7 @@ public class InternalJPCoffeParser extends AbstractInternalAntlrParser {
 
             state._fsp--;
 
-             current =iv_ruleStepsBlock.getText(); 
+             current =iv_ruleStepsBlock; 
             match(input,EOF,FOLLOW_2); 
 
             }
@@ -1154,83 +1279,84 @@ public class InternalJPCoffeParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleStepsBlock"
-    // InternalJPCoffe.g:481:1: ruleStepsBlock returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : (kw= 'Steps' this_NEW_LINE_1= RULE_NEW_LINE this_TITLE_LINE_2= RULE_TITLE_LINE this_NEW_LINE_3= RULE_NEW_LINE (this_Step_4= ruleStep )* this_NEW_LINE_5= RULE_NEW_LINE ) ;
-    public final AntlrDatatypeRuleToken ruleStepsBlock() throws RecognitionException {
-        AntlrDatatypeRuleToken current = new AntlrDatatypeRuleToken();
+    // InternalJPCoffe.g:532:1: ruleStepsBlock returns [EObject current=null] : ( () otherlv_1= 'Steps' this_TITLE_LINE_2= RULE_TITLE_LINE ( (lv_stepsList_3_0= ruleStep ) )* ) ;
+    public final EObject ruleStepsBlock() throws RecognitionException {
+        EObject current = null;
 
-        Token kw=null;
-        Token this_NEW_LINE_1=null;
+        Token otherlv_1=null;
         Token this_TITLE_LINE_2=null;
-        Token this_NEW_LINE_3=null;
-        Token this_NEW_LINE_5=null;
-        AntlrDatatypeRuleToken this_Step_4 = null;
+        EObject lv_stepsList_3_0 = null;
 
 
 
         	enterRule();
 
         try {
-            // InternalJPCoffe.g:487:2: ( (kw= 'Steps' this_NEW_LINE_1= RULE_NEW_LINE this_TITLE_LINE_2= RULE_TITLE_LINE this_NEW_LINE_3= RULE_NEW_LINE (this_Step_4= ruleStep )* this_NEW_LINE_5= RULE_NEW_LINE ) )
-            // InternalJPCoffe.g:488:2: (kw= 'Steps' this_NEW_LINE_1= RULE_NEW_LINE this_TITLE_LINE_2= RULE_TITLE_LINE this_NEW_LINE_3= RULE_NEW_LINE (this_Step_4= ruleStep )* this_NEW_LINE_5= RULE_NEW_LINE )
+            // InternalJPCoffe.g:538:2: ( ( () otherlv_1= 'Steps' this_TITLE_LINE_2= RULE_TITLE_LINE ( (lv_stepsList_3_0= ruleStep ) )* ) )
+            // InternalJPCoffe.g:539:2: ( () otherlv_1= 'Steps' this_TITLE_LINE_2= RULE_TITLE_LINE ( (lv_stepsList_3_0= ruleStep ) )* )
             {
-            // InternalJPCoffe.g:488:2: (kw= 'Steps' this_NEW_LINE_1= RULE_NEW_LINE this_TITLE_LINE_2= RULE_TITLE_LINE this_NEW_LINE_3= RULE_NEW_LINE (this_Step_4= ruleStep )* this_NEW_LINE_5= RULE_NEW_LINE )
-            // InternalJPCoffe.g:489:3: kw= 'Steps' this_NEW_LINE_1= RULE_NEW_LINE this_TITLE_LINE_2= RULE_TITLE_LINE this_NEW_LINE_3= RULE_NEW_LINE (this_Step_4= ruleStep )* this_NEW_LINE_5= RULE_NEW_LINE
+            // InternalJPCoffe.g:539:2: ( () otherlv_1= 'Steps' this_TITLE_LINE_2= RULE_TITLE_LINE ( (lv_stepsList_3_0= ruleStep ) )* )
+            // InternalJPCoffe.g:540:3: () otherlv_1= 'Steps' this_TITLE_LINE_2= RULE_TITLE_LINE ( (lv_stepsList_3_0= ruleStep ) )*
             {
-            kw=(Token)match(input,25,FOLLOW_13); 
+            // InternalJPCoffe.g:540:3: ()
+            // InternalJPCoffe.g:541:4: 
+            {
 
-            			current.merge(kw);
-            			newLeafNode(kw, grammarAccess.getStepsBlockAccess().getStepsKeyword_0());
-            		
-            this_NEW_LINE_1=(Token)match(input,RULE_NEW_LINE,FOLLOW_14); 
+            				current = forceCreateModelElement(
+            					grammarAccess.getStepsBlockAccess().getStepsBlockAction_0(),
+            					current);
+            			
 
-            			current.merge(this_NEW_LINE_1);
-            		
+            }
 
-            			newLeafNode(this_NEW_LINE_1, grammarAccess.getStepsBlockAccess().getNEW_LINETerminalRuleCall_1());
-            		
-            this_TITLE_LINE_2=(Token)match(input,RULE_TITLE_LINE,FOLLOW_13); 
+            otherlv_1=(Token)match(input,21,FOLLOW_12); 
 
-            			current.merge(this_TITLE_LINE_2);
+            			newLeafNode(otherlv_1, grammarAccess.getStepsBlockAccess().getStepsKeyword_1());
             		
+            this_TITLE_LINE_2=(Token)match(input,RULE_TITLE_LINE,FOLLOW_17); 
 
             			newLeafNode(this_TITLE_LINE_2, grammarAccess.getStepsBlockAccess().getTITLE_LINETerminalRuleCall_2());
             		
-            this_NEW_LINE_3=(Token)match(input,RULE_NEW_LINE,FOLLOW_19); 
-
-            			current.merge(this_NEW_LINE_3);
-            		
-
-            			newLeafNode(this_NEW_LINE_3, grammarAccess.getStepsBlockAccess().getNEW_LINETerminalRuleCall_3());
-            		
-            // InternalJPCoffe.g:515:3: (this_Step_4= ruleStep )*
+            // InternalJPCoffe.g:555:3: ( (lv_stepsList_3_0= ruleStep ) )*
             loop6:
             do {
                 int alt6=2;
                 int LA6_0 = input.LA(1);
 
-                if ( (LA6_0==18) ) {
+                if ( (LA6_0==14) ) {
                     alt6=1;
                 }
 
 
                 switch (alt6) {
             	case 1 :
-            	    // InternalJPCoffe.g:516:4: this_Step_4= ruleStep
+            	    // InternalJPCoffe.g:556:4: (lv_stepsList_3_0= ruleStep )
+            	    {
+            	    // InternalJPCoffe.g:556:4: (lv_stepsList_3_0= ruleStep )
+            	    // InternalJPCoffe.g:557:5: lv_stepsList_3_0= ruleStep
             	    {
 
-            	    				newCompositeNode(grammarAccess.getStepsBlockAccess().getStepParserRuleCall_4());
-            	    			
-            	    pushFollow(FOLLOW_19);
-            	    this_Step_4=ruleStep();
+            	    					newCompositeNode(grammarAccess.getStepsBlockAccess().getStepsListStepParserRuleCall_3_0());
+            	    				
+            	    pushFollow(FOLLOW_17);
+            	    lv_stepsList_3_0=ruleStep();
 
             	    state._fsp--;
 
 
-            	    				current.merge(this_Step_4);
-            	    			
+            	    					if (current==null) {
+            	    						current = createModelElementForParent(grammarAccess.getStepsBlockRule());
+            	    					}
+            	    					add(
+            	    						current,
+            	    						"stepsList",
+            	    						lv_stepsList_3_0,
+            	    						"edu.imt.dsl.jpcoffe.JPCoffe.Step");
+            	    					afterParserOrEnumRuleCall();
+            	    				
 
-            	    				afterParserOrEnumRuleCall();
-            	    			
+            	    }
+
 
             	    }
             	    break;
@@ -1240,13 +1366,6 @@ public class InternalJPCoffeParser extends AbstractInternalAntlrParser {
                 }
             } while (true);
 
-            this_NEW_LINE_5=(Token)match(input,RULE_NEW_LINE,FOLLOW_2); 
-
-            			current.merge(this_NEW_LINE_5);
-            		
-
-            			newLeafNode(this_NEW_LINE_5, grammarAccess.getStepsBlockAccess().getNEW_LINETerminalRuleCall_5());
-            		
 
             }
 
@@ -1270,16 +1389,16 @@ public class InternalJPCoffeParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleStep"
-    // InternalJPCoffe.g:538:1: entryRuleStep returns [String current=null] : iv_ruleStep= ruleStep EOF ;
-    public final String entryRuleStep() throws RecognitionException {
-        String current = null;
+    // InternalJPCoffe.g:578:1: entryRuleStep returns [EObject current=null] : iv_ruleStep= ruleStep EOF ;
+    public final EObject entryRuleStep() throws RecognitionException {
+        EObject current = null;
 
-        AntlrDatatypeRuleToken iv_ruleStep = null;
+        EObject iv_ruleStep = null;
 
 
         try {
-            // InternalJPCoffe.g:538:44: (iv_ruleStep= ruleStep EOF )
-            // InternalJPCoffe.g:539:2: iv_ruleStep= ruleStep EOF
+            // InternalJPCoffe.g:578:45: (iv_ruleStep= ruleStep EOF )
+            // InternalJPCoffe.g:579:2: iv_ruleStep= ruleStep EOF
             {
              newCompositeNode(grammarAccess.getStepRule()); 
             pushFollow(FOLLOW_1);
@@ -1287,7 +1406,7 @@ public class InternalJPCoffeParser extends AbstractInternalAntlrParser {
 
             state._fsp--;
 
-             current =iv_ruleStep.getText(); 
+             current =iv_ruleStep; 
             match(input,EOF,FOLLOW_2); 
 
             }
@@ -1306,36 +1425,36 @@ public class InternalJPCoffeParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleStep"
-    // InternalJPCoffe.g:545:1: ruleStep returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : (kw= '{' (this_INT_1= RULE_INT )? (kw= ',' this_INT_3= RULE_INT )* kw= '}' this_SPACE_5= RULE_SPACE kw= '->' this_SPACE_7= RULE_SPACE this_INT_8= RULE_INT kw= '.' this_SPACE_10= RULE_SPACE this_TEXT_11= RULE_TEXT this_NEW_LINE_12= RULE_NEW_LINE ) ;
-    public final AntlrDatatypeRuleToken ruleStep() throws RecognitionException {
-        AntlrDatatypeRuleToken current = new AntlrDatatypeRuleToken();
+    // InternalJPCoffe.g:585:1: ruleStep returns [EObject current=null] : (otherlv_0= '{' ( (lv_pred_1_0= RULE_INT ) )? (otherlv_2= ',' ( (lv_pred_3_0= RULE_INT ) ) )* otherlv_4= '}' otherlv_5= '->' ( (lv_num_6_0= RULE_INT ) ) otherlv_7= '.' ( (lv_text_8_0= ruleTEXT ) ) ) ;
+    public final EObject ruleStep() throws RecognitionException {
+        EObject current = null;
 
-        Token kw=null;
-        Token this_INT_1=null;
-        Token this_INT_3=null;
-        Token this_SPACE_5=null;
-        Token this_SPACE_7=null;
-        Token this_INT_8=null;
-        Token this_SPACE_10=null;
-        Token this_TEXT_11=null;
-        Token this_NEW_LINE_12=null;
+        Token otherlv_0=null;
+        Token lv_pred_1_0=null;
+        Token otherlv_2=null;
+        Token lv_pred_3_0=null;
+        Token otherlv_4=null;
+        Token otherlv_5=null;
+        Token lv_num_6_0=null;
+        Token otherlv_7=null;
+        AntlrDatatypeRuleToken lv_text_8_0 = null;
+
 
 
         	enterRule();
 
         try {
-            // InternalJPCoffe.g:551:2: ( (kw= '{' (this_INT_1= RULE_INT )? (kw= ',' this_INT_3= RULE_INT )* kw= '}' this_SPACE_5= RULE_SPACE kw= '->' this_SPACE_7= RULE_SPACE this_INT_8= RULE_INT kw= '.' this_SPACE_10= RULE_SPACE this_TEXT_11= RULE_TEXT this_NEW_LINE_12= RULE_NEW_LINE ) )
-            // InternalJPCoffe.g:552:2: (kw= '{' (this_INT_1= RULE_INT )? (kw= ',' this_INT_3= RULE_INT )* kw= '}' this_SPACE_5= RULE_SPACE kw= '->' this_SPACE_7= RULE_SPACE this_INT_8= RULE_INT kw= '.' this_SPACE_10= RULE_SPACE this_TEXT_11= RULE_TEXT this_NEW_LINE_12= RULE_NEW_LINE )
+            // InternalJPCoffe.g:591:2: ( (otherlv_0= '{' ( (lv_pred_1_0= RULE_INT ) )? (otherlv_2= ',' ( (lv_pred_3_0= RULE_INT ) ) )* otherlv_4= '}' otherlv_5= '->' ( (lv_num_6_0= RULE_INT ) ) otherlv_7= '.' ( (lv_text_8_0= ruleTEXT ) ) ) )
+            // InternalJPCoffe.g:592:2: (otherlv_0= '{' ( (lv_pred_1_0= RULE_INT ) )? (otherlv_2= ',' ( (lv_pred_3_0= RULE_INT ) ) )* otherlv_4= '}' otherlv_5= '->' ( (lv_num_6_0= RULE_INT ) ) otherlv_7= '.' ( (lv_text_8_0= ruleTEXT ) ) )
             {
-            // InternalJPCoffe.g:552:2: (kw= '{' (this_INT_1= RULE_INT )? (kw= ',' this_INT_3= RULE_INT )* kw= '}' this_SPACE_5= RULE_SPACE kw= '->' this_SPACE_7= RULE_SPACE this_INT_8= RULE_INT kw= '.' this_SPACE_10= RULE_SPACE this_TEXT_11= RULE_TEXT this_NEW_LINE_12= RULE_NEW_LINE )
-            // InternalJPCoffe.g:553:3: kw= '{' (this_INT_1= RULE_INT )? (kw= ',' this_INT_3= RULE_INT )* kw= '}' this_SPACE_5= RULE_SPACE kw= '->' this_SPACE_7= RULE_SPACE this_INT_8= RULE_INT kw= '.' this_SPACE_10= RULE_SPACE this_TEXT_11= RULE_TEXT this_NEW_LINE_12= RULE_NEW_LINE
+            // InternalJPCoffe.g:592:2: (otherlv_0= '{' ( (lv_pred_1_0= RULE_INT ) )? (otherlv_2= ',' ( (lv_pred_3_0= RULE_INT ) ) )* otherlv_4= '}' otherlv_5= '->' ( (lv_num_6_0= RULE_INT ) ) otherlv_7= '.' ( (lv_text_8_0= ruleTEXT ) ) )
+            // InternalJPCoffe.g:593:3: otherlv_0= '{' ( (lv_pred_1_0= RULE_INT ) )? (otherlv_2= ',' ( (lv_pred_3_0= RULE_INT ) ) )* otherlv_4= '}' otherlv_5= '->' ( (lv_num_6_0= RULE_INT ) ) otherlv_7= '.' ( (lv_text_8_0= ruleTEXT ) )
             {
-            kw=(Token)match(input,18,FOLLOW_20); 
+            otherlv_0=(Token)match(input,14,FOLLOW_18); 
 
-            			current.merge(kw);
-            			newLeafNode(kw, grammarAccess.getStepAccess().getLeftCurlyBracketKeyword_0());
+            			newLeafNode(otherlv_0, grammarAccess.getStepAccess().getLeftCurlyBracketKeyword_0());
             		
-            // InternalJPCoffe.g:558:3: (this_INT_1= RULE_INT )?
+            // InternalJPCoffe.g:597:3: ( (lv_pred_1_0= RULE_INT ) )?
             int alt7=2;
             int LA7_0 = input.LA(1);
 
@@ -1344,48 +1463,79 @@ public class InternalJPCoffeParser extends AbstractInternalAntlrParser {
             }
             switch (alt7) {
                 case 1 :
-                    // InternalJPCoffe.g:559:4: this_INT_1= RULE_INT
+                    // InternalJPCoffe.g:598:4: (lv_pred_1_0= RULE_INT )
                     {
-                    this_INT_1=(Token)match(input,RULE_INT,FOLLOW_21); 
+                    // InternalJPCoffe.g:598:4: (lv_pred_1_0= RULE_INT )
+                    // InternalJPCoffe.g:599:5: lv_pred_1_0= RULE_INT
+                    {
+                    lv_pred_1_0=(Token)match(input,RULE_INT,FOLLOW_19); 
 
-                    				current.merge(this_INT_1);
-                    			
+                    					newLeafNode(lv_pred_1_0, grammarAccess.getStepAccess().getPredINTTerminalRuleCall_1_0());
+                    				
 
-                    				newLeafNode(this_INT_1, grammarAccess.getStepAccess().getINTTerminalRuleCall_1());
-                    			
+                    					if (current==null) {
+                    						current = createModelElement(grammarAccess.getStepRule());
+                    					}
+                    					addWithLastConsumed(
+                    						current,
+                    						"pred",
+                    						lv_pred_1_0,
+                    						"edu.imt.dsl.jpcoffe.JPCoffe.INT");
+                    				
+
+                    }
+
 
                     }
                     break;
 
             }
 
-            // InternalJPCoffe.g:567:3: (kw= ',' this_INT_3= RULE_INT )*
+            // InternalJPCoffe.g:615:3: (otherlv_2= ',' ( (lv_pred_3_0= RULE_INT ) ) )*
             loop8:
             do {
                 int alt8=2;
                 int LA8_0 = input.LA(1);
 
-                if ( (LA8_0==26) ) {
+                if ( (LA8_0==22) ) {
                     alt8=1;
                 }
 
 
                 switch (alt8) {
             	case 1 :
-            	    // InternalJPCoffe.g:568:4: kw= ',' this_INT_3= RULE_INT
+            	    // InternalJPCoffe.g:616:4: otherlv_2= ',' ( (lv_pred_3_0= RULE_INT ) )
             	    {
-            	    kw=(Token)match(input,26,FOLLOW_11); 
+            	    otherlv_2=(Token)match(input,22,FOLLOW_10); 
 
-            	    				current.merge(kw);
-            	    				newLeafNode(kw, grammarAccess.getStepAccess().getCommaKeyword_2_0());
+            	    				newLeafNode(otherlv_2, grammarAccess.getStepAccess().getCommaKeyword_2_0());
             	    			
-            	    this_INT_3=(Token)match(input,RULE_INT,FOLLOW_21); 
+            	    // InternalJPCoffe.g:620:4: ( (lv_pred_3_0= RULE_INT ) )
+            	    // InternalJPCoffe.g:621:5: (lv_pred_3_0= RULE_INT )
+            	    {
+            	    // InternalJPCoffe.g:621:5: (lv_pred_3_0= RULE_INT )
+            	    // InternalJPCoffe.g:622:6: lv_pred_3_0= RULE_INT
+            	    {
+            	    lv_pred_3_0=(Token)match(input,RULE_INT,FOLLOW_19); 
 
-            	    				current.merge(this_INT_3);
-            	    			
+            	    						newLeafNode(lv_pred_3_0, grammarAccess.getStepAccess().getPredINTTerminalRuleCall_2_1_0());
+            	    					
 
-            	    				newLeafNode(this_INT_3, grammarAccess.getStepAccess().getINTTerminalRuleCall_2_1());
-            	    			
+            	    						if (current==null) {
+            	    							current = createModelElement(grammarAccess.getStepRule());
+            	    						}
+            	    						addWithLastConsumed(
+            	    							current,
+            	    							"pred",
+            	    							lv_pred_3_0,
+            	    							"edu.imt.dsl.jpcoffe.JPCoffe.INT");
+            	    					
+
+            	    }
+
+
+            	    }
+
 
             	    }
             	    break;
@@ -1395,63 +1545,75 @@ public class InternalJPCoffeParser extends AbstractInternalAntlrParser {
                 }
             } while (true);
 
-            kw=(Token)match(input,19,FOLLOW_16); 
+            otherlv_4=(Token)match(input,15,FOLLOW_20); 
 
-            			current.merge(kw);
-            			newLeafNode(kw, grammarAccess.getStepAccess().getRightCurlyBracketKeyword_3());
+            			newLeafNode(otherlv_4, grammarAccess.getStepAccess().getRightCurlyBracketKeyword_3());
             		
-            this_SPACE_5=(Token)match(input,RULE_SPACE,FOLLOW_22); 
+            otherlv_5=(Token)match(input,23,FOLLOW_10); 
 
-            			current.merge(this_SPACE_5);
+            			newLeafNode(otherlv_5, grammarAccess.getStepAccess().getHyphenMinusGreaterThanSignKeyword_4());
             		
+            // InternalJPCoffe.g:647:3: ( (lv_num_6_0= RULE_INT ) )
+            // InternalJPCoffe.g:648:4: (lv_num_6_0= RULE_INT )
+            {
+            // InternalJPCoffe.g:648:4: (lv_num_6_0= RULE_INT )
+            // InternalJPCoffe.g:649:5: lv_num_6_0= RULE_INT
+            {
+            lv_num_6_0=(Token)match(input,RULE_INT,FOLLOW_21); 
 
-            			newLeafNode(this_SPACE_5, grammarAccess.getStepAccess().getSPACETerminalRuleCall_4());
-            		
-            kw=(Token)match(input,27,FOLLOW_16); 
+            					newLeafNode(lv_num_6_0, grammarAccess.getStepAccess().getNumINTTerminalRuleCall_5_0());
+            				
 
-            			current.merge(kw);
-            			newLeafNode(kw, grammarAccess.getStepAccess().getHyphenMinusGreaterThanSignKeyword_5());
-            		
-            this_SPACE_7=(Token)match(input,RULE_SPACE,FOLLOW_11); 
+            					if (current==null) {
+            						current = createModelElement(grammarAccess.getStepRule());
+            					}
+            					setWithLastConsumed(
+            						current,
+            						"num",
+            						lv_num_6_0,
+            						"edu.imt.dsl.jpcoffe.JPCoffe.INT");
+            				
 
-            			current.merge(this_SPACE_7);
-            		
+            }
 
-            			newLeafNode(this_SPACE_7, grammarAccess.getStepAccess().getSPACETerminalRuleCall_6());
-            		
-            this_INT_8=(Token)match(input,RULE_INT,FOLLOW_23); 
 
-            			current.merge(this_INT_8);
-            		
+            }
 
-            			newLeafNode(this_INT_8, grammarAccess.getStepAccess().getINTTerminalRuleCall_7());
-            		
-            kw=(Token)match(input,28,FOLLOW_16); 
+            otherlv_7=(Token)match(input,24,FOLLOW_22); 
 
-            			current.merge(kw);
-            			newLeafNode(kw, grammarAccess.getStepAccess().getFullStopKeyword_8());
+            			newLeafNode(otherlv_7, grammarAccess.getStepAccess().getFullStopKeyword_6());
             		
-            this_SPACE_10=(Token)match(input,RULE_SPACE,FOLLOW_24); 
+            // InternalJPCoffe.g:669:3: ( (lv_text_8_0= ruleTEXT ) )
+            // InternalJPCoffe.g:670:4: (lv_text_8_0= ruleTEXT )
+            {
+            // InternalJPCoffe.g:670:4: (lv_text_8_0= ruleTEXT )
+            // InternalJPCoffe.g:671:5: lv_text_8_0= ruleTEXT
+            {
 
-            			current.merge(this_SPACE_10);
-            		
+            					newCompositeNode(grammarAccess.getStepAccess().getTextTEXTParserRuleCall_7_0());
+            				
+            pushFollow(FOLLOW_2);
+            lv_text_8_0=ruleTEXT();
 
-            			newLeafNode(this_SPACE_10, grammarAccess.getStepAccess().getSPACETerminalRuleCall_9());
-            		
-            this_TEXT_11=(Token)match(input,RULE_TEXT,FOLLOW_13); 
+            state._fsp--;
 
-            			current.merge(this_TEXT_11);
-            		
 
-            			newLeafNode(this_TEXT_11, grammarAccess.getStepAccess().getTEXTTerminalRuleCall_10());
-            		
-            this_NEW_LINE_12=(Token)match(input,RULE_NEW_LINE,FOLLOW_2); 
+            					if (current==null) {
+            						current = createModelElementForParent(grammarAccess.getStepRule());
+            					}
+            					set(
+            						current,
+            						"text",
+            						lv_text_8_0,
+            						"edu.imt.dsl.jpcoffe.JPCoffe.TEXT");
+            					afterParserOrEnumRuleCall();
+            				
 
-            			current.merge(this_NEW_LINE_12);
-            		
+            }
 
-            			newLeafNode(this_NEW_LINE_12, grammarAccess.getStepAccess().getNEW_LINETerminalRuleCall_11());
-            		
+
+            }
+
 
             }
 
@@ -1473,6 +1635,242 @@ public class InternalJPCoffeParser extends AbstractInternalAntlrParser {
     }
     // $ANTLR end "ruleStep"
 
+
+    // $ANTLR start "entryRuleNAME"
+    // InternalJPCoffe.g:692:1: entryRuleNAME returns [String current=null] : iv_ruleNAME= ruleNAME EOF ;
+    public final String entryRuleNAME() throws RecognitionException {
+        String current = null;
+
+        AntlrDatatypeRuleToken iv_ruleNAME = null;
+
+
+        try {
+            // InternalJPCoffe.g:692:44: (iv_ruleNAME= ruleNAME EOF )
+            // InternalJPCoffe.g:693:2: iv_ruleNAME= ruleNAME EOF
+            {
+             newCompositeNode(grammarAccess.getNAMERule()); 
+            pushFollow(FOLLOW_1);
+            iv_ruleNAME=ruleNAME();
+
+            state._fsp--;
+
+             current =iv_ruleNAME.getText(); 
+            match(input,EOF,FOLLOW_2); 
+
+            }
+
+        }
+
+            catch (RecognitionException re) {
+                recover(input,re);
+                appendSkippedTokens();
+            }
+        finally {
+        }
+        return current;
+    }
+    // $ANTLR end "entryRuleNAME"
+
+
+    // $ANTLR start "ruleNAME"
+    // InternalJPCoffe.g:699:1: ruleNAME returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : (this_MAJ_WORD_0= RULE_MAJ_WORD (this_WORD_1= RULE_WORD )* ) ;
+    public final AntlrDatatypeRuleToken ruleNAME() throws RecognitionException {
+        AntlrDatatypeRuleToken current = new AntlrDatatypeRuleToken();
+
+        Token this_MAJ_WORD_0=null;
+        Token this_WORD_1=null;
+
+
+        	enterRule();
+
+        try {
+            // InternalJPCoffe.g:705:2: ( (this_MAJ_WORD_0= RULE_MAJ_WORD (this_WORD_1= RULE_WORD )* ) )
+            // InternalJPCoffe.g:706:2: (this_MAJ_WORD_0= RULE_MAJ_WORD (this_WORD_1= RULE_WORD )* )
+            {
+            // InternalJPCoffe.g:706:2: (this_MAJ_WORD_0= RULE_MAJ_WORD (this_WORD_1= RULE_WORD )* )
+            // InternalJPCoffe.g:707:3: this_MAJ_WORD_0= RULE_MAJ_WORD (this_WORD_1= RULE_WORD )*
+            {
+            this_MAJ_WORD_0=(Token)match(input,RULE_MAJ_WORD,FOLLOW_23); 
+
+            			current.merge(this_MAJ_WORD_0);
+            		
+
+            			newLeafNode(this_MAJ_WORD_0, grammarAccess.getNAMEAccess().getMAJ_WORDTerminalRuleCall_0());
+            		
+            // InternalJPCoffe.g:714:3: (this_WORD_1= RULE_WORD )*
+            loop9:
+            do {
+                int alt9=2;
+                int LA9_0 = input.LA(1);
+
+                if ( (LA9_0==RULE_WORD) ) {
+                    alt9=1;
+                }
+
+
+                switch (alt9) {
+            	case 1 :
+            	    // InternalJPCoffe.g:715:4: this_WORD_1= RULE_WORD
+            	    {
+            	    this_WORD_1=(Token)match(input,RULE_WORD,FOLLOW_23); 
+
+            	    				current.merge(this_WORD_1);
+            	    			
+
+            	    				newLeafNode(this_WORD_1, grammarAccess.getNAMEAccess().getWORDTerminalRuleCall_1());
+            	    			
+
+            	    }
+            	    break;
+
+            	default :
+            	    break loop9;
+                }
+            } while (true);
+
+
+            }
+
+
+            }
+
+
+            	leaveRule();
+
+        }
+
+            catch (RecognitionException re) {
+                recover(input,re);
+                appendSkippedTokens();
+            }
+        finally {
+        }
+        return current;
+    }
+    // $ANTLR end "ruleNAME"
+
+
+    // $ANTLR start "entryRuleTEXT"
+    // InternalJPCoffe.g:727:1: entryRuleTEXT returns [String current=null] : iv_ruleTEXT= ruleTEXT EOF ;
+    public final String entryRuleTEXT() throws RecognitionException {
+        String current = null;
+
+        AntlrDatatypeRuleToken iv_ruleTEXT = null;
+
+
+        try {
+            // InternalJPCoffe.g:727:44: (iv_ruleTEXT= ruleTEXT EOF )
+            // InternalJPCoffe.g:728:2: iv_ruleTEXT= ruleTEXT EOF
+            {
+             newCompositeNode(grammarAccess.getTEXTRule()); 
+            pushFollow(FOLLOW_1);
+            iv_ruleTEXT=ruleTEXT();
+
+            state._fsp--;
+
+             current =iv_ruleTEXT.getText(); 
+            match(input,EOF,FOLLOW_2); 
+
+            }
+
+        }
+
+            catch (RecognitionException re) {
+                recover(input,re);
+                appendSkippedTokens();
+            }
+        finally {
+        }
+        return current;
+    }
+    // $ANTLR end "entryRuleTEXT"
+
+
+    // $ANTLR start "ruleTEXT"
+    // InternalJPCoffe.g:734:1: ruleTEXT returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : (this_MAJ_WORD_0= RULE_MAJ_WORD | this_WORD_1= RULE_WORD )+ ;
+    public final AntlrDatatypeRuleToken ruleTEXT() throws RecognitionException {
+        AntlrDatatypeRuleToken current = new AntlrDatatypeRuleToken();
+
+        Token this_MAJ_WORD_0=null;
+        Token this_WORD_1=null;
+
+
+        	enterRule();
+
+        try {
+            // InternalJPCoffe.g:740:2: ( (this_MAJ_WORD_0= RULE_MAJ_WORD | this_WORD_1= RULE_WORD )+ )
+            // InternalJPCoffe.g:741:2: (this_MAJ_WORD_0= RULE_MAJ_WORD | this_WORD_1= RULE_WORD )+
+            {
+            // InternalJPCoffe.g:741:2: (this_MAJ_WORD_0= RULE_MAJ_WORD | this_WORD_1= RULE_WORD )+
+            int cnt10=0;
+            loop10:
+            do {
+                int alt10=3;
+                int LA10_0 = input.LA(1);
+
+                if ( (LA10_0==RULE_MAJ_WORD) ) {
+                    alt10=1;
+                }
+                else if ( (LA10_0==RULE_WORD) ) {
+                    alt10=2;
+                }
+
+
+                switch (alt10) {
+            	case 1 :
+            	    // InternalJPCoffe.g:742:3: this_MAJ_WORD_0= RULE_MAJ_WORD
+            	    {
+            	    this_MAJ_WORD_0=(Token)match(input,RULE_MAJ_WORD,FOLLOW_24); 
+
+            	    			current.merge(this_MAJ_WORD_0);
+            	    		
+
+            	    			newLeafNode(this_MAJ_WORD_0, grammarAccess.getTEXTAccess().getMAJ_WORDTerminalRuleCall_0());
+            	    		
+
+            	    }
+            	    break;
+            	case 2 :
+            	    // InternalJPCoffe.g:750:3: this_WORD_1= RULE_WORD
+            	    {
+            	    this_WORD_1=(Token)match(input,RULE_WORD,FOLLOW_24); 
+
+            	    			current.merge(this_WORD_1);
+            	    		
+
+            	    			newLeafNode(this_WORD_1, grammarAccess.getTEXTAccess().getWORDTerminalRuleCall_1());
+            	    		
+
+            	    }
+            	    break;
+
+            	default :
+            	    if ( cnt10 >= 1 ) break loop10;
+                        EarlyExitException eee =
+                            new EarlyExitException(10, input);
+                        throw eee;
+                }
+                cnt10++;
+            } while (true);
+
+
+            }
+
+
+            	leaveRule();
+
+        }
+
+            catch (RecognitionException re) {
+                recover(input,re);
+                appendSkippedTokens();
+            }
+        finally {
+        }
+        return current;
+    }
+    // $ANTLR end "ruleTEXT"
+
     // Delegated rules
 
 
@@ -1480,27 +1878,27 @@ public class InternalJPCoffeParser extends AbstractInternalAntlrParser {
 
     public static final BitSet FOLLOW_1 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_2 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_3 = new BitSet(new long[]{0x0000000000020002L});
-    public static final BitSet FOLLOW_4 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_5 = new BitSet(new long[]{0x0000000000040000L});
-    public static final BitSet FOLLOW_6 = new BitSet(new long[]{0x0000000000100000L});
-    public static final BitSet FOLLOW_7 = new BitSet(new long[]{0x0000000000400000L});
-    public static final BitSet FOLLOW_8 = new BitSet(new long[]{0x0000000001000000L});
-    public static final BitSet FOLLOW_9 = new BitSet(new long[]{0x0000000002000000L});
-    public static final BitSet FOLLOW_10 = new BitSet(new long[]{0x0000000000080000L});
-    public static final BitSet FOLLOW_11 = new BitSet(new long[]{0x0000000000000020L});
-    public static final BitSet FOLLOW_12 = new BitSet(new long[]{0x0000000000200002L});
-    public static final BitSet FOLLOW_13 = new BitSet(new long[]{0x0000000000000040L});
-    public static final BitSet FOLLOW_14 = new BitSet(new long[]{0x0000000000000080L});
-    public static final BitSet FOLLOW_15 = new BitSet(new long[]{0x0000000000800040L});
-    public static final BitSet FOLLOW_16 = new BitSet(new long[]{0x0000000000000100L});
-    public static final BitSet FOLLOW_17 = new BitSet(new long[]{0x0000000000000200L});
-    public static final BitSet FOLLOW_18 = new BitSet(new long[]{0x0000000000000402L});
-    public static final BitSet FOLLOW_19 = new BitSet(new long[]{0x0000000000040040L});
-    public static final BitSet FOLLOW_20 = new BitSet(new long[]{0x0000000004080020L});
-    public static final BitSet FOLLOW_21 = new BitSet(new long[]{0x0000000004080000L});
-    public static final BitSet FOLLOW_22 = new BitSet(new long[]{0x0000000008000000L});
-    public static final BitSet FOLLOW_23 = new BitSet(new long[]{0x0000000010000000L});
-    public static final BitSet FOLLOW_24 = new BitSet(new long[]{0x0000000000000800L});
+    public static final BitSet FOLLOW_3 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_4 = new BitSet(new long[]{0x0000000000004000L});
+    public static final BitSet FOLLOW_5 = new BitSet(new long[]{0x0000000000010000L});
+    public static final BitSet FOLLOW_6 = new BitSet(new long[]{0x0000000000040000L});
+    public static final BitSet FOLLOW_7 = new BitSet(new long[]{0x0000000000100000L});
+    public static final BitSet FOLLOW_8 = new BitSet(new long[]{0x0000000000200000L});
+    public static final BitSet FOLLOW_9 = new BitSet(new long[]{0x0000000000008000L});
+    public static final BitSet FOLLOW_10 = new BitSet(new long[]{0x0000000000000020L});
+    public static final BitSet FOLLOW_11 = new BitSet(new long[]{0x0000000000020002L});
+    public static final BitSet FOLLOW_12 = new BitSet(new long[]{0x0000000000000040L});
+    public static final BitSet FOLLOW_13 = new BitSet(new long[]{0x0000000000080002L});
+    public static final BitSet FOLLOW_14 = new BitSet(new long[]{0x0000000000000100L});
+    public static final BitSet FOLLOW_15 = new BitSet(new long[]{0x0000000000000022L});
+    public static final BitSet FOLLOW_16 = new BitSet(new long[]{0x0000000000000082L});
+    public static final BitSet FOLLOW_17 = new BitSet(new long[]{0x0000000000004002L});
+    public static final BitSet FOLLOW_18 = new BitSet(new long[]{0x0000000000408020L});
+    public static final BitSet FOLLOW_19 = new BitSet(new long[]{0x0000000000408000L});
+    public static final BitSet FOLLOW_20 = new BitSet(new long[]{0x0000000000800000L});
+    public static final BitSet FOLLOW_21 = new BitSet(new long[]{0x0000000001000000L});
+    public static final BitSet FOLLOW_22 = new BitSet(new long[]{0x0000000000000300L});
+    public static final BitSet FOLLOW_23 = new BitSet(new long[]{0x0000000000000202L});
+    public static final BitSet FOLLOW_24 = new BitSet(new long[]{0x0000000000000302L});
 
 }

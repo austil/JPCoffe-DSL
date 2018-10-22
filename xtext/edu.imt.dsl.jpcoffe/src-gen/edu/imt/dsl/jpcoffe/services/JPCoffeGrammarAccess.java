@@ -6,6 +6,8 @@ package edu.imt.dsl.jpcoffe.services;
 import com.google.inject.Inject;
 import com.google.inject.Singleton;
 import java.util.List;
+import org.eclipse.xtext.Action;
+import org.eclipse.xtext.Alternatives;
 import org.eclipse.xtext.Assignment;
 import org.eclipse.xtext.Grammar;
 import org.eclipse.xtext.GrammarUtil;
@@ -14,7 +16,6 @@ import org.eclipse.xtext.Keyword;
 import org.eclipse.xtext.ParserRule;
 import org.eclipse.xtext.RuleCall;
 import org.eclipse.xtext.TerminalRule;
-import org.eclipse.xtext.common.services.TerminalsGrammarAccess;
 import org.eclipse.xtext.service.AbstractElementFinder.AbstractGrammarElementFinder;
 import org.eclipse.xtext.service.GrammarProvider;
 
@@ -23,65 +24,81 @@ public class JPCoffeGrammarAccess extends AbstractGrammarElementFinder {
 	
 	public class MainElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "edu.imt.dsl.jpcoffe.JPCoffe.Main");
-		private final Assignment cRecipesAssignment = (Assignment)rule.eContents().get(1);
-		private final RuleCall cRecipesRecipeParserRuleCall_0 = (RuleCall)cRecipesAssignment.eContents().get(0);
+		private final RuleCall cRecipeParserRuleCall = (RuleCall)rule.eContents().get(1);
 		
 		//Main:
-		//	recipes+=Recipe+;
+		//	Recipe;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//recipes+=Recipe+
-		public Assignment getRecipesAssignment() { return cRecipesAssignment; }
-		
 		//Recipe
-		public RuleCall getRecipesRecipeParserRuleCall_0() { return cRecipesRecipeParserRuleCall_0; }
+		public RuleCall getRecipeParserRuleCall() { return cRecipeParserRuleCall; }
 	}
 	public class RecipeElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "edu.imt.dsl.jpcoffe.JPCoffe.Recipe");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Keyword cRecipeKeyword_0 = (Keyword)cGroup.eContents().get(0);
-		private final RuleCall cSTRINGTerminalRuleCall_1 = (RuleCall)cGroup.eContents().get(1);
+		private final Assignment cNameAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final RuleCall cNameSTRINGTerminalRuleCall_1_0 = (RuleCall)cNameAssignment_1.eContents().get(0);
 		private final Keyword cLeftCurlyBracketKeyword_2 = (Keyword)cGroup.eContents().get(2);
-		private final RuleCall cPortionNBParserRuleCall_3 = (RuleCall)cGroup.eContents().get(3);
-		private final RuleCall cIngredientsBlockParserRuleCall_4 = (RuleCall)cGroup.eContents().get(4);
-		private final RuleCall cToolsBlockParserRuleCall_5 = (RuleCall)cGroup.eContents().get(5);
-		private final RuleCall cStepsBlockParserRuleCall_6 = (RuleCall)cGroup.eContents().get(6);
+		private final Assignment cPortionAssignment_3 = (Assignment)cGroup.eContents().get(3);
+		private final RuleCall cPortionPortionNBParserRuleCall_3_0 = (RuleCall)cPortionAssignment_3.eContents().get(0);
+		private final Assignment cIngredientsAssignment_4 = (Assignment)cGroup.eContents().get(4);
+		private final RuleCall cIngredientsIngredientsBlockParserRuleCall_4_0 = (RuleCall)cIngredientsAssignment_4.eContents().get(0);
+		private final Assignment cToolsAssignment_5 = (Assignment)cGroup.eContents().get(5);
+		private final RuleCall cToolsToolsBlockParserRuleCall_5_0 = (RuleCall)cToolsAssignment_5.eContents().get(0);
+		private final Assignment cStepsAssignment_6 = (Assignment)cGroup.eContents().get(6);
+		private final RuleCall cStepsStepsBlockParserRuleCall_6_0 = (RuleCall)cStepsAssignment_6.eContents().get(0);
 		private final Keyword cRightCurlyBracketKeyword_7 = (Keyword)cGroup.eContents().get(7);
 		
 		//Recipe:
-		//	"Recipe" STRING "{"
-		//	PortionNB
-		//	IngredientsBlock
-		//	ToolsBlock
-		//	StepsBlock
-		//	"}";
+		//	'Recipe' name=STRING '{'
+		//	portion=PortionNB
+		//	ingredients=IngredientsBlock
+		//	tools=ToolsBlock
+		//	steps=StepsBlock
+		//	'}';
 		@Override public ParserRule getRule() { return rule; }
 		
-		//"Recipe" STRING "{" PortionNB IngredientsBlock ToolsBlock StepsBlock "}"
+		//'Recipe' name=STRING '{' portion=PortionNB ingredients=IngredientsBlock tools=ToolsBlock steps=StepsBlock '}'
 		public Group getGroup() { return cGroup; }
 		
-		//"Recipe"
+		//'Recipe'
 		public Keyword getRecipeKeyword_0() { return cRecipeKeyword_0; }
 		
-		//STRING
-		public RuleCall getSTRINGTerminalRuleCall_1() { return cSTRINGTerminalRuleCall_1; }
+		//name=STRING
+		public Assignment getNameAssignment_1() { return cNameAssignment_1; }
 		
-		//"{"
+		//STRING
+		public RuleCall getNameSTRINGTerminalRuleCall_1_0() { return cNameSTRINGTerminalRuleCall_1_0; }
+		
+		//'{'
 		public Keyword getLeftCurlyBracketKeyword_2() { return cLeftCurlyBracketKeyword_2; }
 		
+		//portion=PortionNB
+		public Assignment getPortionAssignment_3() { return cPortionAssignment_3; }
+		
 		//PortionNB
-		public RuleCall getPortionNBParserRuleCall_3() { return cPortionNBParserRuleCall_3; }
+		public RuleCall getPortionPortionNBParserRuleCall_3_0() { return cPortionPortionNBParserRuleCall_3_0; }
+		
+		//ingredients=IngredientsBlock
+		public Assignment getIngredientsAssignment_4() { return cIngredientsAssignment_4; }
 		
 		//IngredientsBlock
-		public RuleCall getIngredientsBlockParserRuleCall_4() { return cIngredientsBlockParserRuleCall_4; }
+		public RuleCall getIngredientsIngredientsBlockParserRuleCall_4_0() { return cIngredientsIngredientsBlockParserRuleCall_4_0; }
+		
+		//tools=ToolsBlock
+		public Assignment getToolsAssignment_5() { return cToolsAssignment_5; }
 		
 		//ToolsBlock
-		public RuleCall getToolsBlockParserRuleCall_5() { return cToolsBlockParserRuleCall_5; }
+		public RuleCall getToolsToolsBlockParserRuleCall_5_0() { return cToolsToolsBlockParserRuleCall_5_0; }
+		
+		//steps=StepsBlock
+		public Assignment getStepsAssignment_6() { return cStepsAssignment_6; }
 		
 		//StepsBlock
-		public RuleCall getStepsBlockParserRuleCall_6() { return cStepsBlockParserRuleCall_6; }
+		public RuleCall getStepsStepsBlockParserRuleCall_6_0() { return cStepsStepsBlockParserRuleCall_6_0; }
 		
-		//"}"
+		//'}'
 		public Keyword getRightCurlyBracketKeyword_7() { return cRightCurlyBracketKeyword_7; }
 	}
 	public class PortionNBElements extends AbstractParserRuleElementFinder {
@@ -114,263 +131,292 @@ public class JPCoffeGrammarAccess extends AbstractGrammarElementFinder {
 	public class IngredientsBlockElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "edu.imt.dsl.jpcoffe.JPCoffe.IngredientsBlock");
 		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Keyword cIngredientsKeyword_0 = (Keyword)cGroup.eContents().get(0);
-		private final RuleCall cNEW_LINETerminalRuleCall_1 = (RuleCall)cGroup.eContents().get(1);
+		private final Action cIngredientsBlockAction_0 = (Action)cGroup.eContents().get(0);
+		private final Keyword cIngredientsKeyword_1 = (Keyword)cGroup.eContents().get(1);
 		private final RuleCall cTITLE_LINETerminalRuleCall_2 = (RuleCall)cGroup.eContents().get(2);
-		private final RuleCall cNEW_LINETerminalRuleCall_3 = (RuleCall)cGroup.eContents().get(3);
-		private final RuleCall cIngredientParserRuleCall_4 = (RuleCall)cGroup.eContents().get(4);
-		private final RuleCall cNEW_LINETerminalRuleCall_5 = (RuleCall)cGroup.eContents().get(5);
+		private final Assignment cIngredientsListAssignment_3 = (Assignment)cGroup.eContents().get(3);
+		private final RuleCall cIngredientsListIngredientParserRuleCall_3_0 = (RuleCall)cIngredientsListAssignment_3.eContents().get(0);
 		
 		//IngredientsBlock:
-		//	"Ingredients" NEW_LINE
-		//	TITLE_LINE NEW_LINE
-		//	Ingredient*
-		//	NEW_LINE;
+		//	{IngredientsBlock} "Ingredients"
+		//	TITLE_LINE
+		//	ingredientsList+=Ingredient*;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//"Ingredients" NEW_LINE TITLE_LINE NEW_LINE Ingredient* NEW_LINE
+		//{IngredientsBlock} "Ingredients" TITLE_LINE ingredientsList+=Ingredient*
 		public Group getGroup() { return cGroup; }
 		
-		//"Ingredients"
-		public Keyword getIngredientsKeyword_0() { return cIngredientsKeyword_0; }
+		//{IngredientsBlock}
+		public Action getIngredientsBlockAction_0() { return cIngredientsBlockAction_0; }
 		
-		//NEW_LINE
-		public RuleCall getNEW_LINETerminalRuleCall_1() { return cNEW_LINETerminalRuleCall_1; }
+		//"Ingredients"
+		public Keyword getIngredientsKeyword_1() { return cIngredientsKeyword_1; }
 		
 		//TITLE_LINE
 		public RuleCall getTITLE_LINETerminalRuleCall_2() { return cTITLE_LINETerminalRuleCall_2; }
 		
-		//NEW_LINE
-		public RuleCall getNEW_LINETerminalRuleCall_3() { return cNEW_LINETerminalRuleCall_3; }
+		//ingredientsList+=Ingredient*
+		public Assignment getIngredientsListAssignment_3() { return cIngredientsListAssignment_3; }
 		
-		//Ingredient*
-		public RuleCall getIngredientParserRuleCall_4() { return cIngredientParserRuleCall_4; }
-		
-		//NEW_LINE
-		public RuleCall getNEW_LINETerminalRuleCall_5() { return cNEW_LINETerminalRuleCall_5; }
+		//Ingredient
+		public RuleCall getIngredientsListIngredientParserRuleCall_3_0() { return cIngredientsListIngredientParserRuleCall_3_0; }
 	}
 	public class IngredientElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "edu.imt.dsl.jpcoffe.JPCoffe.Ingredient");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Keyword cAsteriskKeyword_0 = (Keyword)cGroup.eContents().get(0);
-		private final RuleCall cSPACETerminalRuleCall_1 = (RuleCall)cGroup.eContents().get(1);
-		private final RuleCall cNAMETerminalRuleCall_2 = (RuleCall)cGroup.eContents().get(2);
-		private final RuleCall cQuantityParserRuleCall_3 = (RuleCall)cGroup.eContents().get(3);
-		private final RuleCall cNEW_LINETerminalRuleCall_4 = (RuleCall)cGroup.eContents().get(4);
+		private final Assignment cNameAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final RuleCall cNameNAMEParserRuleCall_1_0 = (RuleCall)cNameAssignment_1.eContents().get(0);
+		private final Assignment cQuantityAssignment_2 = (Assignment)cGroup.eContents().get(2);
+		private final RuleCall cQuantityQuantityParserRuleCall_2_0 = (RuleCall)cQuantityAssignment_2.eContents().get(0);
 		
 		//Ingredient:
-		//	"*" SPACE NAME Quantity NEW_LINE;
+		//	"*"
+		//	name=NAME
+		//	quantity=Quantity?;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//"*" SPACE NAME Quantity NEW_LINE
+		//"*" name=NAME quantity=Quantity?
 		public Group getGroup() { return cGroup; }
 		
 		//"*"
 		public Keyword getAsteriskKeyword_0() { return cAsteriskKeyword_0; }
 		
-		//SPACE
-		public RuleCall getSPACETerminalRuleCall_1() { return cSPACETerminalRuleCall_1; }
+		//name=NAME
+		public Assignment getNameAssignment_1() { return cNameAssignment_1; }
 		
 		//NAME
-		public RuleCall getNAMETerminalRuleCall_2() { return cNAMETerminalRuleCall_2; }
+		public RuleCall getNameNAMEParserRuleCall_1_0() { return cNameNAMEParserRuleCall_1_0; }
+		
+		//quantity=Quantity?
+		public Assignment getQuantityAssignment_2() { return cQuantityAssignment_2; }
 		
 		//Quantity
-		public RuleCall getQuantityParserRuleCall_3() { return cQuantityParserRuleCall_3; }
-		
-		//NEW_LINE
-		public RuleCall getNEW_LINETerminalRuleCall_4() { return cNEW_LINETerminalRuleCall_4; }
+		public RuleCall getQuantityQuantityParserRuleCall_2_0() { return cQuantityQuantityParserRuleCall_2_0; }
 	}
 	public class QuantityElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "edu.imt.dsl.jpcoffe.JPCoffe.Quantity");
 		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final RuleCall cINTTerminalRuleCall_0 = (RuleCall)cGroup.eContents().get(0);
-		private final RuleCall cMETRIC_UNITTerminalRuleCall_1 = (RuleCall)cGroup.eContents().get(1);
+		private final Assignment cAmountAssignment_0 = (Assignment)cGroup.eContents().get(0);
+		private final RuleCall cAmountINTTerminalRuleCall_0_0 = (RuleCall)cAmountAssignment_0.eContents().get(0);
+		private final Assignment cUnitAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final RuleCall cUnitMETRIC_UNITTerminalRuleCall_1_0 = (RuleCall)cUnitAssignment_1.eContents().get(0);
 		
 		//Quantity:
-		//	INT METRIC_UNIT?;
+		//	amount=INT unit=METRIC_UNIT?;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//INT METRIC_UNIT?
+		//amount=INT unit=METRIC_UNIT?
 		public Group getGroup() { return cGroup; }
 		
-		//INT
-		public RuleCall getINTTerminalRuleCall_0() { return cINTTerminalRuleCall_0; }
+		//amount=INT
+		public Assignment getAmountAssignment_0() { return cAmountAssignment_0; }
 		
-		//METRIC_UNIT?
-		public RuleCall getMETRIC_UNITTerminalRuleCall_1() { return cMETRIC_UNITTerminalRuleCall_1; }
+		//INT
+		public RuleCall getAmountINTTerminalRuleCall_0_0() { return cAmountINTTerminalRuleCall_0_0; }
+		
+		//unit=METRIC_UNIT?
+		public Assignment getUnitAssignment_1() { return cUnitAssignment_1; }
+		
+		//METRIC_UNIT
+		public RuleCall getUnitMETRIC_UNITTerminalRuleCall_1_0() { return cUnitMETRIC_UNITTerminalRuleCall_1_0; }
 	}
 	public class ToolsBlockElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "edu.imt.dsl.jpcoffe.JPCoffe.ToolsBlock");
 		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Keyword cToolsKeyword_0 = (Keyword)cGroup.eContents().get(0);
-		private final RuleCall cNEW_LINETerminalRuleCall_1 = (RuleCall)cGroup.eContents().get(1);
+		private final Action cToolsBlockAction_0 = (Action)cGroup.eContents().get(0);
+		private final Keyword cToolsKeyword_1 = (Keyword)cGroup.eContents().get(1);
 		private final RuleCall cTITLE_LINETerminalRuleCall_2 = (RuleCall)cGroup.eContents().get(2);
-		private final RuleCall cNEW_LINETerminalRuleCall_3 = (RuleCall)cGroup.eContents().get(3);
-		private final RuleCall cToolParserRuleCall_4 = (RuleCall)cGroup.eContents().get(4);
-		private final RuleCall cNEW_LINETerminalRuleCall_5 = (RuleCall)cGroup.eContents().get(5);
+		private final Assignment cToolsListAssignment_3 = (Assignment)cGroup.eContents().get(3);
+		private final RuleCall cToolsListToolParserRuleCall_3_0 = (RuleCall)cToolsListAssignment_3.eContents().get(0);
 		
 		//ToolsBlock:
-		//	"Tools" NEW_LINE
-		//	TITLE_LINE NEW_LINE
-		//	Tool*
-		//	NEW_LINE;
+		//	{ToolsBlock} "Tools"
+		//	TITLE_LINE
+		//	toolsList+=Tool*;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//"Tools" NEW_LINE TITLE_LINE NEW_LINE Tool* NEW_LINE
+		//{ToolsBlock} "Tools" TITLE_LINE toolsList+=Tool*
 		public Group getGroup() { return cGroup; }
 		
-		//"Tools"
-		public Keyword getToolsKeyword_0() { return cToolsKeyword_0; }
+		//{ToolsBlock}
+		public Action getToolsBlockAction_0() { return cToolsBlockAction_0; }
 		
-		//NEW_LINE
-		public RuleCall getNEW_LINETerminalRuleCall_1() { return cNEW_LINETerminalRuleCall_1; }
+		//"Tools"
+		public Keyword getToolsKeyword_1() { return cToolsKeyword_1; }
 		
 		//TITLE_LINE
 		public RuleCall getTITLE_LINETerminalRuleCall_2() { return cTITLE_LINETerminalRuleCall_2; }
 		
-		//NEW_LINE
-		public RuleCall getNEW_LINETerminalRuleCall_3() { return cNEW_LINETerminalRuleCall_3; }
+		//toolsList+=Tool*
+		public Assignment getToolsListAssignment_3() { return cToolsListAssignment_3; }
 		
-		//Tool*
-		public RuleCall getToolParserRuleCall_4() { return cToolParserRuleCall_4; }
-		
-		//NEW_LINE
-		public RuleCall getNEW_LINETerminalRuleCall_5() { return cNEW_LINETerminalRuleCall_5; }
+		//Tool
+		public RuleCall getToolsListToolParserRuleCall_3_0() { return cToolsListToolParserRuleCall_3_0; }
 	}
 	public class ToolElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "edu.imt.dsl.jpcoffe.JPCoffe.Tool");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Keyword cAsteriskKeyword_0 = (Keyword)cGroup.eContents().get(0);
-		private final RuleCall cSPACETerminalRuleCall_1 = (RuleCall)cGroup.eContents().get(1);
-		private final RuleCall cNAMETerminalRuleCall_2 = (RuleCall)cGroup.eContents().get(2);
-		private final RuleCall cNEW_LINETerminalRuleCall_3 = (RuleCall)cGroup.eContents().get(3);
+		private final Assignment cNameAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final RuleCall cNameNAMEParserRuleCall_1_0 = (RuleCall)cNameAssignment_1.eContents().get(0);
 		
 		//Tool:
-		//	"*" SPACE NAME NEW_LINE;
+		//	"*"
+		//	name=NAME;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//"*" SPACE NAME NEW_LINE
+		//"*" name=NAME
 		public Group getGroup() { return cGroup; }
 		
 		//"*"
 		public Keyword getAsteriskKeyword_0() { return cAsteriskKeyword_0; }
 		
-		//SPACE
-		public RuleCall getSPACETerminalRuleCall_1() { return cSPACETerminalRuleCall_1; }
+		//name=NAME
+		public Assignment getNameAssignment_1() { return cNameAssignment_1; }
 		
 		//NAME
-		public RuleCall getNAMETerminalRuleCall_2() { return cNAMETerminalRuleCall_2; }
-		
-		//NEW_LINE
-		public RuleCall getNEW_LINETerminalRuleCall_3() { return cNEW_LINETerminalRuleCall_3; }
+		public RuleCall getNameNAMEParserRuleCall_1_0() { return cNameNAMEParserRuleCall_1_0; }
 	}
 	public class StepsBlockElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "edu.imt.dsl.jpcoffe.JPCoffe.StepsBlock");
 		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Keyword cStepsKeyword_0 = (Keyword)cGroup.eContents().get(0);
-		private final RuleCall cNEW_LINETerminalRuleCall_1 = (RuleCall)cGroup.eContents().get(1);
+		private final Action cStepsBlockAction_0 = (Action)cGroup.eContents().get(0);
+		private final Keyword cStepsKeyword_1 = (Keyword)cGroup.eContents().get(1);
 		private final RuleCall cTITLE_LINETerminalRuleCall_2 = (RuleCall)cGroup.eContents().get(2);
-		private final RuleCall cNEW_LINETerminalRuleCall_3 = (RuleCall)cGroup.eContents().get(3);
-		private final RuleCall cStepParserRuleCall_4 = (RuleCall)cGroup.eContents().get(4);
-		private final RuleCall cNEW_LINETerminalRuleCall_5 = (RuleCall)cGroup.eContents().get(5);
+		private final Assignment cStepsListAssignment_3 = (Assignment)cGroup.eContents().get(3);
+		private final RuleCall cStepsListStepParserRuleCall_3_0 = (RuleCall)cStepsListAssignment_3.eContents().get(0);
 		
 		//StepsBlock:
-		//	"Steps" NEW_LINE
-		//	TITLE_LINE NEW_LINE
-		//	Step*
-		//	NEW_LINE;
+		//	{StepsBlock} "Steps"
+		//	TITLE_LINE
+		//	stepsList+=Step*;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//"Steps" NEW_LINE TITLE_LINE NEW_LINE Step* NEW_LINE
+		//{StepsBlock} "Steps" TITLE_LINE stepsList+=Step*
 		public Group getGroup() { return cGroup; }
 		
-		//"Steps"
-		public Keyword getStepsKeyword_0() { return cStepsKeyword_0; }
+		//{StepsBlock}
+		public Action getStepsBlockAction_0() { return cStepsBlockAction_0; }
 		
-		//NEW_LINE
-		public RuleCall getNEW_LINETerminalRuleCall_1() { return cNEW_LINETerminalRuleCall_1; }
+		//"Steps"
+		public Keyword getStepsKeyword_1() { return cStepsKeyword_1; }
 		
 		//TITLE_LINE
 		public RuleCall getTITLE_LINETerminalRuleCall_2() { return cTITLE_LINETerminalRuleCall_2; }
 		
-		//NEW_LINE
-		public RuleCall getNEW_LINETerminalRuleCall_3() { return cNEW_LINETerminalRuleCall_3; }
+		//stepsList+=Step*
+		public Assignment getStepsListAssignment_3() { return cStepsListAssignment_3; }
 		
-		//Step*
-		public RuleCall getStepParserRuleCall_4() { return cStepParserRuleCall_4; }
-		
-		//NEW_LINE
-		public RuleCall getNEW_LINETerminalRuleCall_5() { return cNEW_LINETerminalRuleCall_5; }
+		//Step
+		public RuleCall getStepsListStepParserRuleCall_3_0() { return cStepsListStepParserRuleCall_3_0; }
 	}
 	public class StepElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "edu.imt.dsl.jpcoffe.JPCoffe.Step");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Keyword cLeftCurlyBracketKeyword_0 = (Keyword)cGroup.eContents().get(0);
-		private final RuleCall cINTTerminalRuleCall_1 = (RuleCall)cGroup.eContents().get(1);
+		private final Assignment cPredAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final RuleCall cPredINTTerminalRuleCall_1_0 = (RuleCall)cPredAssignment_1.eContents().get(0);
 		private final Group cGroup_2 = (Group)cGroup.eContents().get(2);
 		private final Keyword cCommaKeyword_2_0 = (Keyword)cGroup_2.eContents().get(0);
-		private final RuleCall cINTTerminalRuleCall_2_1 = (RuleCall)cGroup_2.eContents().get(1);
+		private final Assignment cPredAssignment_2_1 = (Assignment)cGroup_2.eContents().get(1);
+		private final RuleCall cPredINTTerminalRuleCall_2_1_0 = (RuleCall)cPredAssignment_2_1.eContents().get(0);
 		private final Keyword cRightCurlyBracketKeyword_3 = (Keyword)cGroup.eContents().get(3);
-		private final RuleCall cSPACETerminalRuleCall_4 = (RuleCall)cGroup.eContents().get(4);
-		private final Keyword cHyphenMinusGreaterThanSignKeyword_5 = (Keyword)cGroup.eContents().get(5);
-		private final RuleCall cSPACETerminalRuleCall_6 = (RuleCall)cGroup.eContents().get(6);
-		private final RuleCall cINTTerminalRuleCall_7 = (RuleCall)cGroup.eContents().get(7);
-		private final Keyword cFullStopKeyword_8 = (Keyword)cGroup.eContents().get(8);
-		private final RuleCall cSPACETerminalRuleCall_9 = (RuleCall)cGroup.eContents().get(9);
-		private final RuleCall cTEXTTerminalRuleCall_10 = (RuleCall)cGroup.eContents().get(10);
-		private final RuleCall cNEW_LINETerminalRuleCall_11 = (RuleCall)cGroup.eContents().get(11);
+		private final Keyword cHyphenMinusGreaterThanSignKeyword_4 = (Keyword)cGroup.eContents().get(4);
+		private final Assignment cNumAssignment_5 = (Assignment)cGroup.eContents().get(5);
+		private final RuleCall cNumINTTerminalRuleCall_5_0 = (RuleCall)cNumAssignment_5.eContents().get(0);
+		private final Keyword cFullStopKeyword_6 = (Keyword)cGroup.eContents().get(6);
+		private final Assignment cTextAssignment_7 = (Assignment)cGroup.eContents().get(7);
+		private final RuleCall cTextTEXTParserRuleCall_7_0 = (RuleCall)cTextAssignment_7.eContents().get(0);
 		
 		//Step:
-		//	"{" INT? ("," INT)* "}" SPACE
-		//	"->" SPACE INT "." SPACE
-		//	TEXT
-		//	NEW_LINE;
+		//	"{" pred+=INT? ("," pred+=INT)* "}"
+		//	"->" num=INT "."
+		//	text=TEXT;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//"{" INT? ("," INT)* "}" SPACE "->" SPACE INT "." SPACE TEXT NEW_LINE
+		//"{" pred+=INT? ("," pred+=INT)* "}" "->" num=INT "." text=TEXT
 		public Group getGroup() { return cGroup; }
 		
 		//"{"
 		public Keyword getLeftCurlyBracketKeyword_0() { return cLeftCurlyBracketKeyword_0; }
 		
-		//INT?
-		public RuleCall getINTTerminalRuleCall_1() { return cINTTerminalRuleCall_1; }
+		//pred+=INT?
+		public Assignment getPredAssignment_1() { return cPredAssignment_1; }
 		
-		//("," INT)*
+		//INT
+		public RuleCall getPredINTTerminalRuleCall_1_0() { return cPredINTTerminalRuleCall_1_0; }
+		
+		//("," pred+=INT)*
 		public Group getGroup_2() { return cGroup_2; }
 		
 		//","
 		public Keyword getCommaKeyword_2_0() { return cCommaKeyword_2_0; }
 		
+		//pred+=INT
+		public Assignment getPredAssignment_2_1() { return cPredAssignment_2_1; }
+		
 		//INT
-		public RuleCall getINTTerminalRuleCall_2_1() { return cINTTerminalRuleCall_2_1; }
+		public RuleCall getPredINTTerminalRuleCall_2_1_0() { return cPredINTTerminalRuleCall_2_1_0; }
 		
 		//"}"
 		public Keyword getRightCurlyBracketKeyword_3() { return cRightCurlyBracketKeyword_3; }
 		
-		//SPACE
-		public RuleCall getSPACETerminalRuleCall_4() { return cSPACETerminalRuleCall_4; }
-		
 		//"->"
-		public Keyword getHyphenMinusGreaterThanSignKeyword_5() { return cHyphenMinusGreaterThanSignKeyword_5; }
+		public Keyword getHyphenMinusGreaterThanSignKeyword_4() { return cHyphenMinusGreaterThanSignKeyword_4; }
 		
-		//SPACE
-		public RuleCall getSPACETerminalRuleCall_6() { return cSPACETerminalRuleCall_6; }
+		//num=INT
+		public Assignment getNumAssignment_5() { return cNumAssignment_5; }
 		
 		//INT
-		public RuleCall getINTTerminalRuleCall_7() { return cINTTerminalRuleCall_7; }
+		public RuleCall getNumINTTerminalRuleCall_5_0() { return cNumINTTerminalRuleCall_5_0; }
 		
 		//"."
-		public Keyword getFullStopKeyword_8() { return cFullStopKeyword_8; }
+		public Keyword getFullStopKeyword_6() { return cFullStopKeyword_6; }
 		
-		//SPACE
-		public RuleCall getSPACETerminalRuleCall_9() { return cSPACETerminalRuleCall_9; }
+		//text=TEXT
+		public Assignment getTextAssignment_7() { return cTextAssignment_7; }
 		
 		//TEXT
-		public RuleCall getTEXTTerminalRuleCall_10() { return cTEXTTerminalRuleCall_10; }
+		public RuleCall getTextTEXTParserRuleCall_7_0() { return cTextTEXTParserRuleCall_7_0; }
+	}
+	public class NAMEElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "edu.imt.dsl.jpcoffe.JPCoffe.NAME");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final RuleCall cMAJ_WORDTerminalRuleCall_0 = (RuleCall)cGroup.eContents().get(0);
+		private final RuleCall cWORDTerminalRuleCall_1 = (RuleCall)cGroup.eContents().get(1);
 		
-		//NEW_LINE
-		public RuleCall getNEW_LINETerminalRuleCall_11() { return cNEW_LINETerminalRuleCall_11; }
+		//NAME:
+		//	MAJ_WORD WORD*;
+		@Override public ParserRule getRule() { return rule; }
+		
+		//MAJ_WORD WORD*
+		public Group getGroup() { return cGroup; }
+		
+		//MAJ_WORD
+		public RuleCall getMAJ_WORDTerminalRuleCall_0() { return cMAJ_WORDTerminalRuleCall_0; }
+		
+		//WORD*
+		public RuleCall getWORDTerminalRuleCall_1() { return cWORDTerminalRuleCall_1; }
+	}
+	public class TEXTElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "edu.imt.dsl.jpcoffe.JPCoffe.TEXT");
+		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
+		private final RuleCall cMAJ_WORDTerminalRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
+		private final RuleCall cWORDTerminalRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
+		
+		//TEXT:
+		//	(MAJ_WORD | WORD)+;
+		@Override public ParserRule getRule() { return rule; }
+		
+		//(MAJ_WORD | WORD)+
+		public Alternatives getAlternatives() { return cAlternatives; }
+		
+		//MAJ_WORD
+		public RuleCall getMAJ_WORDTerminalRuleCall_0() { return cMAJ_WORDTerminalRuleCall_0; }
+		
+		//WORD
+		public RuleCall getWORDTerminalRuleCall_1() { return cWORDTerminalRuleCall_1; }
 	}
 	
 	
@@ -385,21 +431,22 @@ public class JPCoffeGrammarAccess extends AbstractGrammarElementFinder {
 	private final ToolElements pTool;
 	private final StepsBlockElements pStepsBlock;
 	private final StepElements pStep;
+	private final NAMEElements pNAME;
+	private final TEXTElements pTEXT;
 	private final TerminalRule tTITLE_LINE;
-	private final TerminalRule tNAME;
-	private final TerminalRule tNEW_LINE;
-	private final TerminalRule tSPACE;
-	private final TerminalRule tTEXT;
+	private final TerminalRule tMAJ_WORD;
+	private final TerminalRule tWORD;
+	private final TerminalRule tINT;
+	private final TerminalRule tSTRING;
+	private final TerminalRule tML_COMMENT;
+	private final TerminalRule tSL_COMMENT;
+	private final TerminalRule tWS;
 	
 	private final Grammar grammar;
-	
-	private final TerminalsGrammarAccess gaTerminals;
 
 	@Inject
-	public JPCoffeGrammarAccess(GrammarProvider grammarProvider,
-			TerminalsGrammarAccess gaTerminals) {
+	public JPCoffeGrammarAccess(GrammarProvider grammarProvider) {
 		this.grammar = internalFindGrammar(grammarProvider);
-		this.gaTerminals = gaTerminals;
 		this.pMain = new MainElements();
 		this.pRecipe = new RecipeElements();
 		this.pPortionNB = new PortionNBElements();
@@ -411,11 +458,16 @@ public class JPCoffeGrammarAccess extends AbstractGrammarElementFinder {
 		this.pTool = new ToolElements();
 		this.pStepsBlock = new StepsBlockElements();
 		this.pStep = new StepElements();
+		this.pNAME = new NAMEElements();
+		this.pTEXT = new TEXTElements();
 		this.tTITLE_LINE = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "edu.imt.dsl.jpcoffe.JPCoffe.TITLE_LINE");
-		this.tNAME = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "edu.imt.dsl.jpcoffe.JPCoffe.NAME");
-		this.tNEW_LINE = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "edu.imt.dsl.jpcoffe.JPCoffe.NEW_LINE");
-		this.tSPACE = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "edu.imt.dsl.jpcoffe.JPCoffe.SPACE");
-		this.tTEXT = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "edu.imt.dsl.jpcoffe.JPCoffe.TEXT");
+		this.tMAJ_WORD = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "edu.imt.dsl.jpcoffe.JPCoffe.MAJ_WORD");
+		this.tWORD = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "edu.imt.dsl.jpcoffe.JPCoffe.WORD");
+		this.tINT = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "edu.imt.dsl.jpcoffe.JPCoffe.INT");
+		this.tSTRING = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "edu.imt.dsl.jpcoffe.JPCoffe.STRING");
+		this.tML_COMMENT = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "edu.imt.dsl.jpcoffe.JPCoffe.ML_COMMENT");
+		this.tSL_COMMENT = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "edu.imt.dsl.jpcoffe.JPCoffe.SL_COMMENT");
+		this.tWS = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "edu.imt.dsl.jpcoffe.JPCoffe.WS");
 	}
 	
 	protected Grammar internalFindGrammar(GrammarProvider grammarProvider) {
@@ -439,14 +491,10 @@ public class JPCoffeGrammarAccess extends AbstractGrammarElementFinder {
 		return grammar;
 	}
 	
-	
-	public TerminalsGrammarAccess getTerminalsGrammarAccess() {
-		return gaTerminals;
-	}
 
 	
 	//Main:
-	//	recipes+=Recipe+;
+	//	Recipe;
 	public MainElements getMainAccess() {
 		return pMain;
 	}
@@ -456,12 +504,12 @@ public class JPCoffeGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//Recipe:
-	//	"Recipe" STRING "{"
-	//	PortionNB
-	//	IngredientsBlock
-	//	ToolsBlock
-	//	StepsBlock
-	//	"}";
+	//	'Recipe' name=STRING '{'
+	//	portion=PortionNB
+	//	ingredients=IngredientsBlock
+	//	tools=ToolsBlock
+	//	steps=StepsBlock
+	//	'}';
 	public RecipeElements getRecipeAccess() {
 		return pRecipe;
 	}
@@ -481,10 +529,9 @@ public class JPCoffeGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//IngredientsBlock:
-	//	"Ingredients" NEW_LINE
-	//	TITLE_LINE NEW_LINE
-	//	Ingredient*
-	//	NEW_LINE;
+	//	{IngredientsBlock} "Ingredients"
+	//	TITLE_LINE
+	//	ingredientsList+=Ingredient*;
 	public IngredientsBlockElements getIngredientsBlockAccess() {
 		return pIngredientsBlock;
 	}
@@ -494,7 +541,9 @@ public class JPCoffeGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//Ingredient:
-	//	"*" SPACE NAME Quantity NEW_LINE;
+	//	"*"
+	//	name=NAME
+	//	quantity=Quantity?;
 	public IngredientElements getIngredientAccess() {
 		return pIngredient;
 	}
@@ -504,7 +553,7 @@ public class JPCoffeGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//Quantity:
-	//	INT METRIC_UNIT?;
+	//	amount=INT unit=METRIC_UNIT?;
 	public QuantityElements getQuantityAccess() {
 		return pQuantity;
 	}
@@ -520,10 +569,9 @@ public class JPCoffeGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//ToolsBlock:
-	//	"Tools" NEW_LINE
-	//	TITLE_LINE NEW_LINE
-	//	Tool*
-	//	NEW_LINE;
+	//	{ToolsBlock} "Tools"
+	//	TITLE_LINE
+	//	toolsList+=Tool*;
 	public ToolsBlockElements getToolsBlockAccess() {
 		return pToolsBlock;
 	}
@@ -533,7 +581,8 @@ public class JPCoffeGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//Tool:
-	//	"*" SPACE NAME NEW_LINE;
+	//	"*"
+	//	name=NAME;
 	public ToolElements getToolAccess() {
 		return pTool;
 	}
@@ -543,10 +592,9 @@ public class JPCoffeGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//StepsBlock:
-	//	"Steps" NEW_LINE
-	//	TITLE_LINE NEW_LINE
-	//	Step*
-	//	NEW_LINE;
+	//	{StepsBlock} "Steps"
+	//	TITLE_LINE
+	//	stepsList+=Step*;
 	public StepsBlockElements getStepsBlockAccess() {
 		return pStepsBlock;
 	}
@@ -556,10 +604,9 @@ public class JPCoffeGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//Step:
-	//	"{" INT? ("," INT)* "}" SPACE
-	//	"->" SPACE INT "." SPACE
-	//	TEXT
-	//	NEW_LINE;
+	//	"{" pred+=INT? ("," pred+=INT)* "}"
+	//	"->" num=INT "."
+	//	text=TEXT;
 	public StepElements getStepAccess() {
 		return pStep;
 	}
@@ -568,76 +615,72 @@ public class JPCoffeGrammarAccess extends AbstractGrammarElementFinder {
 		return getStepAccess().getRule();
 	}
 	
+	//NAME:
+	//	MAJ_WORD WORD*;
+	public NAMEElements getNAMEAccess() {
+		return pNAME;
+	}
+	
+	public ParserRule getNAMERule() {
+		return getNAMEAccess().getRule();
+	}
+	
+	//TEXT:
+	//	(MAJ_WORD | WORD)+;
+	public TEXTElements getTEXTAccess() {
+		return pTEXT;
+	}
+	
+	public ParserRule getTEXTRule() {
+		return getTEXTAccess().getRule();
+	}
+	
 	//terminal TITLE_LINE:
 	//	"-"+;
 	public TerminalRule getTITLE_LINERule() {
 		return tTITLE_LINE;
 	}
 	
-	//terminal NAME:
-	//	'A'..'Z' ('a'..'z' | 'A'..'Z' | SPACE)*;
-	public TerminalRule getNAMERule() {
-		return tNAME;
+	//terminal MAJ_WORD:
+	//	'A'..'Z' 'a'..'z'*;
+	public TerminalRule getMAJ_WORDRule() {
+		return tMAJ_WORD;
 	}
 	
-	//terminal NEW_LINE:
-	//	"\n" | "\r\n";
-	public TerminalRule getNEW_LINERule() {
-		return tNEW_LINE;
-	}
-	
-	//terminal SPACE:
-	//	' ';
-	public TerminalRule getSPACERule() {
-		return tSPACE;
-	}
-	
-	//terminal TEXT:
-	//	'a'..'z' | 'A'..'Z'+;
-	public TerminalRule getTEXTRule() {
-		return tTEXT;
-	}
-	
-	//terminal ID:
-	//	'^'? ('a'..'z' | 'A'..'Z' | '_') ('a'..'z' | 'A'..'Z' | '_' | '0'..'9')*;
-	public TerminalRule getIDRule() {
-		return gaTerminals.getIDRule();
+	//terminal WORD:
+	//	'a'..'z' | 'A'..'Z' | '\'' | ','+;
+	public TerminalRule getWORDRule() {
+		return tWORD;
 	}
 	
 	//terminal INT returns ecore::EInt:
 	//	'0'..'9'+;
 	public TerminalRule getINTRule() {
-		return gaTerminals.getINTRule();
+		return tINT;
 	}
 	
 	//terminal STRING:
 	//	'"' ('\\' . | !('\\' | '"'))* '"' |
 	//	"'" ('\\' . | !('\\' | "'"))* "'";
 	public TerminalRule getSTRINGRule() {
-		return gaTerminals.getSTRINGRule();
+		return tSTRING;
 	}
 	
 	//terminal ML_COMMENT:
 	//	'/*'->'*/';
 	public TerminalRule getML_COMMENTRule() {
-		return gaTerminals.getML_COMMENTRule();
+		return tML_COMMENT;
 	}
 	
 	//terminal SL_COMMENT:
 	//	'//' !('\n' | '\r')* ('\r'? '\n')?;
 	public TerminalRule getSL_COMMENTRule() {
-		return gaTerminals.getSL_COMMENTRule();
+		return tSL_COMMENT;
 	}
 	
 	//terminal WS:
 	//	' ' | '\t' | '\r' | '\n'+;
 	public TerminalRule getWSRule() {
-		return gaTerminals.getWSRule();
-	}
-	
-	//terminal ANY_OTHER:
-	//	.;
-	public TerminalRule getANY_OTHERRule() {
-		return gaTerminals.getANY_OTHERRule();
+		return tWS;
 	}
 }

@@ -3,11 +3,18 @@
  */
 package edu.imt.dsl.jpcoffe.jPCoffe.impl;
 
+import edu.imt.dsl.jpcoffe.jPCoffe.Ingredient;
+import edu.imt.dsl.jpcoffe.jPCoffe.IngredientsBlock;
 import edu.imt.dsl.jpcoffe.jPCoffe.JPCoffeFactory;
 import edu.imt.dsl.jpcoffe.jPCoffe.JPCoffePackage;
 import edu.imt.dsl.jpcoffe.jPCoffe.Main;
 import edu.imt.dsl.jpcoffe.jPCoffe.PortionNB;
+import edu.imt.dsl.jpcoffe.jPCoffe.Quantity;
 import edu.imt.dsl.jpcoffe.jPCoffe.Recipe;
+import edu.imt.dsl.jpcoffe.jPCoffe.Step;
+import edu.imt.dsl.jpcoffe.jPCoffe.StepsBlock;
+import edu.imt.dsl.jpcoffe.jPCoffe.Tool;
+import edu.imt.dsl.jpcoffe.jPCoffe.ToolsBlock;
 
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
@@ -44,6 +51,55 @@ public class JPCoffePackageImpl extends EPackageImpl implements JPCoffePackage
    * @generated
    */
   private EClass portionNBEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass ingredientsBlockEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass ingredientEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass quantityEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass toolsBlockEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass toolEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass stepsBlockEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass stepEClass = null;
 
   /**
    * Creates an instance of the model <b>Package</b>, registered with
@@ -123,9 +179,9 @@ public class JPCoffePackageImpl extends EPackageImpl implements JPCoffePackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getMain_Recipes()
+  public EClass getRecipe()
   {
-    return (EReference)mainEClass.getEStructuralFeatures().get(0);
+    return recipeEClass;
   }
 
   /**
@@ -133,9 +189,49 @@ public class JPCoffePackageImpl extends EPackageImpl implements JPCoffePackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EClass getRecipe()
+  public EAttribute getRecipe_Name()
   {
-    return recipeEClass;
+    return (EAttribute)recipeEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getRecipe_Portion()
+  {
+    return (EReference)recipeEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getRecipe_Ingredients()
+  {
+    return (EReference)recipeEClass.getEStructuralFeatures().get(2);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getRecipe_Tools()
+  {
+    return (EReference)recipeEClass.getEStructuralFeatures().get(3);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getRecipe_Steps()
+  {
+    return (EReference)recipeEClass.getEStructuralFeatures().get(4);
   }
 
   /**
@@ -156,6 +252,186 @@ public class JPCoffePackageImpl extends EPackageImpl implements JPCoffePackage
   public EAttribute getPortionNB_Nb()
   {
     return (EAttribute)portionNBEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getIngredientsBlock()
+  {
+    return ingredientsBlockEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getIngredientsBlock_IngredientsList()
+  {
+    return (EReference)ingredientsBlockEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getIngredient()
+  {
+    return ingredientEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getIngredient_Name()
+  {
+    return (EAttribute)ingredientEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getIngredient_Quantity()
+  {
+    return (EReference)ingredientEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getQuantity()
+  {
+    return quantityEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getQuantity_Amount()
+  {
+    return (EAttribute)quantityEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getQuantity_Unit()
+  {
+    return (EAttribute)quantityEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getToolsBlock()
+  {
+    return toolsBlockEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getToolsBlock_ToolsList()
+  {
+    return (EReference)toolsBlockEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getTool()
+  {
+    return toolEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getTool_Name()
+  {
+    return (EAttribute)toolEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getStepsBlock()
+  {
+    return stepsBlockEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getStepsBlock_StepsList()
+  {
+    return (EReference)stepsBlockEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getStep()
+  {
+    return stepEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getStep_Pred()
+  {
+    return (EAttribute)stepEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getStep_Num()
+  {
+    return (EAttribute)stepEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getStep_Text()
+  {
+    return (EAttribute)stepEClass.getEStructuralFeatures().get(2);
   }
 
   /**
@@ -189,12 +465,41 @@ public class JPCoffePackageImpl extends EPackageImpl implements JPCoffePackage
 
     // Create classes and their features
     mainEClass = createEClass(MAIN);
-    createEReference(mainEClass, MAIN__RECIPES);
 
     recipeEClass = createEClass(RECIPE);
+    createEAttribute(recipeEClass, RECIPE__NAME);
+    createEReference(recipeEClass, RECIPE__PORTION);
+    createEReference(recipeEClass, RECIPE__INGREDIENTS);
+    createEReference(recipeEClass, RECIPE__TOOLS);
+    createEReference(recipeEClass, RECIPE__STEPS);
 
     portionNBEClass = createEClass(PORTION_NB);
     createEAttribute(portionNBEClass, PORTION_NB__NB);
+
+    ingredientsBlockEClass = createEClass(INGREDIENTS_BLOCK);
+    createEReference(ingredientsBlockEClass, INGREDIENTS_BLOCK__INGREDIENTS_LIST);
+
+    ingredientEClass = createEClass(INGREDIENT);
+    createEAttribute(ingredientEClass, INGREDIENT__NAME);
+    createEReference(ingredientEClass, INGREDIENT__QUANTITY);
+
+    quantityEClass = createEClass(QUANTITY);
+    createEAttribute(quantityEClass, QUANTITY__AMOUNT);
+    createEAttribute(quantityEClass, QUANTITY__UNIT);
+
+    toolsBlockEClass = createEClass(TOOLS_BLOCK);
+    createEReference(toolsBlockEClass, TOOLS_BLOCK__TOOLS_LIST);
+
+    toolEClass = createEClass(TOOL);
+    createEAttribute(toolEClass, TOOL__NAME);
+
+    stepsBlockEClass = createEClass(STEPS_BLOCK);
+    createEReference(stepsBlockEClass, STEPS_BLOCK__STEPS_LIST);
+
+    stepEClass = createEClass(STEP);
+    createEAttribute(stepEClass, STEP__PRED);
+    createEAttribute(stepEClass, STEP__NUM);
+    createEAttribute(stepEClass, STEP__TEXT);
   }
 
   /**
@@ -226,16 +531,45 @@ public class JPCoffePackageImpl extends EPackageImpl implements JPCoffePackage
     // Set bounds for type parameters
 
     // Add supertypes to classes
-    portionNBEClass.getESuperTypes().add(this.getRecipe());
+    recipeEClass.getESuperTypes().add(this.getMain());
 
     // Initialize classes and features; add operations and parameters
     initEClass(mainEClass, Main.class, "Main", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getMain_Recipes(), this.getRecipe(), null, "recipes", null, 0, -1, Main.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(recipeEClass, Recipe.class, "Recipe", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getRecipe_Name(), ecorePackage.getEString(), "name", null, 0, 1, Recipe.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getRecipe_Portion(), this.getPortionNB(), null, "portion", null, 0, 1, Recipe.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getRecipe_Ingredients(), this.getIngredientsBlock(), null, "ingredients", null, 0, 1, Recipe.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getRecipe_Tools(), this.getToolsBlock(), null, "tools", null, 0, 1, Recipe.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getRecipe_Steps(), this.getStepsBlock(), null, "steps", null, 0, 1, Recipe.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(portionNBEClass, PortionNB.class, "PortionNB", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getPortionNB_Nb(), ecorePackage.getEInt(), "nb", null, 0, 1, PortionNB.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(ingredientsBlockEClass, IngredientsBlock.class, "IngredientsBlock", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getIngredientsBlock_IngredientsList(), this.getIngredient(), null, "ingredientsList", null, 0, -1, IngredientsBlock.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(ingredientEClass, Ingredient.class, "Ingredient", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getIngredient_Name(), ecorePackage.getEString(), "name", null, 0, 1, Ingredient.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getIngredient_Quantity(), this.getQuantity(), null, "quantity", null, 0, 1, Ingredient.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(quantityEClass, Quantity.class, "Quantity", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getQuantity_Amount(), ecorePackage.getEInt(), "amount", null, 0, 1, Quantity.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getQuantity_Unit(), ecorePackage.getEString(), "unit", null, 0, 1, Quantity.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(toolsBlockEClass, ToolsBlock.class, "ToolsBlock", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getToolsBlock_ToolsList(), this.getTool(), null, "toolsList", null, 0, -1, ToolsBlock.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(toolEClass, Tool.class, "Tool", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getTool_Name(), ecorePackage.getEString(), "name", null, 0, 1, Tool.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(stepsBlockEClass, StepsBlock.class, "StepsBlock", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getStepsBlock_StepsList(), this.getStep(), null, "stepsList", null, 0, -1, StepsBlock.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(stepEClass, Step.class, "Step", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getStep_Pred(), ecorePackage.getEInt(), "pred", null, 0, -1, Step.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getStep_Num(), ecorePackage.getEInt(), "num", null, 0, 1, Step.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getStep_Text(), ecorePackage.getEString(), "text", null, 0, 1, Step.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     // Create resource
     createResource(eNS_URI);
