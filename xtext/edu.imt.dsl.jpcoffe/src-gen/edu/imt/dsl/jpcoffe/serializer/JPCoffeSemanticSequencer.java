@@ -4,9 +4,12 @@
 package edu.imt.dsl.jpcoffe.serializer;
 
 import com.google.inject.Inject;
+import edu.imt.dsl.jpcoffe.jPCoffe.ConditionalStep;
 import edu.imt.dsl.jpcoffe.jPCoffe.Ingredient;
 import edu.imt.dsl.jpcoffe.jPCoffe.IngredientsBlock;
+import edu.imt.dsl.jpcoffe.jPCoffe.IngredientsGroup;
 import edu.imt.dsl.jpcoffe.jPCoffe.JPCoffePackage;
+import edu.imt.dsl.jpcoffe.jPCoffe.Main;
 import edu.imt.dsl.jpcoffe.jPCoffe.PortionNB;
 import edu.imt.dsl.jpcoffe.jPCoffe.Quantity;
 import edu.imt.dsl.jpcoffe.jPCoffe.Recipe;
@@ -40,11 +43,20 @@ public class JPCoffeSemanticSequencer extends AbstractDelegatingSemanticSequence
 		Set<Parameter> parameters = context.getEnabledBooleanParameters();
 		if (epackage == JPCoffePackage.eINSTANCE)
 			switch (semanticObject.eClass().getClassifierID()) {
+			case JPCoffePackage.CONDITIONAL_STEP:
+				sequence_ConditionalStep(context, (ConditionalStep) semanticObject); 
+				return; 
 			case JPCoffePackage.INGREDIENT:
 				sequence_Ingredient(context, (Ingredient) semanticObject); 
 				return; 
 			case JPCoffePackage.INGREDIENTS_BLOCK:
 				sequence_IngredientsBlock(context, (IngredientsBlock) semanticObject); 
+				return; 
+			case JPCoffePackage.INGREDIENTS_GROUP:
+				sequence_IngredientsGroup(context, (IngredientsGroup) semanticObject); 
+				return; 
+			case JPCoffePackage.MAIN:
+				sequence_Main(context, (Main) semanticObject); 
 				return; 
 			case JPCoffePackage.PORTION_NB:
 				sequence_PortionNB(context, (PortionNB) semanticObject); 
@@ -74,10 +86,22 @@ public class JPCoffeSemanticSequencer extends AbstractDelegatingSemanticSequence
 	
 	/**
 	 * Contexts:
+	 *     ConditionalStep returns ConditionalStep
+	 *
+	 * Constraint:
+	 *     (pred+=INT? pred+=INT* num=INT condition=TEXT to=INT)
+	 */
+	protected void sequence_ConditionalStep(ISerializationContext context, ConditionalStep semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Contexts:
 	 *     Ingredient returns Ingredient
 	 *
 	 * Constraint:
-	 *     (name=NAME quantity=Quantity?)
+	 *     ((originalName+=NAME originalName+=NAME*)? name=NAME quantity=Quantity?)
 	 */
 	protected void sequence_Ingredient(ISerializationContext context, Ingredient semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -89,9 +113,33 @@ public class JPCoffeSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *     IngredientsBlock returns IngredientsBlock
 	 *
 	 * Constraint:
-	 *     ingredientsList+=Ingredient*
+	 *     (ingredientsList+=IngredientsGroup | ingredientsList+=Ingredient)*
 	 */
 	protected void sequence_IngredientsBlock(ISerializationContext context, IngredientsBlock semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     IngredientsGroup returns IngredientsGroup
+	 *
+	 * Constraint:
+	 *     (name=STRING ingredientsList+=Ingredient* quantity=Quantity?)
+	 */
+	protected void sequence_IngredientsGroup(ISerializationContext context, IngredientsGroup semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     Main returns Main
+	 *
+	 * Constraint:
+	 *     (imports+=Import* recipes+=Recipe+)
+	 */
+	protected void sequence_Main(ISerializationContext context, Main semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	
@@ -128,7 +176,6 @@ public class JPCoffeSemanticSequencer extends AbstractDelegatingSemanticSequence
 	
 	/**
 	 * Contexts:
-	 *     Main returns Recipe
 	 *     Recipe returns Recipe
 	 *
 	 * Constraint:
@@ -174,7 +221,7 @@ public class JPCoffeSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *     StepsBlock returns StepsBlock
 	 *
 	 * Constraint:
-	 *     stepsList+=Step*
+	 *     (stepsList+=ConditionalStep | stepsList+=Step)*
 	 */
 	protected void sequence_StepsBlock(ISerializationContext context, StepsBlock semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -186,16 +233,10 @@ public class JPCoffeSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *     Tool returns Tool
 	 *
 	 * Constraint:
-	 *     name=NAME
+	 *     (originalName=NAME? name=NAME)
 	 */
 	protected void sequence_Tool(ISerializationContext context, Tool semanticObject) {
-		if (errorAcceptor != null) {
-			if (transientValues.isValueTransient(semanticObject, JPCoffePackage.Literals.TOOL__NAME) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, JPCoffePackage.Literals.TOOL__NAME));
-		}
-		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getToolAccess().getNameNAMEParserRuleCall_1_0(), semanticObject.getName());
-		feeder.finish();
+		genericSequencer.createSequence(context, semanticObject);
 	}
 	
 	

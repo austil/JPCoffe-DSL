@@ -84,7 +84,6 @@ public class JPCoffeSwitch<T> extends Switch<T>
       {
         Recipe recipe = (Recipe)theEObject;
         T result = caseRecipe(recipe);
-        if (result == null) result = caseMain(recipe);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -99,6 +98,13 @@ public class JPCoffeSwitch<T> extends Switch<T>
       {
         IngredientsBlock ingredientsBlock = (IngredientsBlock)theEObject;
         T result = caseIngredientsBlock(ingredientsBlock);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case JPCoffePackage.INGREDIENTS_GROUP:
+      {
+        IngredientsGroup ingredientsGroup = (IngredientsGroup)theEObject;
+        T result = caseIngredientsGroup(ingredientsGroup);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -134,6 +140,13 @@ public class JPCoffeSwitch<T> extends Switch<T>
       {
         StepsBlock stepsBlock = (StepsBlock)theEObject;
         T result = caseStepsBlock(stepsBlock);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case JPCoffePackage.CONDITIONAL_STEP:
+      {
+        ConditionalStep conditionalStep = (ConditionalStep)theEObject;
+        T result = caseConditionalStep(conditionalStep);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -208,6 +221,22 @@ public class JPCoffeSwitch<T> extends Switch<T>
    * @generated
    */
   public T caseIngredientsBlock(IngredientsBlock object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Ingredients Group</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Ingredients Group</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseIngredientsGroup(IngredientsGroup object)
   {
     return null;
   }
@@ -288,6 +317,22 @@ public class JPCoffeSwitch<T> extends Switch<T>
    * @generated
    */
   public T caseStepsBlock(StepsBlock object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Conditional Step</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Conditional Step</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseConditionalStep(ConditionalStep object)
   {
     return null;
   }

@@ -27,7 +27,7 @@ public interface StepsBlock extends EObject
 {
   /**
    * Returns the value of the '<em><b>Steps List</b></em>' containment reference list.
-   * The list contents are of type {@link edu.imt.dsl.jpcoffe.jPCoffe.Step}.
+   * The list contents are of type {@link org.eclipse.emf.ecore.EObject}.
    * <!-- begin-user-doc -->
    * <p>
    * If the meaning of the '<em>Steps List</em>' containment reference list isn't clear,
@@ -39,6 +39,6 @@ public interface StepsBlock extends EObject
    * @model containment="true"
    * @generated
    */
-  EList<Step> getStepsList();
+  EList<EObject> getStepsList();
 
 } // StepsBlock

@@ -69,11 +69,13 @@ public class JPCoffeFactoryImpl extends EFactoryImpl implements JPCoffeFactory
       case JPCoffePackage.RECIPE: return createRecipe();
       case JPCoffePackage.PORTION_NB: return createPortionNB();
       case JPCoffePackage.INGREDIENTS_BLOCK: return createIngredientsBlock();
+      case JPCoffePackage.INGREDIENTS_GROUP: return createIngredientsGroup();
       case JPCoffePackage.INGREDIENT: return createIngredient();
       case JPCoffePackage.QUANTITY: return createQuantity();
       case JPCoffePackage.TOOLS_BLOCK: return createToolsBlock();
       case JPCoffePackage.TOOL: return createTool();
       case JPCoffePackage.STEPS_BLOCK: return createStepsBlock();
+      case JPCoffePackage.CONDITIONAL_STEP: return createConditionalStep();
       case JPCoffePackage.STEP: return createStep();
       default:
         throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
@@ -129,6 +131,17 @@ public class JPCoffeFactoryImpl extends EFactoryImpl implements JPCoffeFactory
    * <!-- end-user-doc -->
    * @generated
    */
+  public IngredientsGroup createIngredientsGroup()
+  {
+    IngredientsGroupImpl ingredientsGroup = new IngredientsGroupImpl();
+    return ingredientsGroup;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public Ingredient createIngredient()
   {
     IngredientImpl ingredient = new IngredientImpl();
@@ -177,6 +190,17 @@ public class JPCoffeFactoryImpl extends EFactoryImpl implements JPCoffeFactory
   {
     StepsBlockImpl stepsBlock = new StepsBlockImpl();
     return stepsBlock;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public ConditionalStep createConditionalStep()
+  {
+    ConditionalStepImpl conditionalStep = new ConditionalStepImpl();
+    return conditionalStep;
   }
 
   /**

@@ -21,6 +21,7 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  * The following features are implemented:
  * </p>
  * <ul>
+ *   <li>{@link edu.imt.dsl.jpcoffe.jPCoffe.impl.ToolImpl#getOriginalName <em>Original Name</em>}</li>
  *   <li>{@link edu.imt.dsl.jpcoffe.jPCoffe.impl.ToolImpl#getName <em>Name</em>}</li>
  * </ul>
  *
@@ -28,6 +29,26 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  */
 public class ToolImpl extends MinimalEObjectImpl.Container implements Tool
 {
+  /**
+   * The default value of the '{@link #getOriginalName() <em>Original Name</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getOriginalName()
+   * @generated
+   * @ordered
+   */
+  protected static final String ORIGINAL_NAME_EDEFAULT = null;
+
+  /**
+   * The cached value of the '{@link #getOriginalName() <em>Original Name</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getOriginalName()
+   * @generated
+   * @ordered
+   */
+  protected String originalName = ORIGINAL_NAME_EDEFAULT;
+
   /**
    * The default value of the '{@link #getName() <em>Name</em>}' attribute.
    * <!-- begin-user-doc -->
@@ -74,6 +95,29 @@ public class ToolImpl extends MinimalEObjectImpl.Container implements Tool
    * <!-- end-user-doc -->
    * @generated
    */
+  public String getOriginalName()
+  {
+    return originalName;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setOriginalName(String newOriginalName)
+  {
+    String oldOriginalName = originalName;
+    originalName = newOriginalName;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, JPCoffePackage.TOOL__ORIGINAL_NAME, oldOriginalName, originalName));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public String getName()
   {
     return name;
@@ -102,6 +146,8 @@ public class ToolImpl extends MinimalEObjectImpl.Container implements Tool
   {
     switch (featureID)
     {
+      case JPCoffePackage.TOOL__ORIGINAL_NAME:
+        return getOriginalName();
       case JPCoffePackage.TOOL__NAME:
         return getName();
     }
@@ -118,6 +164,9 @@ public class ToolImpl extends MinimalEObjectImpl.Container implements Tool
   {
     switch (featureID)
     {
+      case JPCoffePackage.TOOL__ORIGINAL_NAME:
+        setOriginalName((String)newValue);
+        return;
       case JPCoffePackage.TOOL__NAME:
         setName((String)newValue);
         return;
@@ -135,6 +184,9 @@ public class ToolImpl extends MinimalEObjectImpl.Container implements Tool
   {
     switch (featureID)
     {
+      case JPCoffePackage.TOOL__ORIGINAL_NAME:
+        setOriginalName(ORIGINAL_NAME_EDEFAULT);
+        return;
       case JPCoffePackage.TOOL__NAME:
         setName(NAME_EDEFAULT);
         return;
@@ -152,6 +204,8 @@ public class ToolImpl extends MinimalEObjectImpl.Container implements Tool
   {
     switch (featureID)
     {
+      case JPCoffePackage.TOOL__ORIGINAL_NAME:
+        return ORIGINAL_NAME_EDEFAULT == null ? originalName != null : !ORIGINAL_NAME_EDEFAULT.equals(originalName);
       case JPCoffePackage.TOOL__NAME:
         return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
     }
@@ -169,7 +223,9 @@ public class ToolImpl extends MinimalEObjectImpl.Container implements Tool
     if (eIsProxy()) return super.toString();
 
     StringBuilder result = new StringBuilder(super.toString());
-    result.append(" (name: ");
+    result.append(" (originalName: ");
+    result.append(originalName);
+    result.append(", name: ");
     result.append(name);
     result.append(')');
     return result.toString();

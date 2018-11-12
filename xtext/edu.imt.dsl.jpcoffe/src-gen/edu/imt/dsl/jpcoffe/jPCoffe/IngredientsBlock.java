@@ -27,7 +27,7 @@ public interface IngredientsBlock extends EObject
 {
   /**
    * Returns the value of the '<em><b>Ingredients List</b></em>' containment reference list.
-   * The list contents are of type {@link edu.imt.dsl.jpcoffe.jPCoffe.Ingredient}.
+   * The list contents are of type {@link org.eclipse.emf.ecore.EObject}.
    * <!-- begin-user-doc -->
    * <p>
    * If the meaning of the '<em>Ingredients List</em>' containment reference list isn't clear,
@@ -39,6 +39,6 @@ public interface IngredientsBlock extends EObject
    * @model containment="true"
    * @generated
    */
-  EList<Ingredient> getIngredientsList();
+  EList<EObject> getIngredientsList();
 
 } // IngredientsBlock

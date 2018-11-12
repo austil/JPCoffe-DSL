@@ -5,11 +5,16 @@ import "http://www.eclipse.org/emf/2002/Ecore" as ecore
 generate jPCoffe "http://www.imt.edu/dsl/jpcoffe/JPCoffe"
 
 Main:
-	Recipe
+	(imports += Import)*
+	(recipes += Recipe)+
+;
+
+Import :
+	"use" "recipe" NAME "in" STRING
 ;
 
 Recipe : 
-	'Recipe' name = STRING '{'
+	"Recipe" name = STRING '{'
 		portion = PortionNB
 		ingredients = IngredientsBlock
 		tools = ToolsBlock
@@ -24,11 +29,19 @@ PortionNB :
 IngredientsBlock :
 	{IngredientsBlock} "Ingredients"
 	TITLE_LINE
-	(ingredientsList += Ingredient)*
+	(ingredientsList += (IngredientsGroup | Ingredient))*
+;
+
+IngredientsGroup :
+	'*' "GROUP" name = STRING '[' 
+		(ingredientsList += Ingredient)*
+	']'
+	(quantity = Quantity)?
 ;
 
 Ingredient :
-	"*" 
+	'*' 
+	(originalName += NAME ("OR" originalName += NAME)* "AS")?
 	name = NAME
 	(quantity = Quantity)?
 ;
@@ -38,7 +51,7 @@ Quantity :
 ;
 
 terminal METRIC_UNIT :
-	"gr" | "kg" | "cl" | "l"
+	"gr" | "kg" | "cl" | "l" | "g"
 ;
 
 ToolsBlock :
@@ -48,14 +61,21 @@ ToolsBlock :
 ;
 
 Tool :
-	"*"
-	name = NAME
+	'*'
+	(originalName = NAME "AS")? name = NAME
 ;
 
 StepsBlock : 
 	{StepsBlock} "Steps"
 	TITLE_LINE
-	(stepsList += Step)*
+	(stepsList += (ConditionalStep | Step))*
+;
+
+ConditionalStep :
+	"{" (pred += INT)? ("," pred += INT)* "}" 
+	"->" num = INT "."
+	"IF" condition = TEXT
+	"THEN" to = INT
 ;
 
 Step :
@@ -65,11 +85,11 @@ Step :
 ;
 
 NAME : MAJ_WORD (WORD)*;
-TEXT : (MAJ_WORD | WORD)+;
+TEXT : (MAJ_WORD | WORD | INT)+;
 
 terminal TITLE_LINE : ("-")+;
-terminal MAJ_WORD : ('A'..'Z') ('a'..'z')*;
-terminal WORD : ('a'..'z'|'A'..'Z'|'\''|',')+ ;
+terminal MAJ_WORD : ('A'..'Z') ('a'..'z' | '-')*;
+terminal WORD : ('a'..'z'|'A'..'Z'|'\''|','|'-')+ ;
 
 // from org.eclipse.xtext.common.Terminals
 

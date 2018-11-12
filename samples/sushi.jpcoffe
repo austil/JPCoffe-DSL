@@ -24,6 +24,6 @@ Recipe "Suchi" {
   {2} -> 3. former un pave de Riz avec vos mains
   {3} -> 4. deposer une pointe de Wasabi sur une lamelle de Poissons
   {4} -> 5. poser le pave de Riz sur la lamelle de Poissons et former le sushi
-  {5} -> 6. IF il reste du Poissons et du Riz THEN 2.
+  {5} -> 6. IF il reste du Poissons et du Riz THEN 2
 
 }

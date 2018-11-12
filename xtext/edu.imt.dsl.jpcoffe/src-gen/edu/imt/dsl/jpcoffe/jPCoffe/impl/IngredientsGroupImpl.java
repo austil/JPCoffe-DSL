@@ -4,6 +4,7 @@
 package edu.imt.dsl.jpcoffe.jPCoffe.impl;
 
 import edu.imt.dsl.jpcoffe.jPCoffe.Ingredient;
+import edu.imt.dsl.jpcoffe.jPCoffe.IngredientsGroup;
 import edu.imt.dsl.jpcoffe.jPCoffe.JPCoffePackage;
 import edu.imt.dsl.jpcoffe.jPCoffe.Quantity;
 
@@ -20,35 +21,26 @@ import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
-import org.eclipse.emf.ecore.util.EDataTypeEList;
+import org.eclipse.emf.ecore.util.EObjectContainmentEList;
+import org.eclipse.emf.ecore.util.InternalEList;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Ingredient</b></em>'.
+ * An implementation of the model object '<em><b>Ingredients Group</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link edu.imt.dsl.jpcoffe.jPCoffe.impl.IngredientImpl#getOriginalName <em>Original Name</em>}</li>
- *   <li>{@link edu.imt.dsl.jpcoffe.jPCoffe.impl.IngredientImpl#getName <em>Name</em>}</li>
- *   <li>{@link edu.imt.dsl.jpcoffe.jPCoffe.impl.IngredientImpl#getQuantity <em>Quantity</em>}</li>
+ *   <li>{@link edu.imt.dsl.jpcoffe.jPCoffe.impl.IngredientsGroupImpl#getName <em>Name</em>}</li>
+ *   <li>{@link edu.imt.dsl.jpcoffe.jPCoffe.impl.IngredientsGroupImpl#getIngredientsList <em>Ingredients List</em>}</li>
+ *   <li>{@link edu.imt.dsl.jpcoffe.jPCoffe.impl.IngredientsGroupImpl#getQuantity <em>Quantity</em>}</li>
  * </ul>
  *
  * @generated
  */
-public class IngredientImpl extends MinimalEObjectImpl.Container implements Ingredient
+public class IngredientsGroupImpl extends MinimalEObjectImpl.Container implements IngredientsGroup
 {
-  /**
-   * The cached value of the '{@link #getOriginalName() <em>Original Name</em>}' attribute list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getOriginalName()
-   * @generated
-   * @ordered
-   */
-  protected EList<String> originalName;
-
   /**
    * The default value of the '{@link #getName() <em>Name</em>}' attribute.
    * <!-- begin-user-doc -->
@@ -70,6 +62,16 @@ public class IngredientImpl extends MinimalEObjectImpl.Container implements Ingr
   protected String name = NAME_EDEFAULT;
 
   /**
+   * The cached value of the '{@link #getIngredientsList() <em>Ingredients List</em>}' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getIngredientsList()
+   * @generated
+   * @ordered
+   */
+  protected EList<Ingredient> ingredientsList;
+
+  /**
    * The cached value of the '{@link #getQuantity() <em>Quantity</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -84,7 +86,7 @@ public class IngredientImpl extends MinimalEObjectImpl.Container implements Ingr
    * <!-- end-user-doc -->
    * @generated
    */
-  protected IngredientImpl()
+  protected IngredientsGroupImpl()
   {
     super();
   }
@@ -97,21 +99,7 @@ public class IngredientImpl extends MinimalEObjectImpl.Container implements Ingr
   @Override
   protected EClass eStaticClass()
   {
-    return JPCoffePackage.Literals.INGREDIENT;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EList<String> getOriginalName()
-  {
-    if (originalName == null)
-    {
-      originalName = new EDataTypeEList<String>(String.class, this, JPCoffePackage.INGREDIENT__ORIGINAL_NAME);
-    }
-    return originalName;
+    return JPCoffePackage.Literals.INGREDIENTS_GROUP;
   }
 
   /**
@@ -134,7 +122,21 @@ public class IngredientImpl extends MinimalEObjectImpl.Container implements Ingr
     String oldName = name;
     name = newName;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, JPCoffePackage.INGREDIENT__NAME, oldName, name));
+      eNotify(new ENotificationImpl(this, Notification.SET, JPCoffePackage.INGREDIENTS_GROUP__NAME, oldName, name));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EList<Ingredient> getIngredientsList()
+  {
+    if (ingredientsList == null)
+    {
+      ingredientsList = new EObjectContainmentEList<Ingredient>(Ingredient.class, this, JPCoffePackage.INGREDIENTS_GROUP__INGREDIENTS_LIST);
+    }
+    return ingredientsList;
   }
 
   /**
@@ -158,7 +160,7 @@ public class IngredientImpl extends MinimalEObjectImpl.Container implements Ingr
     quantity = newQuantity;
     if (eNotificationRequired())
     {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, JPCoffePackage.INGREDIENT__QUANTITY, oldQuantity, newQuantity);
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, JPCoffePackage.INGREDIENTS_GROUP__QUANTITY, oldQuantity, newQuantity);
       if (msgs == null) msgs = notification; else msgs.add(notification);
     }
     return msgs;
@@ -175,14 +177,14 @@ public class IngredientImpl extends MinimalEObjectImpl.Container implements Ingr
     {
       NotificationChain msgs = null;
       if (quantity != null)
-        msgs = ((InternalEObject)quantity).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - JPCoffePackage.INGREDIENT__QUANTITY, null, msgs);
+        msgs = ((InternalEObject)quantity).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - JPCoffePackage.INGREDIENTS_GROUP__QUANTITY, null, msgs);
       if (newQuantity != null)
-        msgs = ((InternalEObject)newQuantity).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - JPCoffePackage.INGREDIENT__QUANTITY, null, msgs);
+        msgs = ((InternalEObject)newQuantity).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - JPCoffePackage.INGREDIENTS_GROUP__QUANTITY, null, msgs);
       msgs = basicSetQuantity(newQuantity, msgs);
       if (msgs != null) msgs.dispatch();
     }
     else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, JPCoffePackage.INGREDIENT__QUANTITY, newQuantity, newQuantity));
+      eNotify(new ENotificationImpl(this, Notification.SET, JPCoffePackage.INGREDIENTS_GROUP__QUANTITY, newQuantity, newQuantity));
   }
 
   /**
@@ -195,7 +197,9 @@ public class IngredientImpl extends MinimalEObjectImpl.Container implements Ingr
   {
     switch (featureID)
     {
-      case JPCoffePackage.INGREDIENT__QUANTITY:
+      case JPCoffePackage.INGREDIENTS_GROUP__INGREDIENTS_LIST:
+        return ((InternalEList<?>)getIngredientsList()).basicRemove(otherEnd, msgs);
+      case JPCoffePackage.INGREDIENTS_GROUP__QUANTITY:
         return basicSetQuantity(null, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
@@ -211,11 +215,11 @@ public class IngredientImpl extends MinimalEObjectImpl.Container implements Ingr
   {
     switch (featureID)
     {
-      case JPCoffePackage.INGREDIENT__ORIGINAL_NAME:
-        return getOriginalName();
-      case JPCoffePackage.INGREDIENT__NAME:
+      case JPCoffePackage.INGREDIENTS_GROUP__NAME:
         return getName();
-      case JPCoffePackage.INGREDIENT__QUANTITY:
+      case JPCoffePackage.INGREDIENTS_GROUP__INGREDIENTS_LIST:
+        return getIngredientsList();
+      case JPCoffePackage.INGREDIENTS_GROUP__QUANTITY:
         return getQuantity();
     }
     return super.eGet(featureID, resolve, coreType);
@@ -232,14 +236,14 @@ public class IngredientImpl extends MinimalEObjectImpl.Container implements Ingr
   {
     switch (featureID)
     {
-      case JPCoffePackage.INGREDIENT__ORIGINAL_NAME:
-        getOriginalName().clear();
-        getOriginalName().addAll((Collection<? extends String>)newValue);
-        return;
-      case JPCoffePackage.INGREDIENT__NAME:
+      case JPCoffePackage.INGREDIENTS_GROUP__NAME:
         setName((String)newValue);
         return;
-      case JPCoffePackage.INGREDIENT__QUANTITY:
+      case JPCoffePackage.INGREDIENTS_GROUP__INGREDIENTS_LIST:
+        getIngredientsList().clear();
+        getIngredientsList().addAll((Collection<? extends Ingredient>)newValue);
+        return;
+      case JPCoffePackage.INGREDIENTS_GROUP__QUANTITY:
         setQuantity((Quantity)newValue);
         return;
     }
@@ -256,13 +260,13 @@ public class IngredientImpl extends MinimalEObjectImpl.Container implements Ingr
   {
     switch (featureID)
     {
-      case JPCoffePackage.INGREDIENT__ORIGINAL_NAME:
-        getOriginalName().clear();
-        return;
-      case JPCoffePackage.INGREDIENT__NAME:
+      case JPCoffePackage.INGREDIENTS_GROUP__NAME:
         setName(NAME_EDEFAULT);
         return;
-      case JPCoffePackage.INGREDIENT__QUANTITY:
+      case JPCoffePackage.INGREDIENTS_GROUP__INGREDIENTS_LIST:
+        getIngredientsList().clear();
+        return;
+      case JPCoffePackage.INGREDIENTS_GROUP__QUANTITY:
         setQuantity((Quantity)null);
         return;
     }
@@ -279,11 +283,11 @@ public class IngredientImpl extends MinimalEObjectImpl.Container implements Ingr
   {
     switch (featureID)
     {
-      case JPCoffePackage.INGREDIENT__ORIGINAL_NAME:
-        return originalName != null && !originalName.isEmpty();
-      case JPCoffePackage.INGREDIENT__NAME:
+      case JPCoffePackage.INGREDIENTS_GROUP__NAME:
         return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
-      case JPCoffePackage.INGREDIENT__QUANTITY:
+      case JPCoffePackage.INGREDIENTS_GROUP__INGREDIENTS_LIST:
+        return ingredientsList != null && !ingredientsList.isEmpty();
+      case JPCoffePackage.INGREDIENTS_GROUP__QUANTITY:
         return quantity != null;
     }
     return super.eIsSet(featureID);
@@ -300,12 +304,10 @@ public class IngredientImpl extends MinimalEObjectImpl.Container implements Ingr
     if (eIsProxy()) return super.toString();
 
     StringBuilder result = new StringBuilder(super.toString());
-    result.append(" (originalName: ");
-    result.append(originalName);
-    result.append(", name: ");
+    result.append(" (name: ");
     result.append(name);
     result.append(')');
     return result.toString();
   }
 
-} //IngredientImpl
+} //IngredientsGroupImpl

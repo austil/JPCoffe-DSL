@@ -15,11 +15,11 @@ Recipe "Garniture Lasagnes Bolognaise" {
 
     Tools
     ------
-    * Poele 1
-    * Planche en bois 1
-    * Hachoir 1
-    * Cuillere a soupe 1
-    * Couvercle 1
+    * Poele
+    * Planche en bois
+    * Hachoir
+    * Cuillere a soupe
+    * Couvercle
 
     Steps
     ------
@@ -38,16 +38,16 @@ Recipe "Lasagnes Bolognaises Express" {
     Ingredients
     ------------    
     * Eau 20cl
-    * Paquet feuilles lasagnes 1 as Feuilles lasagnes
+    * Paquet feuilles lasagnes AS Feuilles lasagnes
     * Gruyere rape 100g
     * Bechamel
     * Garniture Lasagnes Bolognaise AS Garniture
 
     Tools
     ------
-    * Plat a gratin 1
-    * Four 1
-    * Casserole 1
+    * Plat a gratin
+    * Four
+    * Casserole
 
     Steps
     ------

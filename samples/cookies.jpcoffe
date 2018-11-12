@@ -9,8 +9,8 @@ Recipe "Cookies" {
   * Beurre doux 85g
   * Farine 150g
   * Pepites de chocolat 100g
-  * Cuillere a soupe de levure chimique 1 as Levure chimique
-  * Cuillere a soupe de cafe de sel 0,5 as Sel
+  * Cuillere a soupe de levure chimique AS Levure chimique 1
+  * Cuillere a cafe de sel AS Sel 1
   * GROUP "Pate" [ 
     * Oeuf
     * Sucre
@@ -25,17 +25,17 @@ Recipe "Cookies" {
   ------
   * Four
   * Saladier
-  * Plaque recouverte d'une feuille de cuisson as Plaque
+  * Plaque recouverte d'une feuille de cuisson AS Plaque
 
   Steps
   ------
-  {} -> 1. prechauffer le Four a 180 degres.
-  {} -> 2. laisser ramollir le Beurre doux a temperature ambiante.
-  {2} -> 3. dans un Saladier, malaxer le Beurre doux avec le Sucre.
-  {3} -> 4. Ajouter l'Oeuf dans le Saladier.
-  {4} -> 5. verser progressivement la Farine, la Levure chimique, le Sel et les Pepites de chocolat pour former la Pate.
-  {5} -> 6. melanger la Pate.
-  {6} -> 7. a l'aide des mains, former des noix de Pate sur la Plaque en les espaçant car elles s'etaleront a la cuisson.
-  {1,7} -> 8. enfourner 8 a 10 minutes a 180 degres et sortir la Plaque des que les contours des noix de Pate commencent a brunir. 
+  {} -> 1. prechauffer le Four a 180 degres
+  {} -> 2. laisser ramollir le Beurre doux a temperature ambiante
+  {2} -> 3. dans un Saladier, malaxer le Beurre doux avec le Sucre
+  {3} -> 4. Ajouter l'Oeuf dans le Saladier
+  {4} -> 5. verser progressivement la Farine, la Levure chimique, le Sel et les Pepites de chocolat pour former la Pate
+  {5} -> 6. melanger la Pate
+  {6} -> 7. a l'aide des mains, former des noix de Pate sur la Plaque en les espaçant car elles s'etaleront a la cuisson
+  {1,7} -> 8. enfourner 8 a 10 minutes a 180 degres et sortir la Plaque des que les contours des noix de Pate commencent a brunir
 
 }

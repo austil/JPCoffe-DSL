@@ -96,6 +96,11 @@ public class JPCoffeAdapterFactory extends AdapterFactoryImpl
         return createIngredientsBlockAdapter();
       }
       @Override
+      public Adapter caseIngredientsGroup(IngredientsGroup object)
+      {
+        return createIngredientsGroupAdapter();
+      }
+      @Override
       public Adapter caseIngredient(Ingredient object)
       {
         return createIngredientAdapter();
@@ -119,6 +124,11 @@ public class JPCoffeAdapterFactory extends AdapterFactoryImpl
       public Adapter caseStepsBlock(StepsBlock object)
       {
         return createStepsBlockAdapter();
+      }
+      @Override
+      public Adapter caseConditionalStep(ConditionalStep object)
+      {
+        return createConditionalStepAdapter();
       }
       @Override
       public Adapter caseStep(Step object)
@@ -208,6 +218,21 @@ public class JPCoffeAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
+   * Creates a new adapter for an object of class '{@link edu.imt.dsl.jpcoffe.jPCoffe.IngredientsGroup <em>Ingredients Group</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see edu.imt.dsl.jpcoffe.jPCoffe.IngredientsGroup
+   * @generated
+   */
+  public Adapter createIngredientsGroupAdapter()
+  {
+    return null;
+  }
+
+  /**
    * Creates a new adapter for an object of class '{@link edu.imt.dsl.jpcoffe.jPCoffe.Ingredient <em>Ingredient</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
@@ -278,6 +303,21 @@ public class JPCoffeAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createStepsBlockAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link edu.imt.dsl.jpcoffe.jPCoffe.ConditionalStep <em>Conditional Step</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see edu.imt.dsl.jpcoffe.jPCoffe.ConditionalStep
+   * @generated
+   */
+  public Adapter createConditionalStepAdapter()
   {
     return null;
   }

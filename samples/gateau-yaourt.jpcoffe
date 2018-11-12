@@ -4,12 +4,12 @@ Recipe "Gateau au Yaourt" {
 
   Ingredients
   ------------
-  * Pot de yaourt 1 AS Yaourt
+  * Pot de yaourt AS Yaourt 1
   * Oeufs 2
-  * Pots de farine 3 AS Farine
-  * Pots de sucre en poudre 2 AS Sucre en poudre
-  * Pot d'huile neutre 1 AS Huile neutre
-  * Sachet levure chimique 1 AS Levure chimique
+  * Pots de farine AS Farine 3
+  * Pots de sucre en poudre AS Sucre en poudre 2
+  * Pot d'huile neutre AS Huile neutre 1
+  * Sachet levure chimique AS Levure chimique 1
 
   Tools
   ------
@@ -20,12 +20,12 @@ Recipe "Gateau au Yaourt" {
 
   Steps
   ------
-  {} -> 1. prechauffer le Four a 180 degres.
-  {} -> 2. dans un Saladier, verser le Yaourt et nettoyer le pot qui servira pour doser les autres ingredients.
-  {2} -> 3. ajouter le Sucre en poudre et les Oeufs dans le Saladier et melanger vigoureusement a l’aide d’une Cuillere en bois, jusqu’a ce que la pate blanchisse legerement.
-  {3} -> 4. ajouter alors l'Huile neutre, la Farine et la Levure chimique et bien remuer jusqu’a l’obtention d’une pate homogene.
-  {4} -> 5. verser dans un Moule a cake.
-  {1,5} -> 6. enfourner le Moule a cake pendant 35 min.
-  {6} -> 7. demouler sur une grille et laisser refroidir.
+  {} -> 1. prechauffer le Four a 180 degres
+  {} -> 2. dans un Saladier, verser le Yaourt et nettoyer le pot qui servira pour doser les autres ingredients
+  {2} -> 3. ajouter le Sucre en poudre et les Oeufs dans le Saladier et melanger vigoureusement a l'aide d’une Cuillere en bois, jusqu'a ce que la pate blanchisse legerement
+  {3} -> 4. ajouter alors l'Huile neutre, la Farine et la Levure chimique et bien remuer jusqu'a l'obtention d’une pate homogene
+  {4} -> 5. verser dans un Moule a cake
+  {1,5} -> 6. enfourner le Moule a cake pendant 35 min
+  {6} -> 7. demouler sur une grille et laisser refroidir
 
 }

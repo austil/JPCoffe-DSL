@@ -9,40 +9,24 @@ import org.eclipse.emf.ecore.EObject;
 
 /**
  * <!-- begin-user-doc -->
- * A representation of the model object '<em><b>Ingredient</b></em>'.
+ * A representation of the model object '<em><b>Ingredients Group</b></em>'.
  * <!-- end-user-doc -->
  *
  * <p>
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link edu.imt.dsl.jpcoffe.jPCoffe.Ingredient#getOriginalName <em>Original Name</em>}</li>
- *   <li>{@link edu.imt.dsl.jpcoffe.jPCoffe.Ingredient#getName <em>Name</em>}</li>
- *   <li>{@link edu.imt.dsl.jpcoffe.jPCoffe.Ingredient#getQuantity <em>Quantity</em>}</li>
+ *   <li>{@link edu.imt.dsl.jpcoffe.jPCoffe.IngredientsGroup#getName <em>Name</em>}</li>
+ *   <li>{@link edu.imt.dsl.jpcoffe.jPCoffe.IngredientsGroup#getIngredientsList <em>Ingredients List</em>}</li>
+ *   <li>{@link edu.imt.dsl.jpcoffe.jPCoffe.IngredientsGroup#getQuantity <em>Quantity</em>}</li>
  * </ul>
  *
- * @see edu.imt.dsl.jpcoffe.jPCoffe.JPCoffePackage#getIngredient()
+ * @see edu.imt.dsl.jpcoffe.jPCoffe.JPCoffePackage#getIngredientsGroup()
  * @model
  * @generated
  */
-public interface Ingredient extends EObject
+public interface IngredientsGroup extends EObject
 {
-  /**
-   * Returns the value of the '<em><b>Original Name</b></em>' attribute list.
-   * The list contents are of type {@link java.lang.String}.
-   * <!-- begin-user-doc -->
-   * <p>
-   * If the meaning of the '<em>Original Name</em>' attribute list isn't clear,
-   * there really should be more of a description here...
-   * </p>
-   * <!-- end-user-doc -->
-   * @return the value of the '<em>Original Name</em>' attribute list.
-   * @see edu.imt.dsl.jpcoffe.jPCoffe.JPCoffePackage#getIngredient_OriginalName()
-   * @model unique="false"
-   * @generated
-   */
-  EList<String> getOriginalName();
-
   /**
    * Returns the value of the '<em><b>Name</b></em>' attribute.
    * <!-- begin-user-doc -->
@@ -53,14 +37,14 @@ public interface Ingredient extends EObject
    * <!-- end-user-doc -->
    * @return the value of the '<em>Name</em>' attribute.
    * @see #setName(String)
-   * @see edu.imt.dsl.jpcoffe.jPCoffe.JPCoffePackage#getIngredient_Name()
+   * @see edu.imt.dsl.jpcoffe.jPCoffe.JPCoffePackage#getIngredientsGroup_Name()
    * @model
    * @generated
    */
   String getName();
 
   /**
-   * Sets the value of the '{@link edu.imt.dsl.jpcoffe.jPCoffe.Ingredient#getName <em>Name</em>}' attribute.
+   * Sets the value of the '{@link edu.imt.dsl.jpcoffe.jPCoffe.IngredientsGroup#getName <em>Name</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @param value the new value of the '<em>Name</em>' attribute.
@@ -68,6 +52,22 @@ public interface Ingredient extends EObject
    * @generated
    */
   void setName(String value);
+
+  /**
+   * Returns the value of the '<em><b>Ingredients List</b></em>' containment reference list.
+   * The list contents are of type {@link edu.imt.dsl.jpcoffe.jPCoffe.Ingredient}.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Ingredients List</em>' containment reference list isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Ingredients List</em>' containment reference list.
+   * @see edu.imt.dsl.jpcoffe.jPCoffe.JPCoffePackage#getIngredientsGroup_IngredientsList()
+   * @model containment="true"
+   * @generated
+   */
+  EList<Ingredient> getIngredientsList();
 
   /**
    * Returns the value of the '<em><b>Quantity</b></em>' containment reference.
@@ -79,14 +79,14 @@ public interface Ingredient extends EObject
    * <!-- end-user-doc -->
    * @return the value of the '<em>Quantity</em>' containment reference.
    * @see #setQuantity(Quantity)
-   * @see edu.imt.dsl.jpcoffe.jPCoffe.JPCoffePackage#getIngredient_Quantity()
+   * @see edu.imt.dsl.jpcoffe.jPCoffe.JPCoffePackage#getIngredientsGroup_Quantity()
    * @model containment="true"
    * @generated
    */
   Quantity getQuantity();
 
   /**
-   * Sets the value of the '{@link edu.imt.dsl.jpcoffe.jPCoffe.Ingredient#getQuantity <em>Quantity</em>}' containment reference.
+   * Sets the value of the '{@link edu.imt.dsl.jpcoffe.jPCoffe.IngredientsGroup#getQuantity <em>Quantity</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @param value the new value of the '<em>Quantity</em>' containment reference.
@@ -95,4 +95,4 @@ public interface Ingredient extends EObject
    */
   void setQuantity(Quantity value);
 
-} // Ingredient
+} // IngredientsGroup

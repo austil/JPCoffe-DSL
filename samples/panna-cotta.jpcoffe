@@ -7,7 +7,7 @@ Recipe "Panna Cotta" {
   * Lait 20cl
   * Creme liquide 20cl
   * Sucre 30g
-  * Feuilles de gelatine 2,5
+  * Feuilles de gelatine 3
   * Sachets sucre vanille 2
   * Gousse de vanille 1
   * Coulis de framboise
@@ -15,7 +15,7 @@ Recipe "Panna Cotta" {
     * Lait 20cl
     * Creme liquide 20cl
     * Sucre 30g
-    * Feuilles de gelatine 2,5
+    * Feuilles de gelatine 3
     * Sachets sucre vanille 2
     * Gousse de vanille 1
   ]
@@ -25,13 +25,13 @@ Recipe "Panna Cotta" {
   * Bol
   * Casserole
   * Cuillere
-  * Verrines 4
+  * Verrines
   * Refrigerateur
 
   Steps
   ------
   { } -> 1. mettre a ramollir les Feuilles de gelatine dans Bol d'eau froide
-  {} -> 2. dans une Casserole, faites bouillir le Lait, la Creme liquide, le Sucre et la Gousse de vanille dont on aura enleve les grains. 
+  {} -> 2. dans une Casserole, faites bouillir le Lait, la Creme liquide, le Sucre et la Gousse de vanille dont on aura enleve les grains
   {1} -> 3. essorer Feuilles de gelatine
   {3} -> 4. ajouter Feuilles de gelatine dans Casserole pour former le Yaourt
   {4} -> 5. melanger Yaourt

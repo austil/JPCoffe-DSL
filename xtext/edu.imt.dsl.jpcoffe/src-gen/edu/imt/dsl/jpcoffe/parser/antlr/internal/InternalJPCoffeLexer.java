@@ -21,17 +21,27 @@ public class InternalJPCoffeLexer extends Lexer {
     public static final int T__16=16;
     public static final int T__17=17;
     public static final int T__18=18;
+    public static final int T__33=33;
+    public static final int T__34=34;
     public static final int T__13=13;
     public static final int T__14=14;
     public static final int EOF=-1;
+    public static final int T__30=30;
+    public static final int T__31=31;
+    public static final int T__32=32;
     public static final int RULE_WS=12;
+    public static final int T__26=26;
+    public static final int T__27=27;
     public static final int RULE_MAJ_WORD=8;
+    public static final int T__28=28;
     public static final int RULE_INT=5;
+    public static final int T__29=29;
     public static final int T__22=22;
     public static final int RULE_ML_COMMENT=10;
     public static final int T__23=23;
     public static final int RULE_TITLE_LINE=6;
     public static final int T__24=24;
+    public static final int T__25=25;
     public static final int T__20=20;
     public static final int T__21=21;
 
@@ -53,10 +63,10 @@ public class InternalJPCoffeLexer extends Lexer {
         try {
             int _type = T__13;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalJPCoffe.g:11:7: ( 'Recipe' )
-            // InternalJPCoffe.g:11:9: 'Recipe'
+            // InternalJPCoffe.g:11:7: ( 'use' )
+            // InternalJPCoffe.g:11:9: 'use'
             {
-            match("Recipe"); 
+            match("use"); 
 
 
             }
@@ -74,10 +84,11 @@ public class InternalJPCoffeLexer extends Lexer {
         try {
             int _type = T__14;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalJPCoffe.g:12:7: ( '{' )
-            // InternalJPCoffe.g:12:9: '{'
+            // InternalJPCoffe.g:12:7: ( 'recipe' )
+            // InternalJPCoffe.g:12:9: 'recipe'
             {
-            match('{'); 
+            match("recipe"); 
+
 
             }
 
@@ -94,10 +105,11 @@ public class InternalJPCoffeLexer extends Lexer {
         try {
             int _type = T__15;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalJPCoffe.g:13:7: ( '}' )
-            // InternalJPCoffe.g:13:9: '}'
+            // InternalJPCoffe.g:13:7: ( 'in' )
+            // InternalJPCoffe.g:13:9: 'in'
             {
-            match('}'); 
+            match("in"); 
+
 
             }
 
@@ -114,10 +126,10 @@ public class InternalJPCoffeLexer extends Lexer {
         try {
             int _type = T__16;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalJPCoffe.g:14:7: ( 'For' )
-            // InternalJPCoffe.g:14:9: 'For'
+            // InternalJPCoffe.g:14:7: ( 'Recipe' )
+            // InternalJPCoffe.g:14:9: 'Recipe'
             {
-            match("For"); 
+            match("Recipe"); 
 
 
             }
@@ -135,11 +147,10 @@ public class InternalJPCoffeLexer extends Lexer {
         try {
             int _type = T__17;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalJPCoffe.g:15:7: ( 'people' )
-            // InternalJPCoffe.g:15:9: 'people'
+            // InternalJPCoffe.g:15:7: ( '{' )
+            // InternalJPCoffe.g:15:9: '{'
             {
-            match("people"); 
-
+            match('{'); 
 
             }
 
@@ -156,11 +167,10 @@ public class InternalJPCoffeLexer extends Lexer {
         try {
             int _type = T__18;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalJPCoffe.g:16:7: ( 'Ingredients' )
-            // InternalJPCoffe.g:16:9: 'Ingredients'
+            // InternalJPCoffe.g:16:7: ( '}' )
+            // InternalJPCoffe.g:16:9: '}'
             {
-            match("Ingredients"); 
-
+            match('}'); 
 
             }
 
@@ -177,10 +187,11 @@ public class InternalJPCoffeLexer extends Lexer {
         try {
             int _type = T__19;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalJPCoffe.g:17:7: ( '*' )
-            // InternalJPCoffe.g:17:9: '*'
+            // InternalJPCoffe.g:17:7: ( 'For' )
+            // InternalJPCoffe.g:17:9: 'For'
             {
-            match('*'); 
+            match("For"); 
+
 
             }
 
@@ -197,10 +208,10 @@ public class InternalJPCoffeLexer extends Lexer {
         try {
             int _type = T__20;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalJPCoffe.g:18:7: ( 'Tools' )
-            // InternalJPCoffe.g:18:9: 'Tools'
+            // InternalJPCoffe.g:18:7: ( 'people' )
+            // InternalJPCoffe.g:18:9: 'people'
             {
-            match("Tools"); 
+            match("people"); 
 
 
             }
@@ -218,10 +229,10 @@ public class InternalJPCoffeLexer extends Lexer {
         try {
             int _type = T__21;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalJPCoffe.g:19:7: ( 'Steps' )
-            // InternalJPCoffe.g:19:9: 'Steps'
+            // InternalJPCoffe.g:19:7: ( 'Ingredients' )
+            // InternalJPCoffe.g:19:9: 'Ingredients'
             {
-            match("Steps"); 
+            match("Ingredients"); 
 
 
             }
@@ -239,10 +250,10 @@ public class InternalJPCoffeLexer extends Lexer {
         try {
             int _type = T__22;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalJPCoffe.g:20:7: ( ',' )
-            // InternalJPCoffe.g:20:9: ','
+            // InternalJPCoffe.g:20:7: ( '*' )
+            // InternalJPCoffe.g:20:9: '*'
             {
-            match(','); 
+            match('*'); 
 
             }
 
@@ -259,10 +270,10 @@ public class InternalJPCoffeLexer extends Lexer {
         try {
             int _type = T__23;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalJPCoffe.g:21:7: ( '->' )
-            // InternalJPCoffe.g:21:9: '->'
+            // InternalJPCoffe.g:21:7: ( 'GROUP' )
+            // InternalJPCoffe.g:21:9: 'GROUP'
             {
-            match("->"); 
+            match("GROUP"); 
 
 
             }
@@ -280,10 +291,10 @@ public class InternalJPCoffeLexer extends Lexer {
         try {
             int _type = T__24;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalJPCoffe.g:22:7: ( '.' )
-            // InternalJPCoffe.g:22:9: '.'
+            // InternalJPCoffe.g:22:7: ( '[' )
+            // InternalJPCoffe.g:22:9: '['
             {
-            match('.'); 
+            match('['); 
 
             }
 
@@ -295,20 +306,233 @@ public class InternalJPCoffeLexer extends Lexer {
     }
     // $ANTLR end "T__24"
 
+    // $ANTLR start "T__25"
+    public final void mT__25() throws RecognitionException {
+        try {
+            int _type = T__25;
+            int _channel = DEFAULT_TOKEN_CHANNEL;
+            // InternalJPCoffe.g:23:7: ( ']' )
+            // InternalJPCoffe.g:23:9: ']'
+            {
+            match(']'); 
+
+            }
+
+            state.type = _type;
+            state.channel = _channel;
+        }
+        finally {
+        }
+    }
+    // $ANTLR end "T__25"
+
+    // $ANTLR start "T__26"
+    public final void mT__26() throws RecognitionException {
+        try {
+            int _type = T__26;
+            int _channel = DEFAULT_TOKEN_CHANNEL;
+            // InternalJPCoffe.g:24:7: ( 'OR' )
+            // InternalJPCoffe.g:24:9: 'OR'
+            {
+            match("OR"); 
+
+
+            }
+
+            state.type = _type;
+            state.channel = _channel;
+        }
+        finally {
+        }
+    }
+    // $ANTLR end "T__26"
+
+    // $ANTLR start "T__27"
+    public final void mT__27() throws RecognitionException {
+        try {
+            int _type = T__27;
+            int _channel = DEFAULT_TOKEN_CHANNEL;
+            // InternalJPCoffe.g:25:7: ( 'AS' )
+            // InternalJPCoffe.g:25:9: 'AS'
+            {
+            match("AS"); 
+
+
+            }
+
+            state.type = _type;
+            state.channel = _channel;
+        }
+        finally {
+        }
+    }
+    // $ANTLR end "T__27"
+
+    // $ANTLR start "T__28"
+    public final void mT__28() throws RecognitionException {
+        try {
+            int _type = T__28;
+            int _channel = DEFAULT_TOKEN_CHANNEL;
+            // InternalJPCoffe.g:26:7: ( 'Tools' )
+            // InternalJPCoffe.g:26:9: 'Tools'
+            {
+            match("Tools"); 
+
+
+            }
+
+            state.type = _type;
+            state.channel = _channel;
+        }
+        finally {
+        }
+    }
+    // $ANTLR end "T__28"
+
+    // $ANTLR start "T__29"
+    public final void mT__29() throws RecognitionException {
+        try {
+            int _type = T__29;
+            int _channel = DEFAULT_TOKEN_CHANNEL;
+            // InternalJPCoffe.g:27:7: ( 'Steps' )
+            // InternalJPCoffe.g:27:9: 'Steps'
+            {
+            match("Steps"); 
+
+
+            }
+
+            state.type = _type;
+            state.channel = _channel;
+        }
+        finally {
+        }
+    }
+    // $ANTLR end "T__29"
+
+    // $ANTLR start "T__30"
+    public final void mT__30() throws RecognitionException {
+        try {
+            int _type = T__30;
+            int _channel = DEFAULT_TOKEN_CHANNEL;
+            // InternalJPCoffe.g:28:7: ( ',' )
+            // InternalJPCoffe.g:28:9: ','
+            {
+            match(','); 
+
+            }
+
+            state.type = _type;
+            state.channel = _channel;
+        }
+        finally {
+        }
+    }
+    // $ANTLR end "T__30"
+
+    // $ANTLR start "T__31"
+    public final void mT__31() throws RecognitionException {
+        try {
+            int _type = T__31;
+            int _channel = DEFAULT_TOKEN_CHANNEL;
+            // InternalJPCoffe.g:29:7: ( '->' )
+            // InternalJPCoffe.g:29:9: '->'
+            {
+            match("->"); 
+
+
+            }
+
+            state.type = _type;
+            state.channel = _channel;
+        }
+        finally {
+        }
+    }
+    // $ANTLR end "T__31"
+
+    // $ANTLR start "T__32"
+    public final void mT__32() throws RecognitionException {
+        try {
+            int _type = T__32;
+            int _channel = DEFAULT_TOKEN_CHANNEL;
+            // InternalJPCoffe.g:30:7: ( '.' )
+            // InternalJPCoffe.g:30:9: '.'
+            {
+            match('.'); 
+
+            }
+
+            state.type = _type;
+            state.channel = _channel;
+        }
+        finally {
+        }
+    }
+    // $ANTLR end "T__32"
+
+    // $ANTLR start "T__33"
+    public final void mT__33() throws RecognitionException {
+        try {
+            int _type = T__33;
+            int _channel = DEFAULT_TOKEN_CHANNEL;
+            // InternalJPCoffe.g:31:7: ( 'IF' )
+            // InternalJPCoffe.g:31:9: 'IF'
+            {
+            match("IF"); 
+
+
+            }
+
+            state.type = _type;
+            state.channel = _channel;
+        }
+        finally {
+        }
+    }
+    // $ANTLR end "T__33"
+
+    // $ANTLR start "T__34"
+    public final void mT__34() throws RecognitionException {
+        try {
+            int _type = T__34;
+            int _channel = DEFAULT_TOKEN_CHANNEL;
+            // InternalJPCoffe.g:32:7: ( 'THEN' )
+            // InternalJPCoffe.g:32:9: 'THEN'
+            {
+            match("THEN"); 
+
+
+            }
+
+            state.type = _type;
+            state.channel = _channel;
+        }
+        finally {
+        }
+    }
+    // $ANTLR end "T__34"
+
     // $ANTLR start "RULE_METRIC_UNIT"
     public final void mRULE_METRIC_UNIT() throws RecognitionException {
         try {
             int _type = RULE_METRIC_UNIT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalJPCoffe.g:760:18: ( ( 'gr' | 'kg' | 'cl' | 'l' ) )
-            // InternalJPCoffe.g:760:20: ( 'gr' | 'kg' | 'cl' | 'l' )
+            // InternalJPCoffe.g:1193:18: ( ( 'gr' | 'kg' | 'cl' | 'l' | 'g' ) )
+            // InternalJPCoffe.g:1193:20: ( 'gr' | 'kg' | 'cl' | 'l' | 'g' )
             {
-            // InternalJPCoffe.g:760:20: ( 'gr' | 'kg' | 'cl' | 'l' )
-            int alt1=4;
+            // InternalJPCoffe.g:1193:20: ( 'gr' | 'kg' | 'cl' | 'l' | 'g' )
+            int alt1=5;
             switch ( input.LA(1) ) {
             case 'g':
                 {
-                alt1=1;
+                int LA1_1 = input.LA(2);
+
+                if ( (LA1_1=='r') ) {
+                    alt1=1;
+                }
+                else {
+                    alt1=5;}
                 }
                 break;
             case 'k':
@@ -335,7 +559,7 @@ public class InternalJPCoffeLexer extends Lexer {
 
             switch (alt1) {
                 case 1 :
-                    // InternalJPCoffe.g:760:21: 'gr'
+                    // InternalJPCoffe.g:1193:21: 'gr'
                     {
                     match("gr"); 
 
@@ -343,7 +567,7 @@ public class InternalJPCoffeLexer extends Lexer {
                     }
                     break;
                 case 2 :
-                    // InternalJPCoffe.g:760:26: 'kg'
+                    // InternalJPCoffe.g:1193:26: 'kg'
                     {
                     match("kg"); 
 
@@ -351,7 +575,7 @@ public class InternalJPCoffeLexer extends Lexer {
                     }
                     break;
                 case 3 :
-                    // InternalJPCoffe.g:760:31: 'cl'
+                    // InternalJPCoffe.g:1193:31: 'cl'
                     {
                     match("cl"); 
 
@@ -359,9 +583,16 @@ public class InternalJPCoffeLexer extends Lexer {
                     }
                     break;
                 case 4 :
-                    // InternalJPCoffe.g:760:36: 'l'
+                    // InternalJPCoffe.g:1193:36: 'l'
                     {
                     match('l'); 
+
+                    }
+                    break;
+                case 5 :
+                    // InternalJPCoffe.g:1193:40: 'g'
+                    {
+                    match('g'); 
 
                     }
                     break;
@@ -384,10 +615,10 @@ public class InternalJPCoffeLexer extends Lexer {
         try {
             int _type = RULE_TITLE_LINE;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalJPCoffe.g:762:17: ( ( '-' )+ )
-            // InternalJPCoffe.g:762:19: ( '-' )+
+            // InternalJPCoffe.g:1195:17: ( ( '-' )+ )
+            // InternalJPCoffe.g:1195:19: ( '-' )+
             {
-            // InternalJPCoffe.g:762:19: ( '-' )+
+            // InternalJPCoffe.g:1195:19: ( '-' )+
             int cnt2=0;
             loop2:
             do {
@@ -401,7 +632,7 @@ public class InternalJPCoffeLexer extends Lexer {
 
                 switch (alt2) {
             	case 1 :
-            	    // InternalJPCoffe.g:762:19: '-'
+            	    // InternalJPCoffe.g:1195:19: '-'
             	    {
             	    match('-'); 
 
@@ -433,26 +664,34 @@ public class InternalJPCoffeLexer extends Lexer {
         try {
             int _type = RULE_MAJ_WORD;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalJPCoffe.g:764:15: ( 'A' .. 'Z' ( 'a' .. 'z' )* )
-            // InternalJPCoffe.g:764:17: 'A' .. 'Z' ( 'a' .. 'z' )*
+            // InternalJPCoffe.g:1197:15: ( 'A' .. 'Z' ( 'a' .. 'z' | '-' )* )
+            // InternalJPCoffe.g:1197:17: 'A' .. 'Z' ( 'a' .. 'z' | '-' )*
             {
             matchRange('A','Z'); 
-            // InternalJPCoffe.g:764:26: ( 'a' .. 'z' )*
+            // InternalJPCoffe.g:1197:26: ( 'a' .. 'z' | '-' )*
             loop3:
             do {
                 int alt3=2;
                 int LA3_0 = input.LA(1);
 
-                if ( ((LA3_0>='a' && LA3_0<='z')) ) {
+                if ( (LA3_0=='-'||(LA3_0>='a' && LA3_0<='z')) ) {
                     alt3=1;
                 }
 
 
                 switch (alt3) {
             	case 1 :
-            	    // InternalJPCoffe.g:764:27: 'a' .. 'z'
+            	    // InternalJPCoffe.g:
             	    {
-            	    matchRange('a','z'); 
+            	    if ( input.LA(1)=='-'||(input.LA(1)>='a' && input.LA(1)<='z') ) {
+            	        input.consume();
+
+            	    }
+            	    else {
+            	        MismatchedSetException mse = new MismatchedSetException(null,input);
+            	        recover(mse);
+            	        throw mse;}
+
 
             	    }
             	    break;
@@ -478,17 +717,17 @@ public class InternalJPCoffeLexer extends Lexer {
         try {
             int _type = RULE_WORD;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalJPCoffe.g:766:11: ( ( 'a' .. 'z' | 'A' .. 'Z' | '\\'' | ',' )+ )
-            // InternalJPCoffe.g:766:13: ( 'a' .. 'z' | 'A' .. 'Z' | '\\'' | ',' )+
+            // InternalJPCoffe.g:1199:11: ( ( 'a' .. 'z' | 'A' .. 'Z' | '\\'' | ',' | '-' )+ )
+            // InternalJPCoffe.g:1199:13: ( 'a' .. 'z' | 'A' .. 'Z' | '\\'' | ',' | '-' )+
             {
-            // InternalJPCoffe.g:766:13: ( 'a' .. 'z' | 'A' .. 'Z' | '\\'' | ',' )+
+            // InternalJPCoffe.g:1199:13: ( 'a' .. 'z' | 'A' .. 'Z' | '\\'' | ',' | '-' )+
             int cnt4=0;
             loop4:
             do {
                 int alt4=2;
                 int LA4_0 = input.LA(1);
 
-                if ( (LA4_0=='\''||LA4_0==','||(LA4_0>='A' && LA4_0<='Z')||(LA4_0>='a' && LA4_0<='z')) ) {
+                if ( (LA4_0=='\''||(LA4_0>=',' && LA4_0<='-')||(LA4_0>='A' && LA4_0<='Z')||(LA4_0>='a' && LA4_0<='z')) ) {
                     alt4=1;
                 }
 
@@ -497,7 +736,7 @@ public class InternalJPCoffeLexer extends Lexer {
             	case 1 :
             	    // InternalJPCoffe.g:
             	    {
-            	    if ( input.LA(1)=='\''||input.LA(1)==','||(input.LA(1)>='A' && input.LA(1)<='Z')||(input.LA(1)>='a' && input.LA(1)<='z') ) {
+            	    if ( input.LA(1)=='\''||(input.LA(1)>=',' && input.LA(1)<='-')||(input.LA(1)>='A' && input.LA(1)<='Z')||(input.LA(1)>='a' && input.LA(1)<='z') ) {
             	        input.consume();
 
             	    }
@@ -535,10 +774,10 @@ public class InternalJPCoffeLexer extends Lexer {
         try {
             int _type = RULE_INT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalJPCoffe.g:768:10: ( ( '0' .. '9' )+ )
-            // InternalJPCoffe.g:768:12: ( '0' .. '9' )+
+            // InternalJPCoffe.g:1201:10: ( ( '0' .. '9' )+ )
+            // InternalJPCoffe.g:1201:12: ( '0' .. '9' )+
             {
-            // InternalJPCoffe.g:768:12: ( '0' .. '9' )+
+            // InternalJPCoffe.g:1201:12: ( '0' .. '9' )+
             int cnt5=0;
             loop5:
             do {
@@ -552,7 +791,7 @@ public class InternalJPCoffeLexer extends Lexer {
 
                 switch (alt5) {
             	case 1 :
-            	    // InternalJPCoffe.g:768:13: '0' .. '9'
+            	    // InternalJPCoffe.g:1201:13: '0' .. '9'
             	    {
             	    matchRange('0','9'); 
 
@@ -584,10 +823,10 @@ public class InternalJPCoffeLexer extends Lexer {
         try {
             int _type = RULE_STRING;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalJPCoffe.g:770:13: ( ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' ) )
-            // InternalJPCoffe.g:770:15: ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
+            // InternalJPCoffe.g:1203:13: ( ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' ) )
+            // InternalJPCoffe.g:1203:15: ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
             {
-            // InternalJPCoffe.g:770:15: ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
+            // InternalJPCoffe.g:1203:15: ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
             int alt8=2;
             int LA8_0 = input.LA(1);
 
@@ -605,10 +844,10 @@ public class InternalJPCoffeLexer extends Lexer {
             }
             switch (alt8) {
                 case 1 :
-                    // InternalJPCoffe.g:770:16: '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"'
+                    // InternalJPCoffe.g:1203:16: '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"'
                     {
                     match('\"'); 
-                    // InternalJPCoffe.g:770:20: ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )*
+                    // InternalJPCoffe.g:1203:20: ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )*
                     loop6:
                     do {
                         int alt6=3;
@@ -624,7 +863,7 @@ public class InternalJPCoffeLexer extends Lexer {
 
                         switch (alt6) {
                     	case 1 :
-                    	    // InternalJPCoffe.g:770:21: '\\\\' .
+                    	    // InternalJPCoffe.g:1203:21: '\\\\' .
                     	    {
                     	    match('\\'); 
                     	    matchAny(); 
@@ -632,7 +871,7 @@ public class InternalJPCoffeLexer extends Lexer {
                     	    }
                     	    break;
                     	case 2 :
-                    	    // InternalJPCoffe.g:770:28: ~ ( ( '\\\\' | '\"' ) )
+                    	    // InternalJPCoffe.g:1203:28: ~ ( ( '\\\\' | '\"' ) )
                     	    {
                     	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='!')||(input.LA(1)>='#' && input.LA(1)<='[')||(input.LA(1)>=']' && input.LA(1)<='\uFFFF') ) {
                     	        input.consume();
@@ -657,10 +896,10 @@ public class InternalJPCoffeLexer extends Lexer {
                     }
                     break;
                 case 2 :
-                    // InternalJPCoffe.g:770:48: '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\''
+                    // InternalJPCoffe.g:1203:48: '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\''
                     {
                     match('\''); 
-                    // InternalJPCoffe.g:770:53: ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )*
+                    // InternalJPCoffe.g:1203:53: ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )*
                     loop7:
                     do {
                         int alt7=3;
@@ -676,7 +915,7 @@ public class InternalJPCoffeLexer extends Lexer {
 
                         switch (alt7) {
                     	case 1 :
-                    	    // InternalJPCoffe.g:770:54: '\\\\' .
+                    	    // InternalJPCoffe.g:1203:54: '\\\\' .
                     	    {
                     	    match('\\'); 
                     	    matchAny(); 
@@ -684,7 +923,7 @@ public class InternalJPCoffeLexer extends Lexer {
                     	    }
                     	    break;
                     	case 2 :
-                    	    // InternalJPCoffe.g:770:61: ~ ( ( '\\\\' | '\\'' ) )
+                    	    // InternalJPCoffe.g:1203:61: ~ ( ( '\\\\' | '\\'' ) )
                     	    {
                     	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='&')||(input.LA(1)>='(' && input.LA(1)<='[')||(input.LA(1)>=']' && input.LA(1)<='\uFFFF') ) {
                     	        input.consume();
@@ -727,12 +966,12 @@ public class InternalJPCoffeLexer extends Lexer {
         try {
             int _type = RULE_ML_COMMENT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalJPCoffe.g:772:17: ( '/*' ( options {greedy=false; } : . )* '*/' )
-            // InternalJPCoffe.g:772:19: '/*' ( options {greedy=false; } : . )* '*/'
+            // InternalJPCoffe.g:1205:17: ( '/*' ( options {greedy=false; } : . )* '*/' )
+            // InternalJPCoffe.g:1205:19: '/*' ( options {greedy=false; } : . )* '*/'
             {
             match("/*"); 
 
-            // InternalJPCoffe.g:772:24: ( options {greedy=false; } : . )*
+            // InternalJPCoffe.g:1205:24: ( options {greedy=false; } : . )*
             loop9:
             do {
                 int alt9=2;
@@ -757,7 +996,7 @@ public class InternalJPCoffeLexer extends Lexer {
 
                 switch (alt9) {
             	case 1 :
-            	    // InternalJPCoffe.g:772:52: .
+            	    // InternalJPCoffe.g:1205:52: .
             	    {
             	    matchAny(); 
 
@@ -787,12 +1026,12 @@ public class InternalJPCoffeLexer extends Lexer {
         try {
             int _type = RULE_SL_COMMENT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalJPCoffe.g:774:17: ( '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )? )
-            // InternalJPCoffe.g:774:19: '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )?
+            // InternalJPCoffe.g:1207:17: ( '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )? )
+            // InternalJPCoffe.g:1207:19: '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )?
             {
             match("//"); 
 
-            // InternalJPCoffe.g:774:24: (~ ( ( '\\n' | '\\r' ) ) )*
+            // InternalJPCoffe.g:1207:24: (~ ( ( '\\n' | '\\r' ) ) )*
             loop10:
             do {
                 int alt10=2;
@@ -805,7 +1044,7 @@ public class InternalJPCoffeLexer extends Lexer {
 
                 switch (alt10) {
             	case 1 :
-            	    // InternalJPCoffe.g:774:24: ~ ( ( '\\n' | '\\r' ) )
+            	    // InternalJPCoffe.g:1207:24: ~ ( ( '\\n' | '\\r' ) )
             	    {
             	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='\t')||(input.LA(1)>='\u000B' && input.LA(1)<='\f')||(input.LA(1)>='\u000E' && input.LA(1)<='\uFFFF') ) {
             	        input.consume();
@@ -825,7 +1064,7 @@ public class InternalJPCoffeLexer extends Lexer {
                 }
             } while (true);
 
-            // InternalJPCoffe.g:774:40: ( ( '\\r' )? '\\n' )?
+            // InternalJPCoffe.g:1207:40: ( ( '\\r' )? '\\n' )?
             int alt12=2;
             int LA12_0 = input.LA(1);
 
@@ -834,9 +1073,9 @@ public class InternalJPCoffeLexer extends Lexer {
             }
             switch (alt12) {
                 case 1 :
-                    // InternalJPCoffe.g:774:41: ( '\\r' )? '\\n'
+                    // InternalJPCoffe.g:1207:41: ( '\\r' )? '\\n'
                     {
-                    // InternalJPCoffe.g:774:41: ( '\\r' )?
+                    // InternalJPCoffe.g:1207:41: ( '\\r' )?
                     int alt11=2;
                     int LA11_0 = input.LA(1);
 
@@ -845,7 +1084,7 @@ public class InternalJPCoffeLexer extends Lexer {
                     }
                     switch (alt11) {
                         case 1 :
-                            // InternalJPCoffe.g:774:41: '\\r'
+                            // InternalJPCoffe.g:1207:41: '\\r'
                             {
                             match('\r'); 
 
@@ -877,10 +1116,10 @@ public class InternalJPCoffeLexer extends Lexer {
         try {
             int _type = RULE_WS;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalJPCoffe.g:776:9: ( ( ' ' | '\\t' | '\\r' | '\\n' )+ )
-            // InternalJPCoffe.g:776:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
+            // InternalJPCoffe.g:1209:9: ( ( ' ' | '\\t' | '\\r' | '\\n' )+ )
+            // InternalJPCoffe.g:1209:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
             {
-            // InternalJPCoffe.g:776:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
+            // InternalJPCoffe.g:1209:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
             int cnt13=0;
             loop13:
             do {
@@ -930,8 +1169,8 @@ public class InternalJPCoffeLexer extends Lexer {
     // $ANTLR end "RULE_WS"
 
     public void mTokens() throws RecognitionException {
-        // InternalJPCoffe.g:1:8: ( T__13 | T__14 | T__15 | T__16 | T__17 | T__18 | T__19 | T__20 | T__21 | T__22 | T__23 | T__24 | RULE_METRIC_UNIT | RULE_TITLE_LINE | RULE_MAJ_WORD | RULE_WORD | RULE_INT | RULE_STRING | RULE_ML_COMMENT | RULE_SL_COMMENT | RULE_WS )
-        int alt14=21;
+        // InternalJPCoffe.g:1:8: ( T__13 | T__14 | T__15 | T__16 | T__17 | T__18 | T__19 | T__20 | T__21 | T__22 | T__23 | T__24 | T__25 | T__26 | T__27 | T__28 | T__29 | T__30 | T__31 | T__32 | T__33 | T__34 | RULE_METRIC_UNIT | RULE_TITLE_LINE | RULE_MAJ_WORD | RULE_WORD | RULE_INT | RULE_STRING | RULE_ML_COMMENT | RULE_SL_COMMENT | RULE_WS )
+        int alt14=31;
         alt14 = dfa14.predict(input);
         switch (alt14) {
             case 1 :
@@ -1019,63 +1258,133 @@ public class InternalJPCoffeLexer extends Lexer {
                 }
                 break;
             case 13 :
-                // InternalJPCoffe.g:1:82: RULE_METRIC_UNIT
+                // InternalJPCoffe.g:1:82: T__25
+                {
+                mT__25(); 
+
+                }
+                break;
+            case 14 :
+                // InternalJPCoffe.g:1:88: T__26
+                {
+                mT__26(); 
+
+                }
+                break;
+            case 15 :
+                // InternalJPCoffe.g:1:94: T__27
+                {
+                mT__27(); 
+
+                }
+                break;
+            case 16 :
+                // InternalJPCoffe.g:1:100: T__28
+                {
+                mT__28(); 
+
+                }
+                break;
+            case 17 :
+                // InternalJPCoffe.g:1:106: T__29
+                {
+                mT__29(); 
+
+                }
+                break;
+            case 18 :
+                // InternalJPCoffe.g:1:112: T__30
+                {
+                mT__30(); 
+
+                }
+                break;
+            case 19 :
+                // InternalJPCoffe.g:1:118: T__31
+                {
+                mT__31(); 
+
+                }
+                break;
+            case 20 :
+                // InternalJPCoffe.g:1:124: T__32
+                {
+                mT__32(); 
+
+                }
+                break;
+            case 21 :
+                // InternalJPCoffe.g:1:130: T__33
+                {
+                mT__33(); 
+
+                }
+                break;
+            case 22 :
+                // InternalJPCoffe.g:1:136: T__34
+                {
+                mT__34(); 
+
+                }
+                break;
+            case 23 :
+                // InternalJPCoffe.g:1:142: RULE_METRIC_UNIT
                 {
                 mRULE_METRIC_UNIT(); 
 
                 }
                 break;
-            case 14 :
-                // InternalJPCoffe.g:1:99: RULE_TITLE_LINE
+            case 24 :
+                // InternalJPCoffe.g:1:159: RULE_TITLE_LINE
                 {
                 mRULE_TITLE_LINE(); 
 
                 }
                 break;
-            case 15 :
-                // InternalJPCoffe.g:1:115: RULE_MAJ_WORD
+            case 25 :
+                // InternalJPCoffe.g:1:175: RULE_MAJ_WORD
                 {
                 mRULE_MAJ_WORD(); 
 
                 }
                 break;
-            case 16 :
-                // InternalJPCoffe.g:1:129: RULE_WORD
+            case 26 :
+                // InternalJPCoffe.g:1:189: RULE_WORD
                 {
                 mRULE_WORD(); 
 
                 }
                 break;
-            case 17 :
-                // InternalJPCoffe.g:1:139: RULE_INT
+            case 27 :
+                // InternalJPCoffe.g:1:199: RULE_INT
                 {
                 mRULE_INT(); 
 
                 }
                 break;
-            case 18 :
-                // InternalJPCoffe.g:1:148: RULE_STRING
+            case 28 :
+                // InternalJPCoffe.g:1:208: RULE_STRING
                 {
                 mRULE_STRING(); 
 
                 }
                 break;
-            case 19 :
-                // InternalJPCoffe.g:1:160: RULE_ML_COMMENT
+            case 29 :
+                // InternalJPCoffe.g:1:220: RULE_ML_COMMENT
                 {
                 mRULE_ML_COMMENT(); 
 
                 }
                 break;
-            case 20 :
-                // InternalJPCoffe.g:1:176: RULE_SL_COMMENT
+            case 30 :
+                // InternalJPCoffe.g:1:236: RULE_SL_COMMENT
                 {
                 mRULE_SL_COMMENT(); 
 
                 }
                 break;
-            case 21 :
-                // InternalJPCoffe.g:1:192: RULE_WS
+            case 31 :
+                // InternalJPCoffe.g:1:252: RULE_WS
                 {
                 mRULE_WS(); 
 
@@ -1089,90 +1398,125 @@ public class InternalJPCoffeLexer extends Lexer {
 
     protected DFA14 dfa14 = new DFA14(this);
     static final String DFA14_eotS =
-        "\1\uffff\1\31\2\uffff\1\31\1\25\1\31\1\uffff\2\31\1\40\1\42\1\uffff\3\25\1\46\1\31\1\25\5\uffff\1\31\1\uffff\2\31\1\25\3\31\3\uffff\3\46\1\uffff\1\25\3\uffff\1\31\1\62\1\25\4\31\1\uffff\1\25\4\31\1\25\1\31\1\77\1\100\1\101\1\102\1\31\4\uffff\4\31\1\110\1\uffff";
+        "\1\uffff\3\35\1\45\2\uffff\1\45\1\35\1\45\1\uffff\1\45\2\uffff\4\45\1\60\1\62\1\uffff\1\65\2\35\1\65\1\45\1\35\5\uffff\2\35\1\76\2\45\1\uffff\1\45\1\35\1\45\1\103\1\35\1\105\1\106\1\45\1\35\1\45\3\uffff\1\62\1\65\1\uffff\2\65\1\35\3\uffff\1\112\1\35\1\uffff\1\45\1\115\1\35\1\45\1\uffff\1\35\2\uffff\1\45\1\35\1\45\1\uffff\1\35\1\45\1\uffff\1\35\1\45\1\35\1\45\1\132\1\45\1\35\1\45\1\35\1\45\1\140\1\141\1\uffff\1\142\1\143\1\144\1\145\1\45\6\uffff\4\45\1\153\1\uffff";
     static final String DFA14_eofS =
-        "\111\uffff";
+        "\154\uffff";
     static final String DFA14_minS =
-        "\1\11\1\47\2\uffff\1\47\1\145\1\47\1\uffff\3\47\1\76\1\uffff\1\162\1\147\1\154\2\47\1\0\3\uffff\1\52\1\uffff\1\47\1\uffff\2\47\1\157\3\47\3\uffff\3\47\1\uffff\1\0\3\uffff\2\47\1\160\4\47\1\uffff\1\154\4\47\1\145\6\47\4\uffff\5\47\1\uffff";
+        "\1\11\1\163\1\145\1\156\1\47\2\uffff\1\47\1\145\1\47\1\uffff\1\47\2\uffff\6\47\1\uffff\1\47\1\147\1\154\2\47\1\0\3\uffff\1\52\1\uffff\1\145\1\143\3\47\1\uffff\1\47\1\157\2\47\1\117\3\47\1\105\1\47\3\uffff\2\47\1\uffff\2\47\1\0\3\uffff\1\47\1\151\1\uffff\2\47\1\160\1\47\1\uffff\1\125\2\uffff\1\47\1\116\1\47\1\uffff\1\160\1\47\1\uffff\1\154\1\47\1\120\3\47\1\145\1\47\1\145\3\47\1\uffff\5\47\6\uffff\5\47\1\uffff";
     static final String DFA14_maxS =
-        "\1\175\1\172\2\uffff\1\172\1\145\1\172\1\uffff\3\172\1\76\1\uffff\1\162\1\147\1\154\2\172\1\uffff\3\uffff\1\57\1\uffff\1\172\1\uffff\2\172\1\157\3\172\3\uffff\3\172\1\uffff\1\uffff\3\uffff\2\172\1\160\4\172\1\uffff\1\154\4\172\1\145\6\172\4\uffff\5\172\1\uffff";
+        "\1\175\1\163\1\145\1\156\1\172\2\uffff\1\172\1\145\1\172\1\uffff\1\172\2\uffff\6\172\1\uffff\1\172\1\147\1\154\2\172\1\uffff\3\uffff\1\57\1\uffff\1\145\1\143\3\172\1\uffff\1\172\1\157\2\172\1\117\3\172\1\105\1\172\3\uffff\2\172\1\uffff\2\172\1\uffff\3\uffff\1\172\1\151\1\uffff\2\172\1\160\1\172\1\uffff\1\125\2\uffff\1\172\1\116\1\172\1\uffff\1\160\1\172\1\uffff\1\154\1\172\1\120\3\172\1\145\1\172\1\145\3\172\1\uffff\5\172\6\uffff\5\172\1\uffff";
     static final String DFA14_acceptS =
-        "\2\uffff\1\2\1\3\3\uffff\1\7\4\uffff\1\14\6\uffff\1\21\1\22\1\20\1\uffff\1\25\1\uffff\1\17\6\uffff\1\12\1\13\1\16\3\uffff\1\15\1\uffff\1\20\1\23\1\24\7\uffff\1\4\14\uffff\1\10\1\11\1\1\1\5\5\uffff\1\6";
+        "\5\uffff\1\5\1\6\3\uffff\1\12\1\uffff\1\14\1\15\6\uffff\1\24\6\uffff\1\33\1\34\1\32\1\uffff\1\37\5\uffff\1\31\12\uffff\1\22\1\23\1\30\2\uffff\1\27\3\uffff\1\32\1\35\1\36\2\uffff\1\3\4\uffff\1\25\1\uffff\1\16\1\17\3\uffff\1\1\2\uffff\1\7\14\uffff\1\26\5\uffff\1\13\1\20\1\21\1\2\1\4\1\10\5\uffff\1\11";
     static final String DFA14_specialS =
-        "\22\uffff\1\0\24\uffff\1\1\41\uffff}>";
+        "\32\uffff\1\1\35\uffff\1\0\63\uffff}>";
     static final String[] DFA14_transitionS = {
-            "\2\27\2\uffff\1\27\22\uffff\1\27\1\uffff\1\24\4\uffff\1\22\2\uffff\1\7\1\uffff\1\12\1\13\1\14\1\26\12\23\7\uffff\5\21\1\4\2\21\1\6\10\21\1\1\1\11\1\10\6\21\6\uffff\2\25\1\17\3\25\1\15\3\25\1\16\1\20\3\25\1\5\12\25\1\2\1\uffff\1\3",
-            "\1\25\4\uffff\1\25\24\uffff\32\25\6\uffff\4\32\1\30\25\32",
-            "",
-            "",
-            "\1\25\4\uffff\1\25\24\uffff\32\25\6\uffff\16\32\1\33\13\32",
-            "\1\34",
-            "\1\25\4\uffff\1\25\24\uffff\32\25\6\uffff\15\32\1\35\14\32",
-            "",
-            "\1\25\4\uffff\1\25\24\uffff\32\25\6\uffff\16\32\1\36\13\32",
-            "\1\25\4\uffff\1\25\24\uffff\32\25\6\uffff\23\32\1\37\6\32",
-            "\1\25\4\uffff\1\25\24\uffff\32\25\6\uffff\32\25",
+            "\2\37\2\uffff\1\37\22\uffff\1\37\1\uffff\1\34\4\uffff\1\32\2\uffff\1\12\1\uffff\1\22\1\23\1\24\1\36\12\33\7\uffff\1\17\4\31\1\7\1\13\1\31\1\11\5\31\1\16\2\31\1\4\1\21\1\20\6\31\1\14\1\uffff\1\15\3\uffff\2\35\1\27\3\35\1\25\1\35\1\3\1\35\1\26\1\30\3\35\1\10\1\35\1\2\2\35\1\1\5\35\1\5\1\uffff\1\6",
+            "\1\40",
             "\1\41",
-            "",
-            "\1\43",
-            "\1\44",
-            "\1\45",
-            "\1\25\4\uffff\1\25\24\uffff\32\25\6\uffff\32\25",
-            "\1\25\4\uffff\1\25\24\uffff\32\25\6\uffff\32\32",
-            "\47\24\1\50\4\24\1\47\24\24\32\47\6\24\32\47\uff85\24",
+            "\1\42",
+            "\1\35\4\uffff\1\35\1\44\23\uffff\32\35\6\uffff\4\44\1\43\25\44",
             "",
             "",
+            "\1\35\4\uffff\1\35\1\44\23\uffff\32\35\6\uffff\16\44\1\46\13\44",
+            "\1\47",
+            "\1\35\4\uffff\1\35\1\44\23\uffff\5\35\1\51\24\35\6\uffff\15\44\1\50\14\44",
             "",
-            "\1\51\4\uffff\1\52",
-            "",
-            "\1\25\4\uffff\1\25\24\uffff\32\25\6\uffff\2\32\1\53\27\32",
-            "",
-            "\1\25\4\uffff\1\25\24\uffff\32\25\6\uffff\32\32",
-            "\1\25\4\uffff\1\25\24\uffff\32\25\6\uffff\21\32\1\54\10\32",
-            "\1\55",
-            "\1\25\4\uffff\1\25\24\uffff\32\25\6\uffff\6\32\1\56\23\32",
-            "\1\25\4\uffff\1\25\24\uffff\32\25\6\uffff\16\32\1\57\13\32",
-            "\1\25\4\uffff\1\25\24\uffff\32\25\6\uffff\4\32\1\60\25\32",
+            "\1\35\4\uffff\1\35\1\44\23\uffff\21\35\1\52\10\35\6\uffff\32\44",
             "",
             "",
+            "\1\35\4\uffff\1\35\1\44\23\uffff\21\35\1\53\10\35\6\uffff\32\44",
+            "\1\35\4\uffff\1\35\1\44\23\uffff\22\35\1\54\7\35\6\uffff\32\44",
+            "\1\35\4\uffff\1\35\1\44\23\uffff\7\35\1\56\22\35\6\uffff\16\44\1\55\13\44",
+            "\1\35\4\uffff\1\35\1\44\23\uffff\32\35\6\uffff\23\44\1\57\6\44",
+            "\1\35\4\uffff\2\35\23\uffff\32\35\6\uffff\32\35",
+            "\1\35\4\uffff\1\35\1\63\20\uffff\1\61\2\uffff\32\35\6\uffff\32\35",
             "",
-            "\1\25\4\uffff\1\25\24\uffff\32\25\6\uffff\32\25",
-            "\1\25\4\uffff\1\25\24\uffff\32\25\6\uffff\32\25",
-            "\1\25\4\uffff\1\25\24\uffff\32\25\6\uffff\32\25",
-            "",
-            "\47\24\1\50\4\24\1\47\24\24\32\47\6\24\32\47\uff85\24",
+            "\1\35\4\uffff\2\35\23\uffff\32\35\6\uffff\21\35\1\64\10\35",
+            "\1\66",
+            "\1\67",
+            "\1\35\4\uffff\2\35\23\uffff\32\35\6\uffff\32\35",
+            "\1\35\4\uffff\1\35\1\44\23\uffff\32\35\6\uffff\32\44",
+            "\47\34\1\71\4\34\2\70\23\34\32\70\6\34\32\70\uff85\34",
             "",
             "",
             "",
-            "\1\25\4\uffff\1\25\24\uffff\32\25\6\uffff\10\32\1\61\21\32",
-            "\1\25\4\uffff\1\25\24\uffff\32\25\6\uffff\32\32",
-            "\1\63",
-            "\1\25\4\uffff\1\25\24\uffff\32\25\6\uffff\21\32\1\64\10\32",
-            "\1\25\4\uffff\1\25\24\uffff\32\25\6\uffff\13\32\1\65\16\32",
-            "\1\25\4\uffff\1\25\24\uffff\32\25\6\uffff\17\32\1\66\12\32",
-            "\1\25\4\uffff\1\25\24\uffff\32\25\6\uffff\17\32\1\67\12\32",
+            "\1\72\4\uffff\1\73",
             "",
-            "\1\70",
-            "\1\25\4\uffff\1\25\24\uffff\32\25\6\uffff\4\32\1\71\25\32",
-            "\1\25\4\uffff\1\25\24\uffff\32\25\6\uffff\22\32\1\72\7\32",
-            "\1\25\4\uffff\1\25\24\uffff\32\25\6\uffff\22\32\1\73\7\32",
-            "\1\25\4\uffff\1\25\24\uffff\32\25\6\uffff\4\32\1\74\25\32",
+            "\1\74",
             "\1\75",
-            "\1\25\4\uffff\1\25\24\uffff\32\25\6\uffff\3\32\1\76\26\32",
-            "\1\25\4\uffff\1\25\24\uffff\32\25\6\uffff\32\32",
-            "\1\25\4\uffff\1\25\24\uffff\32\25\6\uffff\32\32",
-            "\1\25\4\uffff\1\25\24\uffff\32\25\6\uffff\32\32",
-            "\1\25\4\uffff\1\25\24\uffff\32\25\6\uffff\32\25",
-            "\1\25\4\uffff\1\25\24\uffff\32\25\6\uffff\10\32\1\103\21\32",
+            "\1\35\4\uffff\2\35\23\uffff\32\35\6\uffff\32\35",
+            "\1\35\4\uffff\1\35\1\44\23\uffff\32\35\6\uffff\2\44\1\77\27\44",
+            "\1\35\4\uffff\1\35\1\44\23\uffff\32\35\6\uffff\32\44",
+            "",
+            "\1\35\4\uffff\1\35\1\44\23\uffff\32\35\6\uffff\21\44\1\100\10\44",
+            "\1\101",
+            "\1\35\4\uffff\1\35\1\44\23\uffff\32\35\6\uffff\6\44\1\102\23\44",
+            "\1\35\4\uffff\2\35\23\uffff\32\35\6\uffff\32\35",
+            "\1\104",
+            "\1\35\4\uffff\2\35\23\uffff\32\35\6\uffff\32\35",
+            "\1\35\4\uffff\2\35\23\uffff\32\35\6\uffff\32\35",
+            "\1\35\4\uffff\1\35\1\44\23\uffff\32\35\6\uffff\16\44\1\107\13\44",
+            "\1\110",
+            "\1\35\4\uffff\1\35\1\44\23\uffff\32\35\6\uffff\4\44\1\111\25\44",
+            "",
+            "",
+            "",
+            "\1\35\4\uffff\1\35\1\63\23\uffff\32\35\6\uffff\32\35",
+            "\1\35\4\uffff\2\35\23\uffff\32\35\6\uffff\32\35",
+            "",
+            "\1\35\4\uffff\2\35\23\uffff\32\35\6\uffff\32\35",
+            "\1\35\4\uffff\2\35\23\uffff\32\35\6\uffff\32\35",
+            "\47\34\1\71\4\34\2\70\23\34\32\70\6\34\32\70\uff85\34",
+            "",
+            "",
+            "",
+            "\1\35\4\uffff\2\35\23\uffff\32\35\6\uffff\32\35",
+            "\1\113",
+            "",
+            "\1\35\4\uffff\1\35\1\44\23\uffff\32\35\6\uffff\10\44\1\114\21\44",
+            "\1\35\4\uffff\1\35\1\44\23\uffff\32\35\6\uffff\32\44",
+            "\1\116",
+            "\1\35\4\uffff\1\35\1\44\23\uffff\32\35\6\uffff\21\44\1\117\10\44",
+            "",
+            "\1\120",
+            "",
+            "",
+            "\1\35\4\uffff\1\35\1\44\23\uffff\32\35\6\uffff\13\44\1\121\16\44",
+            "\1\122",
+            "\1\35\4\uffff\1\35\1\44\23\uffff\32\35\6\uffff\17\44\1\123\12\44",
+            "",
+            "\1\124",
+            "\1\35\4\uffff\1\35\1\44\23\uffff\32\35\6\uffff\17\44\1\125\12\44",
+            "",
+            "\1\126",
+            "\1\35\4\uffff\1\35\1\44\23\uffff\32\35\6\uffff\4\44\1\127\25\44",
+            "\1\130",
+            "\1\35\4\uffff\1\35\1\44\23\uffff\32\35\6\uffff\22\44\1\131\7\44",
+            "\1\35\4\uffff\2\35\23\uffff\32\35\6\uffff\32\35",
+            "\1\35\4\uffff\1\35\1\44\23\uffff\32\35\6\uffff\22\44\1\133\7\44",
+            "\1\134",
+            "\1\35\4\uffff\1\35\1\44\23\uffff\32\35\6\uffff\4\44\1\135\25\44",
+            "\1\136",
+            "\1\35\4\uffff\1\35\1\44\23\uffff\32\35\6\uffff\3\44\1\137\26\44",
+            "\1\35\4\uffff\2\35\23\uffff\32\35\6\uffff\32\35",
+            "\1\35\4\uffff\1\35\1\44\23\uffff\32\35\6\uffff\32\44",
+            "",
+            "\1\35\4\uffff\1\35\1\44\23\uffff\32\35\6\uffff\32\44",
+            "\1\35\4\uffff\2\35\23\uffff\32\35\6\uffff\32\35",
+            "\1\35\4\uffff\1\35\1\44\23\uffff\32\35\6\uffff\32\44",
+            "\1\35\4\uffff\2\35\23\uffff\32\35\6\uffff\32\35",
+            "\1\35\4\uffff\1\35\1\44\23\uffff\32\35\6\uffff\10\44\1\146\21\44",
             "",
             "",
             "",
             "",
-            "\1\25\4\uffff\1\25\24\uffff\32\25\6\uffff\4\32\1\104\25\32",
-            "\1\25\4\uffff\1\25\24\uffff\32\25\6\uffff\15\32\1\105\14\32",
-            "\1\25\4\uffff\1\25\24\uffff\32\25\6\uffff\23\32\1\106\6\32",
-            "\1\25\4\uffff\1\25\24\uffff\32\25\6\uffff\22\32\1\107\7\32",
-            "\1\25\4\uffff\1\25\24\uffff\32\25\6\uffff\32\32",
+            "",
+            "",
+            "\1\35\4\uffff\1\35\1\44\23\uffff\32\35\6\uffff\4\44\1\147\25\44",
+            "\1\35\4\uffff\1\35\1\44\23\uffff\32\35\6\uffff\15\44\1\150\14\44",
+            "\1\35\4\uffff\1\35\1\44\23\uffff\32\35\6\uffff\23\44\1\151\6\44",
+            "\1\35\4\uffff\1\35\1\44\23\uffff\32\35\6\uffff\22\44\1\152\7\44",
+            "\1\35\4\uffff\1\35\1\44\23\uffff\32\35\6\uffff\32\44",
             ""
     };
 
@@ -1206,37 +1550,37 @@ public class InternalJPCoffeLexer extends Lexer {
             this.transition = DFA14_transition;
         }
         public String getDescription() {
-            return "1:1: Tokens : ( T__13 | T__14 | T__15 | T__16 | T__17 | T__18 | T__19 | T__20 | T__21 | T__22 | T__23 | T__24 | RULE_METRIC_UNIT | RULE_TITLE_LINE | RULE_MAJ_WORD | RULE_WORD | RULE_INT | RULE_STRING | RULE_ML_COMMENT | RULE_SL_COMMENT | RULE_WS );";
+            return "1:1: Tokens : ( T__13 | T__14 | T__15 | T__16 | T__17 | T__18 | T__19 | T__20 | T__21 | T__22 | T__23 | T__24 | T__25 | T__26 | T__27 | T__28 | T__29 | T__30 | T__31 | T__32 | T__33 | T__34 | RULE_METRIC_UNIT | RULE_TITLE_LINE | RULE_MAJ_WORD | RULE_WORD | RULE_INT | RULE_STRING | RULE_ML_COMMENT | RULE_SL_COMMENT | RULE_WS );";
         }
         public int specialStateTransition(int s, IntStream _input) throws NoViableAltException {
             IntStream input = _input;
         	int _s = s;
             switch ( s ) {
                     case 0 : 
-                        int LA14_18 = input.LA(1);
+                        int LA14_56 = input.LA(1);
 
                         s = -1;
-                        if ( (LA14_18==','||(LA14_18>='A' && LA14_18<='Z')||(LA14_18>='a' && LA14_18<='z')) ) {s = 39;}
+                        if ( (LA14_56=='\'') ) {s = 57;}
 
-                        else if ( ((LA14_18>='\u0000' && LA14_18<='&')||(LA14_18>='(' && LA14_18<='+')||(LA14_18>='-' && LA14_18<='@')||(LA14_18>='[' && LA14_18<='`')||(LA14_18>='{' && LA14_18<='\uFFFF')) ) {s = 20;}
+                        else if ( ((LA14_56>='\u0000' && LA14_56<='&')||(LA14_56>='(' && LA14_56<='+')||(LA14_56>='.' && LA14_56<='@')||(LA14_56>='[' && LA14_56<='`')||(LA14_56>='{' && LA14_56<='\uFFFF')) ) {s = 28;}
 
-                        else if ( (LA14_18=='\'') ) {s = 40;}
+                        else if ( ((LA14_56>=',' && LA14_56<='-')||(LA14_56>='A' && LA14_56<='Z')||(LA14_56>='a' && LA14_56<='z')) ) {s = 56;}
 
-                        else s = 21;
+                        else s = 29;
 
                         if ( s>=0 ) return s;
                         break;
                     case 1 : 
-                        int LA14_39 = input.LA(1);
+                        int LA14_26 = input.LA(1);
 
                         s = -1;
-                        if ( (LA14_39=='\'') ) {s = 40;}
+                        if ( ((LA14_26>='\u0000' && LA14_26<='&')||(LA14_26>='(' && LA14_26<='+')||(LA14_26>='.' && LA14_26<='@')||(LA14_26>='[' && LA14_26<='`')||(LA14_26>='{' && LA14_26<='\uFFFF')) ) {s = 28;}
 
-                        else if ( (LA14_39==','||(LA14_39>='A' && LA14_39<='Z')||(LA14_39>='a' && LA14_39<='z')) ) {s = 39;}
+                        else if ( ((LA14_26>=',' && LA14_26<='-')||(LA14_26>='A' && LA14_26<='Z')||(LA14_26>='a' && LA14_26<='z')) ) {s = 56;}
 
-                        else if ( ((LA14_39>='\u0000' && LA14_39<='&')||(LA14_39>='(' && LA14_39<='+')||(LA14_39>='-' && LA14_39<='@')||(LA14_39>='[' && LA14_39<='`')||(LA14_39>='{' && LA14_39<='\uFFFF')) ) {s = 20;}
+                        else if ( (LA14_26=='\'') ) {s = 57;}
 
-                        else s = 21;
+                        else s = 29;
 
                         if ( s>=0 ) return s;
                         break;

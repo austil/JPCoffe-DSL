@@ -22,7 +22,7 @@ Recipe "Puree" {
   { } -> 1. eplucher les Pommes de terre
   {1} -> 2. couper les Pommes de terre en gros morceaux
   {} -> 3. porter de l'eau a ebullition dans la Casserole
-  {2,3} -> 4. Mettre les Pommes de terre dans la Casserole pendant 20min
+  {2,3} -> 4. mettre les Pommes de terre dans la Casserole pendant 20min
   {3} -> 5. mettre du Sel dans la Casserole
   {4,5} -> 6. egoutter les Pommes de terre
   {6} -> 7. passer les Pommes de terre au Moulin a legumes

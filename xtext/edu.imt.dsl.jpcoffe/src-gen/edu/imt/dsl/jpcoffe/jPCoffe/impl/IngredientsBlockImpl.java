@@ -3,7 +3,6 @@
  */
 package edu.imt.dsl.jpcoffe.jPCoffe.impl;
 
-import edu.imt.dsl.jpcoffe.jPCoffe.Ingredient;
 import edu.imt.dsl.jpcoffe.jPCoffe.IngredientsBlock;
 import edu.imt.dsl.jpcoffe.jPCoffe.JPCoffePackage;
 
@@ -14,6 +13,7 @@ import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
@@ -44,7 +44,7 @@ public class IngredientsBlockImpl extends MinimalEObjectImpl.Container implement
    * @generated
    * @ordered
    */
-  protected EList<Ingredient> ingredientsList;
+  protected EList<EObject> ingredientsList;
 
   /**
    * <!-- begin-user-doc -->
@@ -72,11 +72,11 @@ public class IngredientsBlockImpl extends MinimalEObjectImpl.Container implement
    * <!-- end-user-doc -->
    * @generated
    */
-  public EList<Ingredient> getIngredientsList()
+  public EList<EObject> getIngredientsList()
   {
     if (ingredientsList == null)
     {
-      ingredientsList = new EObjectContainmentEList<Ingredient>(Ingredient.class, this, JPCoffePackage.INGREDIENTS_BLOCK__INGREDIENTS_LIST);
+      ingredientsList = new EObjectContainmentEList<EObject>(EObject.class, this, JPCoffePackage.INGREDIENTS_BLOCK__INGREDIENTS_LIST);
     }
     return ingredientsList;
   }
@@ -126,7 +126,7 @@ public class IngredientsBlockImpl extends MinimalEObjectImpl.Container implement
     {
       case JPCoffePackage.INGREDIENTS_BLOCK__INGREDIENTS_LIST:
         getIngredientsList().clear();
-        getIngredientsList().addAll((Collection<? extends Ingredient>)newValue);
+        getIngredientsList().addAll((Collection<? extends EObject>)newValue);
         return;
     }
     super.eSet(featureID, newValue);

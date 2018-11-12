@@ -3,6 +3,7 @@
  */
 package edu.imt.dsl.jpcoffe.jPCoffe;
 
+import org.eclipse.emf.ecore.EObject;
 
 /**
  * <!-- begin-user-doc -->
@@ -24,7 +25,7 @@ package edu.imt.dsl.jpcoffe.jPCoffe;
  * @model
  * @generated
  */
-public interface Recipe extends Main
+public interface Recipe extends EObject
 {
   /**
    * Returns the value of the '<em><b>Name</b></em>' attribute.

@@ -27,6 +27,6 @@ Recipe "Croque-Monsieur" {
   {4} -> 5. recouvrir les tranches avec garniture par les tranches sans garniture
   {5} -> 6. etaler le reste de la Bechamel sur chaque Croque-Monsieur
   {6} -> 7. ajouter le reste du Fromage rape sur chaque Croque-Monsieur
-  {3, 7} -> 8. Cuirre les Croque-Monsieur au Four sur une plaque de cuisson pendant une douzaine de minutes
+  {3, 7} -> 8. cuirre les Croque-Monsieur au Four sur une plaque de cuisson pendant une douzaine de minutes
 
 }

@@ -3,8 +3,10 @@
  */
 package edu.imt.dsl.jpcoffe.jPCoffe.impl;
 
+import edu.imt.dsl.jpcoffe.jPCoffe.ConditionalStep;
 import edu.imt.dsl.jpcoffe.jPCoffe.Ingredient;
 import edu.imt.dsl.jpcoffe.jPCoffe.IngredientsBlock;
+import edu.imt.dsl.jpcoffe.jPCoffe.IngredientsGroup;
 import edu.imt.dsl.jpcoffe.jPCoffe.JPCoffeFactory;
 import edu.imt.dsl.jpcoffe.jPCoffe.JPCoffePackage;
 import edu.imt.dsl.jpcoffe.jPCoffe.Main;
@@ -64,6 +66,13 @@ public class JPCoffePackageImpl extends EPackageImpl implements JPCoffePackage
    * <!-- end-user-doc -->
    * @generated
    */
+  private EClass ingredientsGroupEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   private EClass ingredientEClass = null;
 
   /**
@@ -93,6 +102,13 @@ public class JPCoffePackageImpl extends EPackageImpl implements JPCoffePackage
    * @generated
    */
   private EClass stepsBlockEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass conditionalStepEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -172,6 +188,26 @@ public class JPCoffePackageImpl extends EPackageImpl implements JPCoffePackage
   public EClass getMain()
   {
     return mainEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getMain_Imports()
+  {
+    return (EAttribute)mainEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getMain_Recipes()
+  {
+    return (EReference)mainEClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -279,6 +315,46 @@ public class JPCoffePackageImpl extends EPackageImpl implements JPCoffePackage
    * <!-- end-user-doc -->
    * @generated
    */
+  public EClass getIngredientsGroup()
+  {
+    return ingredientsGroupEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getIngredientsGroup_Name()
+  {
+    return (EAttribute)ingredientsGroupEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getIngredientsGroup_IngredientsList()
+  {
+    return (EReference)ingredientsGroupEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getIngredientsGroup_Quantity()
+  {
+    return (EReference)ingredientsGroupEClass.getEStructuralFeatures().get(2);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public EClass getIngredient()
   {
     return ingredientEClass;
@@ -289,7 +365,7 @@ public class JPCoffePackageImpl extends EPackageImpl implements JPCoffePackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getIngredient_Name()
+  public EAttribute getIngredient_OriginalName()
   {
     return (EAttribute)ingredientEClass.getEStructuralFeatures().get(0);
   }
@@ -299,9 +375,19 @@ public class JPCoffePackageImpl extends EPackageImpl implements JPCoffePackage
    * <!-- end-user-doc -->
    * @generated
    */
+  public EAttribute getIngredient_Name()
+  {
+    return (EAttribute)ingredientEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public EReference getIngredient_Quantity()
   {
-    return (EReference)ingredientEClass.getEStructuralFeatures().get(1);
+    return (EReference)ingredientEClass.getEStructuralFeatures().get(2);
   }
 
   /**
@@ -369,9 +455,19 @@ public class JPCoffePackageImpl extends EPackageImpl implements JPCoffePackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getTool_Name()
+  public EAttribute getTool_OriginalName()
   {
     return (EAttribute)toolEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getTool_Name()
+  {
+    return (EAttribute)toolEClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -392,6 +488,56 @@ public class JPCoffePackageImpl extends EPackageImpl implements JPCoffePackage
   public EReference getStepsBlock_StepsList()
   {
     return (EReference)stepsBlockEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getConditionalStep()
+  {
+    return conditionalStepEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getConditionalStep_Pred()
+  {
+    return (EAttribute)conditionalStepEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getConditionalStep_Num()
+  {
+    return (EAttribute)conditionalStepEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getConditionalStep_Condition()
+  {
+    return (EAttribute)conditionalStepEClass.getEStructuralFeatures().get(2);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getConditionalStep_To()
+  {
+    return (EAttribute)conditionalStepEClass.getEStructuralFeatures().get(3);
   }
 
   /**
@@ -465,6 +611,8 @@ public class JPCoffePackageImpl extends EPackageImpl implements JPCoffePackage
 
     // Create classes and their features
     mainEClass = createEClass(MAIN);
+    createEAttribute(mainEClass, MAIN__IMPORTS);
+    createEReference(mainEClass, MAIN__RECIPES);
 
     recipeEClass = createEClass(RECIPE);
     createEAttribute(recipeEClass, RECIPE__NAME);
@@ -479,7 +627,13 @@ public class JPCoffePackageImpl extends EPackageImpl implements JPCoffePackage
     ingredientsBlockEClass = createEClass(INGREDIENTS_BLOCK);
     createEReference(ingredientsBlockEClass, INGREDIENTS_BLOCK__INGREDIENTS_LIST);
 
+    ingredientsGroupEClass = createEClass(INGREDIENTS_GROUP);
+    createEAttribute(ingredientsGroupEClass, INGREDIENTS_GROUP__NAME);
+    createEReference(ingredientsGroupEClass, INGREDIENTS_GROUP__INGREDIENTS_LIST);
+    createEReference(ingredientsGroupEClass, INGREDIENTS_GROUP__QUANTITY);
+
     ingredientEClass = createEClass(INGREDIENT);
+    createEAttribute(ingredientEClass, INGREDIENT__ORIGINAL_NAME);
     createEAttribute(ingredientEClass, INGREDIENT__NAME);
     createEReference(ingredientEClass, INGREDIENT__QUANTITY);
 
@@ -491,10 +645,17 @@ public class JPCoffePackageImpl extends EPackageImpl implements JPCoffePackage
     createEReference(toolsBlockEClass, TOOLS_BLOCK__TOOLS_LIST);
 
     toolEClass = createEClass(TOOL);
+    createEAttribute(toolEClass, TOOL__ORIGINAL_NAME);
     createEAttribute(toolEClass, TOOL__NAME);
 
     stepsBlockEClass = createEClass(STEPS_BLOCK);
     createEReference(stepsBlockEClass, STEPS_BLOCK__STEPS_LIST);
+
+    conditionalStepEClass = createEClass(CONDITIONAL_STEP);
+    createEAttribute(conditionalStepEClass, CONDITIONAL_STEP__PRED);
+    createEAttribute(conditionalStepEClass, CONDITIONAL_STEP__NUM);
+    createEAttribute(conditionalStepEClass, CONDITIONAL_STEP__CONDITION);
+    createEAttribute(conditionalStepEClass, CONDITIONAL_STEP__TO);
 
     stepEClass = createEClass(STEP);
     createEAttribute(stepEClass, STEP__PRED);
@@ -531,10 +692,11 @@ public class JPCoffePackageImpl extends EPackageImpl implements JPCoffePackage
     // Set bounds for type parameters
 
     // Add supertypes to classes
-    recipeEClass.getESuperTypes().add(this.getMain());
 
     // Initialize classes and features; add operations and parameters
     initEClass(mainEClass, Main.class, "Main", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getMain_Imports(), ecorePackage.getEString(), "imports", null, 0, -1, Main.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getMain_Recipes(), this.getRecipe(), null, "recipes", null, 0, -1, Main.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(recipeEClass, Recipe.class, "Recipe", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getRecipe_Name(), ecorePackage.getEString(), "name", null, 0, 1, Recipe.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -547,9 +709,15 @@ public class JPCoffePackageImpl extends EPackageImpl implements JPCoffePackage
     initEAttribute(getPortionNB_Nb(), ecorePackage.getEInt(), "nb", null, 0, 1, PortionNB.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(ingredientsBlockEClass, IngredientsBlock.class, "IngredientsBlock", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getIngredientsBlock_IngredientsList(), this.getIngredient(), null, "ingredientsList", null, 0, -1, IngredientsBlock.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getIngredientsBlock_IngredientsList(), ecorePackage.getEObject(), null, "ingredientsList", null, 0, -1, IngredientsBlock.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(ingredientsGroupEClass, IngredientsGroup.class, "IngredientsGroup", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getIngredientsGroup_Name(), ecorePackage.getEString(), "name", null, 0, 1, IngredientsGroup.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getIngredientsGroup_IngredientsList(), this.getIngredient(), null, "ingredientsList", null, 0, -1, IngredientsGroup.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getIngredientsGroup_Quantity(), this.getQuantity(), null, "quantity", null, 0, 1, IngredientsGroup.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(ingredientEClass, Ingredient.class, "Ingredient", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getIngredient_OriginalName(), ecorePackage.getEString(), "originalName", null, 0, -1, Ingredient.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getIngredient_Name(), ecorePackage.getEString(), "name", null, 0, 1, Ingredient.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getIngredient_Quantity(), this.getQuantity(), null, "quantity", null, 0, 1, Ingredient.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
@@ -561,10 +729,17 @@ public class JPCoffePackageImpl extends EPackageImpl implements JPCoffePackage
     initEReference(getToolsBlock_ToolsList(), this.getTool(), null, "toolsList", null, 0, -1, ToolsBlock.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(toolEClass, Tool.class, "Tool", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getTool_OriginalName(), ecorePackage.getEString(), "originalName", null, 0, 1, Tool.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getTool_Name(), ecorePackage.getEString(), "name", null, 0, 1, Tool.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(stepsBlockEClass, StepsBlock.class, "StepsBlock", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getStepsBlock_StepsList(), this.getStep(), null, "stepsList", null, 0, -1, StepsBlock.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getStepsBlock_StepsList(), ecorePackage.getEObject(), null, "stepsList", null, 0, -1, StepsBlock.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(conditionalStepEClass, ConditionalStep.class, "ConditionalStep", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getConditionalStep_Pred(), ecorePackage.getEInt(), "pred", null, 0, -1, ConditionalStep.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getConditionalStep_Num(), ecorePackage.getEInt(), "num", null, 0, 1, ConditionalStep.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getConditionalStep_Condition(), ecorePackage.getEString(), "condition", null, 0, 1, ConditionalStep.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getConditionalStep_To(), ecorePackage.getEInt(), "to", null, 0, 1, ConditionalStep.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(stepEClass, Step.class, "Step", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getStep_Pred(), ecorePackage.getEInt(), "pred", null, 0, -1, Step.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

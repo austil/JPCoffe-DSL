@@ -4,7 +4,6 @@
 package edu.imt.dsl.jpcoffe.jPCoffe.impl;
 
 import edu.imt.dsl.jpcoffe.jPCoffe.JPCoffePackage;
-import edu.imt.dsl.jpcoffe.jPCoffe.Step;
 import edu.imt.dsl.jpcoffe.jPCoffe.StepsBlock;
 
 import java.util.Collection;
@@ -14,6 +13,7 @@ import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
@@ -44,7 +44,7 @@ public class StepsBlockImpl extends MinimalEObjectImpl.Container implements Step
    * @generated
    * @ordered
    */
-  protected EList<Step> stepsList;
+  protected EList<EObject> stepsList;
 
   /**
    * <!-- begin-user-doc -->
@@ -72,11 +72,11 @@ public class StepsBlockImpl extends MinimalEObjectImpl.Container implements Step
    * <!-- end-user-doc -->
    * @generated
    */
-  public EList<Step> getStepsList()
+  public EList<EObject> getStepsList()
   {
     if (stepsList == null)
     {
-      stepsList = new EObjectContainmentEList<Step>(Step.class, this, JPCoffePackage.STEPS_BLOCK__STEPS_LIST);
+      stepsList = new EObjectContainmentEList<EObject>(EObject.class, this, JPCoffePackage.STEPS_BLOCK__STEPS_LIST);
     }
     return stepsList;
   }
@@ -126,7 +126,7 @@ public class StepsBlockImpl extends MinimalEObjectImpl.Container implements Step
     {
       case JPCoffePackage.STEPS_BLOCK__STEPS_LIST:
         getStepsList().clear();
-        getStepsList().addAll((Collection<? extends Step>)newValue);
+        getStepsList().addAll((Collection<? extends EObject>)newValue);
         return;
     }
     super.eSet(featureID, newValue);

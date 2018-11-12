@@ -60,6 +60,15 @@ public interface JPCoffeFactory extends EFactory
   IngredientsBlock createIngredientsBlock();
 
   /**
+   * Returns a new object of class '<em>Ingredients Group</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Ingredients Group</em>'.
+   * @generated
+   */
+  IngredientsGroup createIngredientsGroup();
+
+  /**
    * Returns a new object of class '<em>Ingredient</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -103,6 +112,15 @@ public interface JPCoffeFactory extends EFactory
    * @generated
    */
   StepsBlock createStepsBlock();
+
+  /**
+   * Returns a new object of class '<em>Conditional Step</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Conditional Step</em>'.
+   * @generated
+   */
+  ConditionalStep createConditionalStep();
 
   /**
    * Returns a new object of class '<em>Step</em>'.

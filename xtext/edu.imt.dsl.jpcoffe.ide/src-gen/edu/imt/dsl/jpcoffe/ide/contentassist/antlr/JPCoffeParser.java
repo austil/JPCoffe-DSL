@@ -31,18 +31,30 @@ public class JPCoffeParser extends AbstractContentAssistParser {
 		}
 		
 		private static void init(ImmutableMap.Builder<AbstractElement, String> builder, JPCoffeGrammarAccess grammarAccess) {
+			builder.put(grammarAccess.getIngredientsBlockAccess().getIngredientsListAlternatives_3_0(), "rule__IngredientsBlock__IngredientsListAlternatives_3_0");
+			builder.put(grammarAccess.getStepsBlockAccess().getStepsListAlternatives_3_0(), "rule__StepsBlock__StepsListAlternatives_3_0");
 			builder.put(grammarAccess.getTEXTAccess().getAlternatives(), "rule__TEXT__Alternatives");
+			builder.put(grammarAccess.getMainAccess().getGroup(), "rule__Main__Group__0");
+			builder.put(grammarAccess.getImportAccess().getGroup(), "rule__Import__Group__0");
 			builder.put(grammarAccess.getRecipeAccess().getGroup(), "rule__Recipe__Group__0");
 			builder.put(grammarAccess.getPortionNBAccess().getGroup(), "rule__PortionNB__Group__0");
 			builder.put(grammarAccess.getIngredientsBlockAccess().getGroup(), "rule__IngredientsBlock__Group__0");
+			builder.put(grammarAccess.getIngredientsGroupAccess().getGroup(), "rule__IngredientsGroup__Group__0");
 			builder.put(grammarAccess.getIngredientAccess().getGroup(), "rule__Ingredient__Group__0");
+			builder.put(grammarAccess.getIngredientAccess().getGroup_1(), "rule__Ingredient__Group_1__0");
+			builder.put(grammarAccess.getIngredientAccess().getGroup_1_1(), "rule__Ingredient__Group_1_1__0");
 			builder.put(grammarAccess.getQuantityAccess().getGroup(), "rule__Quantity__Group__0");
 			builder.put(grammarAccess.getToolsBlockAccess().getGroup(), "rule__ToolsBlock__Group__0");
 			builder.put(grammarAccess.getToolAccess().getGroup(), "rule__Tool__Group__0");
+			builder.put(grammarAccess.getToolAccess().getGroup_1(), "rule__Tool__Group_1__0");
 			builder.put(grammarAccess.getStepsBlockAccess().getGroup(), "rule__StepsBlock__Group__0");
+			builder.put(grammarAccess.getConditionalStepAccess().getGroup(), "rule__ConditionalStep__Group__0");
+			builder.put(grammarAccess.getConditionalStepAccess().getGroup_2(), "rule__ConditionalStep__Group_2__0");
 			builder.put(grammarAccess.getStepAccess().getGroup(), "rule__Step__Group__0");
 			builder.put(grammarAccess.getStepAccess().getGroup_2(), "rule__Step__Group_2__0");
 			builder.put(grammarAccess.getNAMEAccess().getGroup(), "rule__NAME__Group__0");
+			builder.put(grammarAccess.getMainAccess().getImportsAssignment_0(), "rule__Main__ImportsAssignment_0");
+			builder.put(grammarAccess.getMainAccess().getRecipesAssignment_1(), "rule__Main__RecipesAssignment_1");
 			builder.put(grammarAccess.getRecipeAccess().getNameAssignment_1(), "rule__Recipe__NameAssignment_1");
 			builder.put(grammarAccess.getRecipeAccess().getPortionAssignment_3(), "rule__Recipe__PortionAssignment_3");
 			builder.put(grammarAccess.getRecipeAccess().getIngredientsAssignment_4(), "rule__Recipe__IngredientsAssignment_4");
@@ -50,13 +62,24 @@ public class JPCoffeParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getRecipeAccess().getStepsAssignment_6(), "rule__Recipe__StepsAssignment_6");
 			builder.put(grammarAccess.getPortionNBAccess().getNbAssignment_1(), "rule__PortionNB__NbAssignment_1");
 			builder.put(grammarAccess.getIngredientsBlockAccess().getIngredientsListAssignment_3(), "rule__IngredientsBlock__IngredientsListAssignment_3");
-			builder.put(grammarAccess.getIngredientAccess().getNameAssignment_1(), "rule__Ingredient__NameAssignment_1");
-			builder.put(grammarAccess.getIngredientAccess().getQuantityAssignment_2(), "rule__Ingredient__QuantityAssignment_2");
+			builder.put(grammarAccess.getIngredientsGroupAccess().getNameAssignment_2(), "rule__IngredientsGroup__NameAssignment_2");
+			builder.put(grammarAccess.getIngredientsGroupAccess().getIngredientsListAssignment_4(), "rule__IngredientsGroup__IngredientsListAssignment_4");
+			builder.put(grammarAccess.getIngredientsGroupAccess().getQuantityAssignment_6(), "rule__IngredientsGroup__QuantityAssignment_6");
+			builder.put(grammarAccess.getIngredientAccess().getOriginalNameAssignment_1_0(), "rule__Ingredient__OriginalNameAssignment_1_0");
+			builder.put(grammarAccess.getIngredientAccess().getOriginalNameAssignment_1_1_1(), "rule__Ingredient__OriginalNameAssignment_1_1_1");
+			builder.put(grammarAccess.getIngredientAccess().getNameAssignment_2(), "rule__Ingredient__NameAssignment_2");
+			builder.put(grammarAccess.getIngredientAccess().getQuantityAssignment_3(), "rule__Ingredient__QuantityAssignment_3");
 			builder.put(grammarAccess.getQuantityAccess().getAmountAssignment_0(), "rule__Quantity__AmountAssignment_0");
 			builder.put(grammarAccess.getQuantityAccess().getUnitAssignment_1(), "rule__Quantity__UnitAssignment_1");
 			builder.put(grammarAccess.getToolsBlockAccess().getToolsListAssignment_3(), "rule__ToolsBlock__ToolsListAssignment_3");
-			builder.put(grammarAccess.getToolAccess().getNameAssignment_1(), "rule__Tool__NameAssignment_1");
+			builder.put(grammarAccess.getToolAccess().getOriginalNameAssignment_1_0(), "rule__Tool__OriginalNameAssignment_1_0");
+			builder.put(grammarAccess.getToolAccess().getNameAssignment_2(), "rule__Tool__NameAssignment_2");
 			builder.put(grammarAccess.getStepsBlockAccess().getStepsListAssignment_3(), "rule__StepsBlock__StepsListAssignment_3");
+			builder.put(grammarAccess.getConditionalStepAccess().getPredAssignment_1(), "rule__ConditionalStep__PredAssignment_1");
+			builder.put(grammarAccess.getConditionalStepAccess().getPredAssignment_2_1(), "rule__ConditionalStep__PredAssignment_2_1");
+			builder.put(grammarAccess.getConditionalStepAccess().getNumAssignment_5(), "rule__ConditionalStep__NumAssignment_5");
+			builder.put(grammarAccess.getConditionalStepAccess().getConditionAssignment_8(), "rule__ConditionalStep__ConditionAssignment_8");
+			builder.put(grammarAccess.getConditionalStepAccess().getToAssignment_10(), "rule__ConditionalStep__ToAssignment_10");
 			builder.put(grammarAccess.getStepAccess().getPredAssignment_1(), "rule__Step__PredAssignment_1");
 			builder.put(grammarAccess.getStepAccess().getPredAssignment_2_1(), "rule__Step__PredAssignment_2_1");
 			builder.put(grammarAccess.getStepAccess().getNumAssignment_5(), "rule__Step__NumAssignment_5");

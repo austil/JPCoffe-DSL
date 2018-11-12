@@ -14,6 +14,7 @@ import org.eclipse.emf.ecore.EObject;
  * The following features are supported:
  * </p>
  * <ul>
+ *   <li>{@link edu.imt.dsl.jpcoffe.jPCoffe.Tool#getOriginalName <em>Original Name</em>}</li>
  *   <li>{@link edu.imt.dsl.jpcoffe.jPCoffe.Tool#getName <em>Name</em>}</li>
  * </ul>
  *
@@ -23,6 +24,32 @@ import org.eclipse.emf.ecore.EObject;
  */
 public interface Tool extends EObject
 {
+  /**
+   * Returns the value of the '<em><b>Original Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Original Name</em>' attribute isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Original Name</em>' attribute.
+   * @see #setOriginalName(String)
+   * @see edu.imt.dsl.jpcoffe.jPCoffe.JPCoffePackage#getTool_OriginalName()
+   * @model
+   * @generated
+   */
+  String getOriginalName();
+
+  /**
+   * Sets the value of the '{@link edu.imt.dsl.jpcoffe.jPCoffe.Tool#getOriginalName <em>Original Name</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Original Name</em>' attribute.
+   * @see #getOriginalName()
+   * @generated
+   */
+  void setOriginalName(String value);
+
   /**
    * Returns the value of the '<em><b>Name</b></em>' attribute.
    * <!-- begin-user-doc -->
