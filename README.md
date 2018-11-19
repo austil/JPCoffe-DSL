@@ -4,6 +4,28 @@ A DSL for COOKS
 
 ![jpmeme](./jpmeme.jpg)
 
+## Progress
+
+Grammaire : 
+
+- Quantité : seuls les entiers sont acceptés
+- Outils : on peut pas mettre de quantité
+- Steps : on peut pas mettre de point et la ponctuation est mal gérée
+- Les références vers les ingredients/tools dans les steps n'existent pas
+
+Runtime :
+
+- [ ] Boucle d'affichage à faire
+- [ ] On ne choisit pas la recette s'il y en a plusieurs
+- [ ] On ne gère pas les imports
+- Non pris en compte
+  - [ ] ConditionStep
+  - [ ] Groupes d'ingredients/tools
+  - Alias
+- Pas le choix sur le nombre de portions pour afficher des quantités proportionnelles
+- On ne précise pas le nombre de cuisiniers disponibles pour faire la recette
+
+
 ## Syntax sample
 
 ```
