@@ -7,6 +7,11 @@ import org.eclipse.emf.ecore.resource.Resource
 import org.eclipse.xtext.generator.AbstractGenerator
 import org.eclipse.xtext.generator.IFileSystemAccess2
 import org.eclipse.xtext.generator.IGeneratorContext
+import edu.imt.dsl.jpcoffe.jPCoffe.Main
+import edu.imt.dsl.jpcoffe.jPCoffe.Recipe
+import edu.imt.dsl.jpcoffe.jPCoffe.Ingredient
+import org.eclipse.emf.common.util.EList
+import edu.imt.dsl.jpcoffe.jPCoffe.Step
 
 /**
  * Generates code from your model files on save.
@@ -15,11 +20,89 @@ import org.eclipse.xtext.generator.IGeneratorContext
  */
 class JPCoffeGenerator extends AbstractGenerator {
 
+	int recipeNb;
+	
+	def getRecipeNb() {
+		recipeNb++;
+		return recipeNb;
+	}
+
 	override void doGenerate(Resource resource, IFileSystemAccess2 fsa, IGeneratorContext context) {
-//		fsa.generateFile('greetings.txt', 'People to greet: ' + 
-//			resource.allContents
-//				.filter(Greeting)
-//				.map[name]
-//				.join(', '))
+		recipeNb = 0;
+		val main = resource.contents.filter(Main).get(0);
+		fsa.generateFile("MainGenerated.java", main.compile());
+	}
+	
+	def compile(Main m) '''
+	import etu.imt.dsl.jpcoffe.runtime.model.Ingredient;
+	import etu.imt.dsl.jpcoffe.runtime.model.Recipe;
+	import etu.imt.dsl.jpcoffe.runtime.model.Step;
+	import etu.imt.dsl.jpcoffe.runtime.App;
+	
+	public class MainGenerated {
+		public static void main(String[] args) {
+			App app = new App();
+			«FOR recipe : m.recipes»
+				«recipe.compile(getRecipeNb)»
+			«ENDFOR»
+			
+			System.out.println("TODO : \n" + app.nextStepsStr());
+		}
+	}
+	'''
+	
+	def compile(Recipe r, int nb) '''
+	Recipe recipe«nb» = new Recipe("«r.name»");
+	recipe«nb».setForPeople(«r.portion.nb»);
+	
+	«FOR ingredient : r.ingredients.ingredientsList.filter(Ingredient)»
+		recipe«nb».addIngredient(«ingredient.compile»);
+	«ENDFOR»
+	
+	«FOR tool : r.tools.toolsList»
+		recipe«nb».addTool("«tool.name»");
+	«ENDFOR»
+	
+	«FOR step : r.steps.stepsList.filter(Step)»
+		recipe«nb».addStep(
+			new Step(new int[]{«predToString(step.pred)»},
+					 «step.num»,
+					 "«step.text»")
+		);
+	«ENDFOR»
+	
+	app.addRecipe(recipe«nb»);
+	'''
+	
+	def compile(Ingredient ingredient) {
+		if (ingredient.quantity !== null) {
+			if (ingredient.quantity.unit !== null) {
+				return '''
+				new Ingredient("«ingredient.name»", «ingredient.quantity.amount», "«ingredient.quantity.unit»")
+				'''
+			}
+			else {
+				return '''
+				new Ingredient("«ingredient.name»", «ingredient.quantity.amount»)
+				'''
+			}
+		}
+		else {
+			return '''new Ingredient("«ingredient.name»")'''
+		}
+	}
+
+	def predToString(EList<Integer> preds)	{
+		if (preds.empty) {
+			return "";
+		}
+		else {
+			var s = preds.get(0).toString;
+			
+			for (var i = 1; i < preds.size; i++) {
+				s += "," + preds.get(i).toString;
+			}
+			return s;
+		}
 	}
 }

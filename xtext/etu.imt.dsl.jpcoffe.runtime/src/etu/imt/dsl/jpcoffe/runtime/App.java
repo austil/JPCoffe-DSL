@@ -11,11 +11,13 @@ import etu.imt.dsl.jpcoffe.runtime.model.Step;
 
 public class App {
 	
-	private Recipe recipe;
+	private List<Recipe> recipes;
+	private Recipe currentRecipe;
 	private Set<Integer> stepsDone;
 	
-	public App (Recipe r) {
-		recipe = r;
+	public App() {
+		recipes = new ArrayList<Recipe>();
+		currentRecipe = null;
 		stepsDone = new HashSet<Integer>();
 	}
 	
@@ -38,7 +40,7 @@ public class App {
 	
 	private List<Step> getNextSteps() {
 		List<Step> nextSteps = new ArrayList<Step>();
-		for(Step s : recipe.getSteps()) {
+		for(Step s : currentRecipe.getSteps()) {
 			if(stepToDo(s)) {
 				nextSteps.add(s);
 			}
@@ -46,8 +48,13 @@ public class App {
 		return nextSteps;
 	}
 	
+	public void addRecipe(Recipe r) {
+		this.recipes.add(r);
+		this.currentRecipe = r;
+	}
+	
 	public String nextStepsStr() {
-		if(stepsDone.size() == recipe.getSteps().size()) {
+		if(stepsDone.size() == currentRecipe.getSteps().size()) {
 			return "Recipe finished !";
 		}
 		String str = "";
@@ -65,7 +72,7 @@ public class App {
 	}
 	
 	public static void main(String[] args) {
-		Recipe r = new Recipe("Béchamel");
+		Recipe r = new Recipe("BÃ©chamel");
 		r.setForPeople(6);
 		r.addIngredient(new Ingredient("Farine", 50, "gr"));
 		r.addIngredient(new Ingredient("Lait", 60, "cl"));
@@ -78,7 +85,8 @@ public class App {
 		r.addStep(new Step(new int[]{2}, 3, "assaisonner de Sel, Poivre et Muscade rapee"));
 		System.out.println(r);
 		
-		App app = new App(r);
+		App app = new App();
+		app.addRecipe(r);
 		System.out.println("TODO :\n" + app.nextStepsStr());
 		app.stepDone(0);
 		System.out.println("TODO :\n" + app.nextStepsStr());
