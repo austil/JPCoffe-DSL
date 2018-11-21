@@ -3,6 +3,7 @@ package etu.imt.dsl.jpcoffe.runtime;
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
+import java.util.Scanner;
 import java.util.Set;
 
 import etu.imt.dsl.jpcoffe.runtime.model.Ingredient;
@@ -14,11 +15,13 @@ public class App {
 	private List<Recipe> recipes;
 	private Recipe currentRecipe;
 	private Set<Integer> stepsDone;
+	private Scanner reader;
 	
 	public App() {
 		recipes = new ArrayList<Recipe>();
 		currentRecipe = null;
-		stepsDone = new HashSet<Integer>();
+		stepsDone = null;
+		reader = new Scanner(System.in);
 	}
 	
 	private List<Integer> getStepsNumbers(List<Step> steps) {
@@ -27,6 +30,10 @@ public class App {
 			stepsNb.add(s.number);
 		}
 		return stepsNb;
+	}
+	
+	private boolean isFinished() {
+		return stepsDone.size() == currentRecipe.getSteps().size();
 	}
 	
 	private boolean stepToDo(Step s) {
@@ -50,29 +57,56 @@ public class App {
 	
 	public void addRecipe(Recipe r) {
 		this.recipes.add(r);
-		this.currentRecipe = r;
 	}
 	
-	public String nextStepsStr() {
-		if(stepsDone.size() == currentRecipe.getSteps().size()) {
-			return "Recipe finished !";
+	public void chooseRecipe() {
+		System.out.println("RECIPES : ");
+		for(int i = 0; i < this.recipes.size(); i++) {
+			System.out.println("    " + i + " - " + this.recipes.get(i).name);
 		}
+		
+		int index = - 1;
+		boolean validIndex = false;
+		while (!validIndex) {
+			System.out.println("Choose a recipe :");
+			index = reader.nextInt();
+			if(index >= 0 && index < this.recipes.size()) {
+				validIndex = true;
+			}
+		}
+		
+		this.stepsDone = new HashSet<Integer>();
+		this.currentRecipe = this.recipes.get(index);
+	}
+	
+	private String nextStepsStr() {
 		String str = "";
 		for(Step s : getNextSteps()) {
-			str += "- " + s.number + " " + s.text + "\n";
+			str += "    " + s.number + " - " + s.text + "\n";
 		}
 		return str;
 	}
 	
-	public boolean stepDone(int stepNb) {
+	private boolean stepDone(int stepNb) {
 		if(getStepsNumbers(getNextSteps()).contains(stepNb) == false) {
 			return false;
 		}
 		return this.stepsDone.add(stepNb);
 	}
 	
+	public void followRecipe() {
+		System.out.println("\n------------------\nStarting recipe : " + this.currentRecipe.name + "\n------------------");
+		while(!this.isFinished()) {
+			System.out.println("\nNext Steps: \n" + this.nextStepsStr());
+			System.out.print("> step done : ");
+			int num = reader.nextInt();
+			this.stepDone(num);
+		}
+		System.out.println("\nRecipe done, enjoy your meal !");
+	}
+	
 	public static void main(String[] args) {
-		Recipe r = new Recipe("BÃ©chamel");
+		Recipe r = new Recipe("Béchamel");
 		r.setForPeople(6);
 		r.addIngredient(new Ingredient("Farine", 50, "gr"));
 		r.addIngredient(new Ingredient("Lait", 60, "cl"));
@@ -83,19 +117,20 @@ public class App {
 		r.addStep(new Step(new int[]{0}, 1, "ajouter la Farine et remuer avec une Cuillere en bois"));
 		r.addStep(new Step(new int[]{1}, 2, "verser le Lait progressivement en remuant jusqu'a ce que la sauce epaississe"));
 		r.addStep(new Step(new int[]{2}, 3, "assaisonner de Sel, Poivre et Muscade rapee"));
-		System.out.println(r);
+		
+		Recipe r2 = new Recipe("Sallage");
+		r2.setForPeople(1);
+		r2.addIngredient(new Ingredient("Sel", 50, "gr"));
+		r2.addTool("Main à sel");
+		r2.addStep(new Step(new int[]{},  0, "prenez une pincée de sel"));
+		r2.addStep(new Step(new int[]{0}, 1, "saupoudrez le plus possible aux alentours"));
 		
 		App app = new App();
 		app.addRecipe(r);
-		System.out.println("TODO :\n" + app.nextStepsStr());
-		app.stepDone(0);
-		System.out.println("TODO :\n" + app.nextStepsStr());
-		app.stepDone(1);
-		System.out.println("TODO :\n" + app.nextStepsStr());
-		app.stepDone(2);
-		System.out.println("TODO :\n" + app.nextStepsStr());
-		app.stepDone(3);
-		System.out.println("TODO :\n" + app.nextStepsStr());
+		app.addRecipe(r2);
+		
+		app.chooseRecipe();
+		app.followRecipe();
 	}
 
 }

@@ -46,7 +46,8 @@ class JPCoffeGenerator extends AbstractGenerator {
 				«recipe.compile(getRecipeNb)»
 			«ENDFOR»
 			
-			System.out.println("TODO : \n" + app.nextStepsStr());
+			app.chooseRecipe();
+			app.followRecipe();
 		}
 	}
 	'''

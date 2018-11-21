@@ -15,8 +15,8 @@ Grammaire :
 
 Runtime :
 
-- [ ] Boucle d'affichage à faire
-- [ ] On ne choisit pas la recette s'il y en a plusieurs
+- [X] ~~Boucle d'affichage à faire~~
+- [X] ~~On ne choisit pas la recette s'il y en a plusieurs~~
 - [ ] On ne gère pas les imports
 - Non pris en compte
   - [ ] ConditionStep

@@ -5,7 +5,7 @@ import java.util.List;
 
 public class Recipe {
 
-	private String name;
+	public final String name;
 	
 	private int forPeople;
 
