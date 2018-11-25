@@ -1,10 +1,19 @@
 # JPCoffe DSL
 
-A DSL for COOKS
+A DSL for COOKS :fork_and_knife: :sushi: :cake:
 
-![jpmeme](./jpmeme.jpg)
+## Working samples list
 
-## Progress
+- bechamel.jpcoffe
+- cookies.jpcoffe
+- gateau-yaourt.jpcoffe
+- omelette.jpcoffe
+- panna-cotta.jpcoffe
+- puree.jpcoffe
+
+> :warning: Samples not included in this list are not expected to be fully working, mainly because they use unimplemented features.
+
+## Limitation
 
 Grammaire : 
 
@@ -15,12 +24,9 @@ Grammaire :
 
 Runtime :
 
-- [X] ~~Boucle d'affichage à faire~~
-- [X] ~~On ne choisit pas la recette s'il y en a plusieurs~~
-- [ ] On ne gère pas les imports
+- On ne gère pas les imports
 - Non pris en compte
-  - [ ] ConditionStep
-  - [ ] Groupes d'ingredients/tools
+  - ConditionStep
   - Alias
 - Pas le choix sur le nombre de portions pour afficher des quantités proportionnelles
 - On ne précise pas le nombre de cuisiniers disponibles pour faire la recette
@@ -59,3 +65,5 @@ Recipe "Bechamel" {
 
 }
 ```
+
+![jpmeme](./jpmeme.jpg)
