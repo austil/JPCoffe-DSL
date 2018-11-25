@@ -18,14 +18,14 @@ A DSL for COOKS :fork_and_knife: :sushi: :cake:
 Grammaire : 
 
 - Quantité : seuls les entiers sont acceptés
-- Outils : on peut pas mettre de quantité
-- Steps : on peut pas mettre de point et la ponctuation est mal gérée
+- Outils : on ne peut pas mettre de quantité
+- Steps : on ne peut pas mettre de point et la ponctuation est mal gérée
 - Les références vers les ingredients/tools dans les steps n'existent pas
 
 Runtime :
 
 - On ne gère pas les imports
-- Non pris en compte
+- Non pris en compte :
   - ConditionStep
   - Alias
 - Pas le choix sur le nombre de portions pour afficher des quantités proportionnelles
