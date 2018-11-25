@@ -12,6 +12,7 @@ import edu.imt.dsl.jpcoffe.jPCoffe.Recipe
 import edu.imt.dsl.jpcoffe.jPCoffe.Ingredient
 import org.eclipse.emf.common.util.EList
 import edu.imt.dsl.jpcoffe.jPCoffe.Step
+import edu.imt.dsl.jpcoffe.jPCoffe.IngredientsGroup
 
 /**
  * Generates code from your model files on save.
@@ -21,10 +22,20 @@ import edu.imt.dsl.jpcoffe.jPCoffe.Step
 class JPCoffeGenerator extends AbstractGenerator {
 
 	int recipeNb;
+	int ingredientsGroupNb;
 	
 	def getRecipeNb() {
 		recipeNb++;
 		return recipeNb;
+	}
+	
+	def getAndIncIngredientsGroupNb() {
+		ingredientsGroupNb++;
+		return ingredientsGroupNb;
+	}
+	
+	def getIngredientsGroupNb() {
+		return ingredientsGroupNb;
 	}
 
 	override void doGenerate(Resource resource, IFileSystemAccess2 fsa, IGeneratorContext context) {
@@ -35,6 +46,7 @@ class JPCoffeGenerator extends AbstractGenerator {
 	
 	def compile(Main m) '''
 	import etu.imt.dsl.jpcoffe.runtime.model.Ingredient;
+	import etu.imt.dsl.jpcoffe.runtime.model.IngredientsGroup;
 	import etu.imt.dsl.jpcoffe.runtime.model.Recipe;
 	import etu.imt.dsl.jpcoffe.runtime.model.Step;
 	import etu.imt.dsl.jpcoffe.runtime.App;
@@ -60,6 +72,11 @@ class JPCoffeGenerator extends AbstractGenerator {
 		recipe«nb».addIngredient(«ingredient.compile»);
 	«ENDFOR»
 	
+	«FOR ingredientsGroup : r.ingredients.ingredientsList.filter(IngredientsGroup)»
+		«ingredientsGroup.compile(getAndIncIngredientsGroupNb)»
+		recipe«nb».addIngredientsGroup(ingrGrp«getIngredientsGroupNb»);
+	«ENDFOR»
+	
 	«FOR tool : r.tools.toolsList»
 		recipe«nb».addTool("«tool.name»");
 	«ENDFOR»
@@ -74,6 +91,35 @@ class JPCoffeGenerator extends AbstractGenerator {
 	
 	app.addRecipe(recipe«nb»);
 	'''
+	
+	def compile (IngredientsGroup ingredientsGroup, int nb)  {
+		if (ingredientsGroup.quantity !== null) {
+			if (ingredientsGroup.quantity.unit !== null) {
+				return '''
+				IngredientsGroup ingrGrp«nb» = new IngredientsGroup("«ingredientsGroup.name»", «ingredientsGroup.quantity.amount», "«ingredientsGroup.quantity.unit»");
+				«FOR ingr : ingredientsGroup.ingredientsList.filter(Ingredient)»
+					ingrGrp«nb».addIngredient(«ingr.compile»);
+				«ENDFOR»
+				'''
+			}
+			else {
+				return '''
+				IngredientsGroup ingrGrp«nb» = new IngredientsGroup("«ingredientsGroup.name»", «ingredientsGroup.quantity.amount»);
+				«FOR ingr : ingredientsGroup.ingredientsList.filter(Ingredient)»
+					ingrGrp«nb».addIngredient(«ingr.compile»);
+				«ENDFOR»
+				'''
+			}
+		}
+		else {
+			return '''
+			IngredientsGroup ingrGrp«nb» = new IngredientsGroup("«ingredientsGroup.name»");
+			«FOR ingr : ingredientsGroup.ingredientsList.filter(Ingredient)»
+				ingrGrp«nb».addIngredient(«ingr.compile»);
+			«ENDFOR»
+			'''
+		}
+	}	
 	
 	def compile(Ingredient ingredient) {
 		if (ingredient.quantity !== null) {
